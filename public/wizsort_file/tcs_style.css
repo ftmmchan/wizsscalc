@@ -1,0 +1,177 @@
+html {overflow-y:scroll;}
+
+img { padding:0px;
+	  margin:0px;
+	  border:none;
+	  width:192px;
+	  height:264px;
+	  }
+a       {text-decoration:none;}
+a:hover {color:#ffcc66;}
+
+#all		{
+			width:100%;
+   			text-align: center;
+			}
+#sort_main	{
+			width:1000px;
+			margin-left:auto;
+			margin-right:auto;
+			text-align:center;
+			}
+#sort_left	{
+			width:650px;
+			float:left;
+			text-align:center;
+			}
+#sort_right	{
+			width:340px;
+			padding-top:100px;
+			float:right;
+			text-align:center;
+			}
+
+
+
+
+#mainTable {
+   width: 500px;
+   font-size: 16px;
+   font-family: '?l?r ?o?S?V?b?N', sans-serif;
+   text-align: center;
+   vertical-align: middle;
+   margin-left: auto;
+   margin-right: auto;
+   border-collapse: separate;
+   border-spacing: 10px 5px;
+   padding:0px;
+   
+}
+
+.opt_foot {
+   text-align: center;
+   background-color:#FFCCCC;
+}
+
+.ot	{
+	margin-bottom:10px;
+   text-align: left;
+	
+	}
+.tb	{
+	width:640px;
+	text-align:center;
+	margin-left:auto;
+	margin-right:auto;
+	font-size:12px;
+	line-height:1.5;
+	}
+
+.tb_header {
+   padding-bottom: 10px;
+    cursor:pointer;
+	width:500px;
+}
+
+#fldLeft    {text-align: center; width: 192px; height: 264px; padding:0px; margin:0px; border: 1px solid #333333; cursor:pointer;}
+#fldRight   {text-align: center; width: 192px; height: 264px; padding:0px; margin:0px; border: 1px solid #333333; cursor:pointer;}
+#fldMiddleT {text-align: center; width: 180px; height: 90px;  padding:0px; margin:0px; border: 1px solid #333333; cursor:pointer;}
+#fldMiddleB {text-align: center; width: 180px; height: 90px;  padding:0px; margin:0px; border: 1px solid #333333; cursor:pointer;}
+
+.GG	{
+		width:500px;
+		margin-left:auto;
+		margin-right:auto;
+		text-align:center;
+		}
+
+@media screen and (-webkit-min-device-pixel-ratio:0){
+.GG    {  
+		width:500px;
+		margin-left:0px;
+		margin-right:0;
+		padding:0px;
+	}
+	}
+
+
+.cbox {
+   cursor:pointer;
+   padding:2px;
+   border:1px solid #999999; border-width:0px 1px 1px 0px;
+}
+
+.red  {background-color:#ffcccc; }
+.none {background-color:#ffffff; }
+
+
+#resTable {
+   width:200px;
+   font-size:12px;
+   line-height:120%;
+   margin-left:auto;
+   margin-right:auto;
+   border:1px solid #000;
+   border-collapse:collapse;
+   text-align: center;
+}
+
+.resTableH {color:#ffffff; background-color:#000000; text-align:center;}
+.resTableL {color:#000000; border:1px solid #000000; text-align:right; padding-right:5px;}
+.resTableR {color:#000000; border:1px solid #000000; padding-left:5px;}
+
+    table.gauge { border-spacing:0px; border-collapse:collapse; }
+    table.gauge td {
+       font-size : 0px;
+       width : 2px;
+       height : 12px; 
+	   color:#ffffff; 
+	    
+    }
+    table.gauge .leftend  {border-top : 1px #3333ff solid; border-bottom : 1px #3333ff solid; border-left : 1px #333333 solid;}
+    table.gauge .mid      {border-top : 1px #3333ff solid; border-bottom : 1px #3333ff solid; border-left : 1px #666666 solid;}
+    table.gauge .normal   {border-top : 1px #3333ff solid; border-bottom : 1px #3333ff solid; border-left : 1px #999999 solid;}
+    table.gauge .leftendr {border-top : 1px #ff3333 solid; border-bottom : 1px #ff3333 solid; border-left : 1px #333333 solid;}
+    table.gauge .midr     {border-top : 1px #ff3333 solid; border-bottom : 1px #ff3333 solid; border-left : 1px #666666 solid;}
+    table.gauge .normalr  {border-top : 1px #ff3333 solid; border-bottom : 1px #ff3333 solid; border-left : 1px #999999 solid;}
+    table.gauge .rightend {border-left : 1px #333333 solid; border-width : 0px 0px 0px 1px;}
+
+.lL	{border : 1px solid #515151;}
+.lR	{border : 1px solid #515151;}
+
+.lL a {color:#0068b7;}
+.lL a:hover {color:#a40035; text-decoration:underline;}
+
+.lR a {color:#0068b7;}
+.lR a:hover {color:#a40035; text-decoration:underline;}
+
+.graphic	{ color:red; font-size:13px; display:block;}
+.graphic2	{ color:black; font-size:13px; display:block;}
+
+table#wm {
+    border-collapse: collapse;
+    border-spacing: 0;
+	font-size:12px;
+	text-align:left;
+}
+#wmaster	{
+				text-align:left;
+				line-height:1.5;
+				font-size:12px;
+			}
+#wm td { padding:5px; border:1px solid #e3e3e3;}
+
+.wmd	{	width:50px; text-align:center;}
+.wmd2	{	width:40px; border:none;}
+
+table#gd {
+    width: 625px;
+    border: 0px #E3E3E3 solid;
+    border-collapse: collapse;
+    border-spacing: 0;
+	font-size:12px;
+}
+
+#gd td { padding:5px; border:1px solid #e3e3e3;}
+.dtt	{	text-align:center;}
+.dtd	{	width:125px; text-align:center;}
