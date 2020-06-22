@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- saved from url=(0039)http://mainyan.sakura.ne.jp/thsort.html -->
+<html lang="ja" data-blockbyte-bs-uid="98979"><head>
+ <meta http-equiv="content-type" charset="utf-8">
+  <meta http-equiv="Content-Script-Type" content="text/javascript">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="Cache-Control" content="no-cache">
+  <meta name="author" content="ftmmchan">
+  <meta name="description" content="黒ウィズキャラクターソート">
+  <meta name="keywords" content="">
+  <meta name="generator" content="notepad">
+<style class="blockbyte-bs-style" data-name="content">body>div#blockbyte-bs-indicator>div{opacity:0;pointer-events:none}body>iframe#blockbyte-bs-sidebar.blockbyte-bs-visible,body>iframe#blockbyte-bs-overlay.blockbyte-bs-visible{opacity:1;pointer-events:auto}body.blockbyte-bs-noscroll{overflow:hidden !important}body>div#blockbyte-bs-indicator>div{position:absolute;transform:translate3d(-40px, 0, 0);top:0;left:0;width:40px !important;height:100%;background:rgba(0,0,0,0.5);border-radius:0 10px 10px 0;transition:opacity 0.3s, transform 0.3s;z-index:2}body>div#blockbyte-bs-indicator>div>span{-webkit-mask:no-repeat center/32px;-webkit-mask-image:url(chrome-extension://jdbnofccmhefkmjbkkdkfiicjkgofkdh/img/icon-bookmark.svg);background-color:#ffffff;position:absolute;display:block;top:0;left:0;width:100%;height:100%}body>div#blockbyte-bs-indicator[data-pos='right']{left:auto;right:0}body>div#blockbyte-bs-indicator[data-pos='right']>div{transform:translate3d(40px, 0, 0);left:auto;right:0;border-radius:10px 0 0 10px}body>div#blockbyte-bs-indicator.blockbyte-bs-fullHeight>div{border-radius:0}body>div#blockbyte-bs-indicator.blockbyte-bs-hover>div{transform:translate3d(0, 0, 0);opacity:1}body>div#blockbyte-bs-indicator[data-pos='left'].blockbyte-bs-has-lsb{height:100% !important;top:0 !important}body>div#blockbyte-bs-indicator[data-pos='left'].blockbyte-bs-has-lsb>div{background:transparent}body>div#blockbyte-bs-indicator[data-pos='left'].blockbyte-bs-has-lsb>div>span{-webkit-mask-position-y:20px}body>iframe#blockbyte-bs-sidebar{width:350px;max-width:none;height:0;z-index:2147483646;background-color:rgba(255,255,255,0.8) !important;border:none;display:block !important;transform:translate3d(-350px, 0, 0);transition:width 0s 0.3s, height 0s 0.3s, opacity 0.3s, transform 0.3s}body>iframe#blockbyte-bs-sidebar[data-pos='right']{left:auto;right:0;transform:translate3d(350px, 0, 0)}body>iframe#blockbyte-bs-sidebar.blockbyte-bs-visible{width:calc(100% + 350px);height:100%;transform:translate3d(0, 0, 0);transition:opacity 0.3s, transform 0.3s}body>iframe#blockbyte-bs-sidebar.blockbyte-bs-hideMask{background:none !important}body>iframe#blockbyte-bs-sidebar.blockbyte-bs-hideMask:not(.blockbyte-bs-hover){width:calc(350px + 50px)}body>iframe#blockbyte-bs-overlay{width:100%;max-width:none;height:100%;z-index:2147483647;border:none;background:rgba(0,0,0,0.5) !important;transition:opacity 0.3s}
+</style></head><body onload="startup()">　<link rel="stylesheet" type="text/css" href="./wizsort_file/tcs_style.css">
+  <title>黒ウィズキャラソート</title>
+  
+  <script type="text/javascript" src="./wizsort_file/fnc_main.js"></script>
+  <script type="text/javascript" src="./wizsort_file/mod_k-factory.js"></script>
+  <script type="text/javascript" src="./wizsort_file/fnc_data.js"></script>
+  <script type="text/javascript" src="./wizsort_file/op.js"></script>
+  
+
+
+<div id="all">
+<div id="sort_main">
+<div id="sort_left">
+<div align="center">
+<table id="mainTable">
+  <thead>
+  <tr>
+    <td colspan="3" class="tb_header">Battle No. <span id="lblCount">―</span><br>
+    <span id="lblProgress">0</span>％ sorted.<br><br>
+    <div class="GG"><span id="GaGprog"><table class="gauge" id="GaGprog"><tbody><tr><td id="GaGprog0" class="leftend">.</td><td id="GaGprog1" class="normal">.</td><td id="GaGprog2" class="normal">.</td><td id="GaGprog3" class="normal">.</td><td id="GaGprog4" class="normal">.</td><td id="GaGprog5" class="mid">.</td><td id="GaGprog6" class="normal">.</td><td id="GaGprog7" class="normal">.</td><td id="GaGprog8" class="normal">.</td><td id="GaGprog9" class="normal">.</td><td id="GaGprog10" class="leftend">.</td><td id="GaGprog11" class="normal">.</td><td id="GaGprog12" class="normal">.</td><td id="GaGprog13" class="normal">.</td><td id="GaGprog14" class="normal">.</td><td id="GaGprog15" class="mid">.</td><td id="GaGprog16" class="normal">.</td><td id="GaGprog17" class="normal">.</td><td id="GaGprog18" class="normal">.</td><td id="GaGprog19" class="normal">.</td><td id="GaGprog20" class="leftend">.</td><td id="GaGprog21" class="normal">.</td><td id="GaGprog22" class="normal">.</td><td id="GaGprog23" class="normal">.</td><td id="GaGprog24" class="normal">.</td><td id="GaGprog25" class="mid">.</td><td id="GaGprog26" class="normal">.</td><td id="GaGprog27" class="normal">.</td><td id="GaGprog28" class="normal">.</td><td id="GaGprog29" class="normal">.</td><td id="GaGprog30" class="leftend">.</td><td id="GaGprog31" class="normal">.</td><td id="GaGprog32" class="normal">.</td><td id="GaGprog33" class="normal">.</td><td id="GaGprog34" class="normal">.</td><td id="GaGprog35" class="mid">.</td><td id="GaGprog36" class="normal">.</td><td id="GaGprog37" class="normal">.</td><td id="GaGprog38" class="normal">.</td><td id="GaGprog39" class="normal">.</td><td id="GaGprog40" class="leftend">.</td><td id="GaGprog41" class="normal">.</td><td id="GaGprog42" class="normal">.</td><td id="GaGprog43" class="normal">.</td><td id="GaGprog44" class="normal">.</td><td id="GaGprog45" class="mid">.</td><td id="GaGprog46" class="normal">.</td><td id="GaGprog47" class="normal">.</td><td id="GaGprog48" class="normal">.</td><td id="GaGprog49" class="normal">.</td><td id="GaGprog50" class="leftend">.</td><td id="GaGprog51" class="normal">.</td><td id="GaGprog52" class="normal">.</td><td id="GaGprog53" class="normal">.</td><td id="GaGprog54" class="normal">.</td><td id="GaGprog55" class="mid">.</td><td id="GaGprog56" class="normal">.</td><td id="GaGprog57" class="normal">.</td><td id="GaGprog58" class="normal">.</td><td id="GaGprog59" class="normal">.</td><td id="GaGprog60" class="leftend">.</td><td id="GaGprog61" class="normal">.</td><td id="GaGprog62" class="normal">.</td><td id="GaGprog63" class="normal">.</td><td id="GaGprog64" class="normal">.</td><td id="GaGprog65" class="mid">.</td><td id="GaGprog66" class="normal">.</td><td id="GaGprog67" class="normal">.</td><td id="GaGprog68" class="normal">.</td><td id="GaGprog69" class="normal">.</td><td id="GaGprog70" class="leftend">.</td><td id="GaGprog71" class="normal">.</td><td id="GaGprog72" class="normal">.</td><td id="GaGprog73" class="normal">.</td><td id="GaGprog74" class="normal">.</td><td id="GaGprog75" class="mid">.</td><td id="GaGprog76" class="normal">.</td><td id="GaGprog77" class="normal">.</td><td id="GaGprog78" class="normal">.</td><td id="GaGprog79" class="normal">.</td><td id="GaGprog80" class="leftend">.</td><td id="GaGprog81" class="normal">.</td><td id="GaGprog82" class="normal">.</td><td id="GaGprog83" class="normal">.</td><td id="GaGprog84" class="normal">.</td><td id="GaGprog85" class="mid">.</td><td id="GaGprog86" class="normal">.</td><td id="GaGprog87" class="normal">.</td><td id="GaGprog88" class="normal">.</td><td id="GaGprog89" class="normal">.</td><td id="GaGprog90" class="leftend">.</td><td id="GaGprog91" class="normal">.</td><td id="GaGprog92" class="normal">.</td><td id="GaGprog93" class="normal">.</td><td id="GaGprog94" class="normal">.</td><td id="GaGprog95" class="mid">.</td><td id="GaGprog96" class="normal">.</td><td id="GaGprog97" class="normal">.</td><td id="GaGprog98" class="normal">.</td><td id="GaGprog99" class="normal">.</td><td class="rightend">.</td></tr></tbody></table></span></div>
+    </td>
+  </tr>
+  </thead>
+
+ <tbody>
+    <tr>
+      <td id="fldLeft" onclick="fnc_Sort(-1);" onmouseover="fnc_CC(this.id, &#39;red&#39;)" onmouseout="fnc_CC(this.id, &#39;none&#39;)" rowspan="2"><img src="./wizsort_file/defaultL.jpg"></td>
+      <td id="fldMiddleT" onclick="fnc_Sort(0);" onmouseover="fnc_CC(this.id, &#39;red&#39;)" onmouseout="fnc_CC(this.id, &#39;none&#39;)">黒ウィズキャラソート</td>
+      <td id="fldRight" onclick="fnc_Sort(1);" onmouseover="fnc_CC(this.id, &#39;red&#39;)" onmouseout="fnc_CC(this.id, &#39;none&#39;)" rowspan="2"><img src="./wizsort_file/defaultR.jpg"></td>
+    </tr>
+    
+    <tr>
+      <td id="fldMiddleB" onclick="fnc_Sort(0);" onmouseover="fnc_CC(this.id, &#39;red&#39;)" onmouseout="fnc_CC(this.id, &#39;none&#39;)">CLICKで開始</td>
+    </tr>
+  </tbody>
+  
+  <tbody>
+    <tr>
+    </tr>
+  </tbody>
+  <tfoot>
+   <tr>
+    <td id="linLeft" class="lL">キャラの名前</td>
+    <td><input id="optImage" checked="checked" type="checkbox">ソートに画像を表示する。</td>
+    <td id="linRight" class="lR">キャラの名前</td>
+  </tr>
+  </tfoot>
+</table>
+</div>
+
+<br>
+
+<table id="optTable" width="660" align="center" class="ot"><tbody></tbody><tfoot></tfoot></table>
+<div id="ranTable" width="660px" align="center" class="tb" style="display:none;">
+<div>
+
+
+
+
+<div id="result"></div>
+下の表の上から10キャラ分です。<br>
+</div>
+<div>
+
+<form>
+      <input type="button" value="全順位の結果をテキストで開いてみる" onclick="OpenWnd()">
+</form> 	
+</div>
+</div>
+<div id="resultField" width="600" style="text-align: center;">
+好きな方をクリックしてください<br>
+全部にチェックするとめちゃくちゃ長くなります<br>
+出てくるのはイベントのガチャ限だけです
+</div>
+
+<br>
