@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+    <title>SS計算機
+    </title>
+    
+
+</head>
+<body>
+    <h1>ＳＳダメージ計算機</h1>
+作りは適当です。<br><br>
+<form action="#" name="form1">
+ＳＳの種類：<select name="ss">
+<option value="1">大魔術等基本的な物</option>
+<option value="2">特効・残滅大魔術・カウンター</option>
+<option value="3">蓄積解放大魔術(聖・邪・破)</option>
+<option value="4">蓄積解放(印・連)・Ｌカウント・パネル属性カウント・捕食大魔術</option>
+<option value="5">時限大魔術</option>
+<option value="6">パネル爆破大魔術</option>
+<option value="7">反転解除大魔術</option>
+<option value="8">詠唱大魔術</option>
+<option value="9">反動蝕・犠牲魔術</option>
+<option value="10">純属性・融合大魔術</option>
+<option value="11">統一大魔術</option>
+<option value="12">連鎖解放大魔術</option>
+<option value="13">激化大魔術</option>
+<option value="14">急襲大魔術</option>
+</select><br>
+属性相性<select name="zokusei">
+<option value="1">等倍</option>
+<option value="2">有利</option>
+<option value="3">不利</option>
+</select><br><br>
+
+精霊の攻撃力<input type="text" name="atk" size="20" value="0" ><br>
+ＳＳの効果値<input type="text" name="mp" size="20" value="0" ><br>
+結晶の効果値<input type="text" name="cs" size="20" value="0" ><br>
+ダメージ強化効果値<input type="text" name="eh1" size="20" value="0" ><br>
+ブースト効果値<input type="text" name="eh2" size="20" value="0" ><br>
+精霊強化効果値<input type="text" name="eh3" size="20" value="0" ><br>
+蓄積解放強化効果値<input type="text" name="eh4" size="20" value="0" ><br>
+夢現の射手効果値<input type="text" name="eh5" size="20" value="0" ><br>
+チェイン数<input type="text" name="ch" size="20" value="0" ><br>
+連鎖狂化効果<input type="text" name="chch" size="20" value="0" ><br>
+<br>
+敵ガード<input type="text" name="egd" size="20" value="0" ><br>
+敵弱体化（味方の弱体化大魔術）<input type="text" name="mjk" size="20" value="0" ><br>
+敵弱体化（敵の反動攻撃）<input type="text" name="ehd" size="20" value="0" ><br>
+
+ダメージ倍率結晶<select name="csmpsel">
+<option value="1">なし</option>
+<option value="2">アドヴェリタス(1.2倍)</option>
+<option value="3">ミュージアム(0.9倍)</option>
+<option value="4">アドヴェリタス＋ミュージアム(1.1倍)</option>
+</select><br>
+ダメージ倍率潜在<select name="awmpsel">
+<option value="1">なし</option>
+<option value="2">あり(1.1倍)</option>
+<option value="3">あり(1.3倍)</option>
+</select><br><br>
+効果値上限値<input type="text" name="jou" size="20" value="0" ><br>
+複属性効果値上限値<input type="text" name="jouf" size="20" value="0" ><br>
+カウント上限値<input type="text" name="kauj" size="20" value="0" ><br>
+カウント数<input type="text" name="kau" size="20" value="0" ><br>
+蓄積％<input type="text" name="tiku" size="20" value="0" ><br>
+条件に一致する精霊数<input type="text" name="sei" size="20" value="5" ><br>
+パネル色数<input type="text" name="pane" size="20" value="0" ><br>
+スキル発動回数<input type="text" name="ski" size="20" value="1" ><br>
+時間ゲージ段階数<input type="text" name="jikan" size="20" value="0" ><br>
+段階あたりの効果値<input type="text" name="dan" size="20" value="0" ><br>
+段階あたりの倍率<input type="text" name="bai" size="20" value="2" ><br>
+
+<input type="button" value="計算する" onClick="sscalc()">
+
+
+<br><br>
+ダメージ予想<input type="text" name="damage" size="8" value=""> <br>
+ダメージ予想(最小)<input type="text" name="damagemin" size="8" value=""> <br>
+ダメージ予想(最大)<input type="text" name="damagemax" size="8" value=""> 
+
+
+</form>
+
+
+<script src="./sscalc_file/sscalc.js" charset="utf-8">
+</script>
+
+</body>
+
+</html>
