@@ -62,6 +62,9 @@ switch (awmpsel) {
 		var awmp = 1.1;
 	break;
 	case 2:
+		var awmp = 1.2;
+	break;
+	case 3:
 		var awmp = 1.3;
 	break;
 	default:
