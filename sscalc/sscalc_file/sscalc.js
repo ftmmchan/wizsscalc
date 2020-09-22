@@ -89,54 +89,54 @@ switch (awmpsel) {
 var dmmp = eval(csmp)+eval(awmp)-1;
 
 switch (ss) {
-	case 1: //“ÁŒøEc–Å‘å–‚pEƒJƒEƒ“ƒ^[
+	case 1: //ç‰¹åŠ¹ãƒ»æ®‹æ»…å¤§é­”è¡“ãƒ»ã‚«ã‚¦ãƒ³ã‚¿ãƒ¼
 		var mptotal = mptotal + 100;
 		var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chch;
 	break;
-	case 2: //’~Ï%
+	case 2: //è“„ç©%
 		var mptotal = mptotal+100+(tiku/100)*jou;
 		var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chch;
 	break;
-	case 3: //ƒJƒEƒ“ƒg
+	case 3: //ã‚«ã‚¦ãƒ³ãƒˆ
 		var mptotal = ehtotal+100+(kau/kauj)*jou;
 		var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chch;
 	break;
-	case 4: //ŒÀ
+	case 4: //æ™‚é™
 		var damage = Math.floor(Math.floor(atk*(Math.floor((mptotal/100)+cheh))*zkeh)*sseh*dmmp*chch);
 	break;
-	case 5: //ƒpƒlƒ‹”š”j
+	case 5: //ãƒ‘ãƒãƒ«çˆ†ç ´
 		var damage = atk*((mptotal/100)*pane)*cheh*sseh*dmmp*zkeh*chch;
 	break;
-	case 6: //”½“]‰ğœ
+	case 6: //åè»¢è§£é™¤
 		var mptotal = mptotal * sei * 2;
 		var damage = atk*((mptotal/100))*cheh*sseh*dmmp*zkeh*chch;
 	break;
-	case 7: //‰r¥
+	case 7: //è© å”±
 		var mptotal = mptotal + (jikan*dan);
 		var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chch;
 	break;
-	case 8: //”½“®IE‹]µ
+	case 8: //åå‹•è•ãƒ»çŠ ç‰²
 		var mptotal = mptotal * sei;
 		var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chch;
 	break;
-	case 9: //ƒ‘®«E—Z‡E“ˆê
+	case 9: //ç´”å±æ€§ãƒ»èåˆãƒ»çµ±ä¸€
 		var mptotal = mptotal + (jou*jyt);
 		var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chch;
 	break;
-	case 10: //˜A½‰ğ•ú
+	case 10: //é€£é–è§£æ”¾
 		var mptotal = ehtotal+100+((ch/(kauj+cs))*jou);
 		var damage = atk*(mptotal/100)*sseh*dmmp*zkeh;
 	break;
-	case 11: //Œƒ‰»
+	case 11: //æ¿€åŒ–
 		var mptotal = mptotal*Math.pow(bai,ski - 1);
 		var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chch;
 	break;
-	case 12: //‹}P
+	case 12: //æ€¥è¥²
 		var mptotal = mptotal/Math.pow(bai,ski - 1);
 		var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chch;
 	break;
 
-	default: //‘å–‚p
+	default: //å¤§é­”è¡“
 		var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chch;
 }
 
