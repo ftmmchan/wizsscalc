@@ -124,7 +124,7 @@ switch (ss) {
 		var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chch;
 	break;
 	case 10: //連鎖解放
-		var mptotal = ehtotal-cs+100+((ch/(kauj+cs))*jou);
+		var mptotal = ehtotal+100+((ch/(kauj+cs))*jou);
 		var damage = atk*(mptotal/100)*sseh*dmmp*zkeh;
 	break;
 	case 11: //激化
