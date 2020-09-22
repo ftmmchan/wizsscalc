@@ -1,33 +1,33 @@
 function sscalc(){
-var atk = eval(document.form1.atk.value);
-var mp = eval(document.form1.mp.value);
-var cs = eval(document.form1.cs.value);
-var eh1 = eval(document.form1.eh1.value);
-var eh2 = eval(document.form1.eh2.value);
-var eh3 = eval(document.form1.eh3.value);
-var eh4 = eval(document.form1.eh4.value);
-var eh5 = eval(document.form1.eh5.value);
-var eh6 = eval(document.form1.eh6.value);
-var ch = eval(document.form1.ch.value);
-var ehtotal = eh1 + eh2 + eh3 + eh4 + eh5 + eh6;
-var ss = document.form1.ss.selectedIndex;
-var mptotal = (mp+cs+ehtotal);
-var cheh = 1+(eval(document.form1.ch.value)/100);
-var sseh = (1-(eval(document.form1.egd.value)/100))*(1+(eval(document.form1.mjk.value)/100))*(1+(eval(document.form1.ehd.value)/100));
-var csmpsel = document.form1.csmpsel.selectedIndex;
-var awmpsel = document.form1.awmpsel.selectedIndex;
-var zokusei = document.form1.zokusei.selectedIndex;
-var chch = 1+((eval(document.form1.chch.value)/100)*ch);
-var jou = eval(document.form1.jou.value);
-var tiku = eval(document.form1.tiku.value);
-var kau = eval(document.form1.kau.value);
-var kauj = eval(document.form1.kauj.value);
-var pane = eval(document.form1.pane.value);
-var sei = eval(document.form1.sei.value);
-var jikan = eval(document.form1.jikan.value);
-var dan = eval(document.form1.dan.value);
-var bai = eval(document.form1.bai.value);
-var ski = eval(document.form1.ski.value);
+var atk = eval(document.form1.atk.value); //精霊の攻撃力
+var mp = eval(document.form1.mp.value); //ＳＳの効果値
+var cs = eval(document.form1.cs.value); //結晶の効果値
+var eh1 = eval(document.form1.eh1.value); //ダメージ強化効果値
+var eh2 = eval(document.form1.eh2.value); //ブースト効果値
+var eh3 = eval(document.form1.eh3.value); //精霊強化効果値
+var eh4 = eval(document.form1.eh4.value); //蓄積解放強化効果値
+var eh5 = eval(document.form1.eh5.value); //夢現の射手効果値
+var eh6 = eval(document.form1.eh6.value); //SPスキル強化効果値
+var ch = eval(document.form1.ch.value); //チェイン数
+var ehtotal = eh1 + eh2 + eh3 + eh4 + eh5 + eh6; //ダメージ強化合計
+var ss = document.form1.ss.selectedIndex; //ＳＳの種類
+var mptotal = (mp+cs+ehtotal); //計算上の効果値
+var cheh = 1+(eval(document.form1.ch.value)/100); //チェイン補正
+var sseh = (1-(eval(document.form1.egd.value)/100))*(1+(eval(document.form1.mjk.value)/100))*(1+(eval(document.form1.ehd.value)/100)); //敵被ダメージ補正
+var csmpsel = document.form1.csmpsel.selectedIndex; //ダメージ倍率結晶
+var awmpsel = document.form1.awmpsel.selectedIndex; //ダメージ倍率潜在
+var zokusei = document.form1.zokusei.selectedIndex; //属性補正
+var chch = 1+((eval(document.form1.chch.value)/100)*ch); //連鎖狂化効果
+var jou = eval(document.form1.jou.value); //効果値上限値
+var tiku = eval(document.form1.tiku.value); //蓄積％
+var kau = eval(document.form1.kau.value); //カウント数
+var kauj = eval(document.form1.kauj.value); //カウント上限値
+var pane = eval(document.form1.pane.value); //パネル色数
+var sei = eval(document.form1.sei.value); //精霊数
+var jikan = eval(document.form1.jikan.value); //時間ゲージ段階数
+var dan = eval(document.form1.dan.value); //段階あたりの効果値
+var bai = eval(document.form1.bai.value); //段階あたりの倍率
+var ski = eval(document.form1.ski.value); //スキル発動回数
 
 switch (sei) {
 	case 1:
@@ -124,7 +124,7 @@ switch (ss) {
 		var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chch;
 	break;
 	case 10: //連鎖解放
-		var mptotal = ehtotal+100+((ch/(kauj+cs))*jou);
+		var mptotal = ehtotal-cs+100+((ch/(kauj+cs))*jou);
 		var damage = atk*(mptotal/100)*sseh*dmmp*zkeh;
 	break;
 	case 11: //激化
