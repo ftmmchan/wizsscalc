@@ -105,7 +105,7 @@ switch (ss) {
 		var damage = Math.floor(Math.floor(atk*(Math.floor((mptotal/100)+cheh))*zkeh)*sseh*dmmp*chch);
 	break;
 	case 5: //パネル爆破
-		var damage = atk*((mptotal/100)*pane)*cheh*sseh*dmmp*zkeh*chch;
+		var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chch*pane;
 	break;
 	case 6: //反転解除
 		var mptotal = mptotal * sei;
