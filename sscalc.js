@@ -108,7 +108,7 @@ switch (ss) {
 		var damage = atk*((mptotal/100)*pane)*cheh*sseh*dmmp*zkeh*chch;
 	break;
 	case 6: //反転解除
-		var mptotal = mptotal * sei * 2;
+		var mptotal = mptotal * sei;
 		var damage = atk*((mptotal/100))*cheh*sseh*dmmp*zkeh*chch;
 	break;
 	case 7: //詠唱
