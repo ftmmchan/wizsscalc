@@ -26,7 +26,6 @@ var pane = eval(document.form1.pane.value);
 var sei = eval(document.form1.sei.value);
 var jikan = eval(document.form1.jikan.value);
 var dan = eval(document.form1.dan.value);
-var jouf = eval(document.form1.jouf.value);
 var bai = eval(document.form1.bai.value);
 var ski = eval(document.form1.ski.value);
 
@@ -74,47 +73,51 @@ switch (awmpsel) {
 var dmmp = eval(csmp)+eval(awmp)-1;
 
 switch (ss) {
-	case 1:
-		var damage = Math.floor( atk*((mptotal+100)/100)*cheh*sseh*dmmp*zkeh*chch);
+	case 1: //“ÁŒøEc–Å‘å–‚pEƒJƒEƒ“ƒ^[
+		var mptotal = mptotal + 100;
+		var damage = Math.floor( atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chch);
 	break;
-	case 2:
-		var damage = Math.floor( atk*((ehtotal+100+((tiku/100)*jou))/100)*cheh*sseh*dmmp*zkeh*chch);
+	case 2: //’~Ï%
+		var mptotal = mptotal+100+(tiku/100)*jou;
+		var damage = Math.floor( atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chch);
 	break;
-	case 3:
-		var damage = Math.floor( atk*((ehtotal+100+((kau/kauj)*jou))/100)*cheh*sseh*dmmp*zkeh*chch);
+	case 3: //ƒJƒEƒ“ƒg
+		var mptotal = ehtotal+100+(kau/kauj)*jou;
+		var damage = Math.floor( atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chch);
 	break;
-	case 4:
+	case 4: //ŒÀ
 		var damage = Math.floor(Math.floor(atk*(Math.floor((mptotal/100)+cheh))*zkeh)*sseh*dmmp*chch);
 	break;
-	case 5:
+	case 5: //ƒpƒlƒ‹”š”j
 		var damage = Math.floor(atk*((mptotal/100)*pane)*cheh*sseh*dmmp*zkeh*chch);
 	break;
-	case 6:
+	case 6: //”½“]‰ğœ
 		var damage = Math.floor(atk*((mptotal/100)*sei*2)*cheh*sseh*dmmp*zkeh*chch);
 	break;
-	case 7:
-		var damage = Math.floor(atk*(((jikan*dan)+mptotal)/100)*cheh*sseh*dmmp*zkeh*chch);
+	case 7: //‰r¥
+		var mptotal = mptotal + (jikan*dan);
+		var damage = Math.floor(atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chch);
 	break;
-	case 8:
+	case 8: //”½“®IE‹]µ
 		var damage = Math.floor(atk*((mptotal/100)*sei)*cheh*sseh*dmmp*zkeh*chch);
 	break;
-	case 9:
-		var damage = Math.floor(atk*(Math.floor(Math.pow(jou*(sei/5),2.5)+ehtotal)/100)*cheh*sseh*dmmp*zkeh*chch);
+	case 9: //ƒ‘®«E—Z‡E“ˆê
+		var mptotal = mptotal + Math.floor(Math.pow(jou*(sei/5),2.5)+ehtotal);
+		var damage = Math.floor(atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chch);
 	break;
-	case 10:
-		var damage = Math.floor(atk*(Math.floor(Math.pow(jou*(sei/5),2.5)+ehtotal)/100)*cheh*sseh*dmmp*zkeh*chch)+ Math.floor(atk*(Math.floor(Math.pow(jouf*(sei/5),2.5)+ehtotal+cs)/100)*cheh*sseh*dmmp*zkeh*chch);
-	break;
-	case 11:
+	case 10: //˜A½‰ğ•ú
 		var damage = Math.floor( atk*((ehtotal+100+((ch/(kauj+cs))*jou))/100)*sseh*dmmp*zkeh);
 	break;
-	case 12:
-		var damage = Math.floor( atk*((mptotal/100)*Math.pow(bai,ski - 1))*cheh*sseh*dmmp*zkeh*chch);
+	case 11: //Œƒ‰»
+		var mptotal =mptotal*Math.pow(bai,ski - 1);
+		var damage = Math.floor( atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chch);
 	break;
-	case 13:
-		var damage = Math.floor( atk*((mptotal/100)/Math.pow(bai,ski - 1))*cheh*sseh*dmmp*zkeh*chch);
+	case 12: //‹}P
+		var mptotal =mptotal/Math.pow(bai,ski - 1);
+		var damage = Math.floor( atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chch);
 	break;
 
-	default:
+	default: //‘å–‚p
 		var damage = Math.floor(atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chch);
 }
 
@@ -122,7 +125,7 @@ switch (ss) {
 document.form1.damage.value = damage; 
 document.form1.damagemin.value = Math.floor(damage*0.9); 
 document.form1.damagemax.value = Math.floor(damage*1.1); 
-document.form1.ssmp.value = mptotal;
+document.form1.ssmp.value = mptotal * dmmp;
 
 
 
