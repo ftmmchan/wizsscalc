@@ -45,7 +45,7 @@ switch (sei) {
 	default:
 		var jyt = 1;
 }
-
+ 
 
 switch (zokusei) {
 	case 1:
