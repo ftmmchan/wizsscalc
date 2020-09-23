@@ -97,7 +97,7 @@ switch (ss) {
 		var damagemax = Math.floor(damage*1.1);
 	break;
 	case 2: //蓄積%
-		var mptotal = mptotal+100+(tiku/100)*jou;
+		var mptotal = ehtotal+100+(tiku/100)*jou;
 		var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chch;
 		var damage = Math.floor(damage);
 		var damagemin = Math.floor(damage*0.9);
@@ -115,57 +115,49 @@ switch (ss) {
 		var damagemin = damage;
 		var damagemax = damage;
 	break;
-	case 5: //パネル爆破 エンハの乗り方が特殊っぽい
-		var temp = ehtotal / pane;
-		var damage = atk*(((cs+mp+temp))/100)*cheh*sseh*dmmp*zkeh*chch*pane;
-		var mptotal = cs+mp+temp;
-		var damage = Math.floor(damage);
-		var damagemin = Math.floor(damage*0.9);
-		var damagemax = Math.floor(damage*1.1);
-	break;
-	case 6: //反転解除
-		var mptotal = mptotal * sei;
+	case 5: //反転解除
+		var mptotal = mptotal + (sei*dan);
 		var damage = atk*((mptotal/100))*cheh*sseh*dmmp*zkeh*chch;
 		var damage = Math.floor(damage);
 		var damagemin = Math.floor(damage*0.9);
 		var damagemax = Math.floor(damage*1.1);
 	break;
-	case 7: //詠唱
+	case 6: //詠唱
 		var mptotal = mptotal + (jikan*dan);
 		var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chch;
 		var damage = Math.floor(damage);
 		var damagemin = Math.floor(damage*0.9);
 		var damagemax = Math.floor(damage*1.1);
 	break;
-	case 8: //反動蝕・犠牲
+	case 7: //反動蝕・犠牲
 		var mptotal = mptotal * sei;
 		var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chch;
 		var damage = Math.floor(damage);
 		var damagemin = Math.floor(damage*0.9);
 		var damagemax = Math.floor(damage*1.1);
 	break;
-	case 9: //純属性・融合・統一
+	case 8: //純属性・融合・統一
 		var mptotal = mptotal + (jou*jyt);
 		var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chch;
 		var damage = Math.floor(damage);
 		var damagemin = Math.floor(damage*0.9);
 		var damagemax = Math.floor(damage*1.1);
 	break;
-	case 10: //連鎖解放
+	case 9: //連鎖解放
 		var mptotal = ehtotal+100+((ch/(kauj+cs))*jou);
 		var damage = atk*(mptotal/100)*sseh*dmmp*zkeh;
 		var damage = Math.floor(damage);
 		var damagemin = Math.floor(damage*0.9);
 		var damagemax = Math.floor(damage*1.1);
 	break;
-	case 11: //激化 エンハの乗り方が特殊っぽい
+	case 10: //激化 エンハの乗り方が特殊っぽい
 		var mptotal = ((cs+mp)*(Math.pow(bai,ski - 1))+ehtotal);
 		var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chch;
 		var damage = Math.floor(damage);
 		var damagemin = Math.floor(damage*0.9);
 		var damagemax = Math.floor(damage*1.1);
 	break;
-	case 12: //急襲 多分激化の逆
+	case 11: //急襲 多分激化の逆
 		var mptotal = ((cs+mp)/(Math.pow(bai,ski - 1))+ehtotal);
 		var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chch;
 		var damage = Math.floor(damage);
