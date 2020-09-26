@@ -17,7 +17,7 @@ var sseh = (1-(eval(document.form1.egd.value)/100))*(1+(eval(document.form1.mjk.
 var csmpsel = document.form1.csmpsel.selectedIndex; //ダメージ倍率結晶
 var awmpsel = document.form1.awmpsel.selectedIndex; //ダメージ倍率潜在
 var zokusei = document.form1.zokusei.selectedIndex; //属性補正
-var chch = 1+((eval(document.form1.chch.value)/100)*ch); //連鎖狂化効果
+var chch = 1+((eval(document.form1.chch.value)*ch)/100); //連鎖狂化効果
 var jou = eval(document.form1.jou.value); //効果値上限値
 var tiku = eval(document.form1.tiku.value); //蓄積％
 var kau = eval(document.form1.kau.value); //カウント数
@@ -111,7 +111,9 @@ switch (ss) {
 		var damagemax = Math.floor(damage*1.1);
 	break;
 	case 4: //時限 計算式が特殊かつ乱数の影響を受けない
-		var damage = Math.floor(Math.floor(atk*(Math.floor(((mptotal+100)/100)))*zkeh*cheh)*sseh*dmmp*chch);
+		//var damage = Math.floor(Math.floor(atk*(Math.floor((mptotal/100)+cheh))*zkeh)*sseh*dmmp*chch);
+		var mptotal = mptotal + 100;
+		var damage = Math.floor(Math.floor(Math.floor(atk*(Math.floor(Math.floor((mptotal/100)))*zkeh*cheh))*sseh*dmmp)*chch);
 		var damagemin = damage;
 		var damagemax = damage;
 	break;
