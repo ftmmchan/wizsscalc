@@ -111,7 +111,7 @@ switch (ss) {
 		var damagemax = Math.floor(damage*1.1);
 	break;
 	case 4: //時限 計算式が特殊かつ乱数の影響を受けない
-		var damage = Math.floor(Math.floor(atk*(Math.floor((mptotal/100)+cheh))*zkeh)*sseh*dmmp*chch);
+		var damage = Math.floor(Math.floor(atk*(Math.floor(((mptotal+100)/100)))*zkeh*cheh)*sseh*dmmp*chch);
 		var damagemin = damage;
 		var damagemax = damage;
 	break;
