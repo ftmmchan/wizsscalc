@@ -1,18 +1,13 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="utf-8"/>
-    <title>SS計算機
-    </title>
-    
-
+  <meta charset="UTF-8">
+    <title>SS計算機</title>
 </head>
 <body>
     <h1>ＳＳダメージ計算機（仮）</h1>
-作りは適当です。<br>
-パネル爆破は<a href="./panel.htm">専用のもの</a>を使ってください。<br><br>
-<form action="#" name="form1">
-ＳＳの種類：<select name="ss">
+<select id="ss_type">
+<option value="0">リストから選択</option>
 <option value="1">大魔術(リストにない物もこれ)</option>
 <option value="2">特効・残滅大魔術・カウンター</option>
 <option value="3">蓄積解放大魔術(聖・邪・破)</option>
@@ -25,68 +20,105 @@
 <option value="10">連鎖解放大魔術</option>
 <option value="11">激化大魔術</option>
 <option value="12">急襲大魔術</option>
-</select><br>
-属性相性<select name="zokusei">
-<option value="1">等倍</option>
-<option value="2">有利</option>
-<option value="3">不利</option>
-</select><br><br>
-
-精霊の攻撃力<input type="text" name="atk" size="20" value="0" ><br>
-ＳＳの効果値<input type="text" name="mp" size="20" value="0" ><br>
-結晶の効果値<input type="text" name="cs" size="20" value="0" ><br>
-ダメージ強化効果値<input type="text" name="eh1" size="20" value="0" ><br>
-ブースト効果値<input type="text" name="eh2" size="20" value="0" ><br>
-精霊強化効果値<input type="text" name="eh3" size="20" value="0" ><br>
-蓄積解放強化効果値<input type="text" name="eh4" size="20" value="0" ><br>
-夢現の射手効果値<input type="text" name="eh5" size="20" value="0" ><br>
-SPスキル強化効果値<input type="text" name="eh6" size="20" value="0" ><br>
-チェイン数<input type="text" name="ch" size="20" value="0" ><br>
-連鎖狂化効果<input type="text" name="chch" size="20" value="0" ><br>
+<option value="13">パネル爆破大魔術</option>
+<option value="14">爆裂大魔術</option>
+</select>
 <br>
-敵ガード<input type="text" name="egd" size="20" value="0" ><br>
-敵弱体化（味方の弱体化大魔術）<input type="text" name="mjk" size="20" value="0" ><br>
-敵弱体化（敵の反動攻撃）<input type="text" name="ehd" size="20" value="0" ><br>
- 
-ダメージ倍率結晶<select name="csmpsel">
-<option value="1">なし</option>
-<option value="2">アドヴェリタス(1.2倍)</option>
-<option value="3">ミュージアム(0.9倍)</option>
-<option value="4">アドヴェリタス＋ミュージアム(1.1倍)</option>
+
+
+攻撃属性：<select id="myzokusei">
+<option value="1">火</option>
+<option value="2">水</option>
+<option value="3">雷</option>
+<option value="4">光</option>
+<option value="5">闇</option>
 </select><br>
-ダメージ倍率潜在<select name="awmpsel">
-<option value="1">なし</option>
-<option value="2">あり(1.1倍)</option>
-<option value="3">あり(1.2倍)</option>
-<option value="4">あり(1.3倍)</option>
+
+敵属性：<select id="emzokusei">
+<option value="1">火</option>
+<option value="2">水</option>
+<option value="3">雷</option>
+<option value="4">光</option>
+<option value="5">闇</option>
+</select><br>
 </select><br><br>
-効果値上限値<input type="text" name="jou" size="20" value="0" ><br>
-カウント上限値<input type="text" name="kauj" size="20" value="0" ><br>
-カウント数<input type="text" name="kau" size="20" value="0" ><br>
-蓄積％<input type="text" name="tiku" size="20" value="0" ><br>
-精霊数<input type="text" name="sei" size="20" value="5" ><br>
-パネル色数<input type="text" name="pane" size="20" value="4" ><br>
-スキル発動回数<input type="text" name="ski" size="20" value="1" ><br>
-時間ゲージ段階数<input type="text" name="jikan" size="20" value="0" ><br>
-段階あたりの効果値<input type="text" name="dan" size="20" value="0" ><br>
-段階あたりの倍率<input type="text" name="bai" size="20" value="2" ><br>
 
-<input type="button" value="計算する" onClick="sscalc()">
+精霊の攻撃力<input id="atk" size="20" value="0" ><br>
+ＳＳの効果値<input id="mp" size="20" value="0" ><br>
+結晶の効果値<input id="cs" size="20" value="0" ><br>
+ダメージ強化効果値<input id="eh1" size="20" value="0" ><br>
+ブースト効果値<input id="eh2" size="20" value="0" ><br>
+精霊強化効果値<input id="eh3" size="20" value="0" ><br>
+蓄積解放強化効果値<input id="eh4" size="20" value="0" ><br>
+夢現の射手効果値<input id="eh5" size="20" value="0" ><br>
+SPスキル強化効果値<input id="eh6" size="20" value="0" ><br>
+チェイン数<input id="ch" size="20" value="0" ><br>
+連鎖狂化効果<input id="chch" size="20" value="0" ><br>
+<br>
+<div id="egdtxt">敵ガード<input id="egd" size="20" value="0" ><br></div>
+<div id="egdhitxt">敵火ガード<input id="egdhi" size="20" value="0" ><br></div>
+<div id="egdmizutxt">敵水ガード<input id="egdmizu" size="20" value="0" ><br></div>
+<div id="egdkamitxt">敵雷ガード<input id="egdkami" size="20" value="0" ><br></div>
+<div id="egdhikatxt">敵光ガード<input id="egdhika" size="20" value="0" ><br></div>
+<div id="egdyamitxt">敵闇ガード<input id="egdyami" size="20" value="0" ><br></div>
 
+<div id="mjktxt">敵弱体化（味方の弱体化大魔術）<input id="mjk" size="20" value="0" ><br></div>
+<div id="mjkhitxt">敵火弱体化（味方の弱体化大魔術）<input id="mjkhi" size="20" value="0" ><br></div>
+<div id="mjkmizutxt">敵水弱体化（味方の弱体化大魔術）<input id="mjkmizu" size="20" value="0" ><br></div>
+<div id="mjkkamitxt">敵雷弱体化（味方の弱体化大魔術）<input id="mjkkami" size="20" value="0" ><br></div>
+<div id="mjkhikatxt">敵光弱体化（味方の弱体化大魔術）<input id="mjkhika" size="20" value="0" ><br></div>
+<div id="mjkyamitxt">敵闇弱体化（味方の弱体化大魔術）<input id="mjkyami" size="20" value="0" ><br></div>
+
+<div id="ehdtxt">敵弱体化（敵の反動攻撃）<input id="ehd" size="20" value="0" ><br></div>
+<div id="ehdhitxt">敵火弱体化（敵の反動攻撃）<input id="ehdhi" size="20" value="0" ><br></div>
+<div id="ehdmizutxt">敵水弱体化（敵の反動攻撃）<input id="ehdmizu" size="20" value="0" ><br></div>
+<div id="ehdkamitxt">敵雷弱体化（敵の反動攻撃）<input id="ehdkami" size="20" value="0" ><br></div>
+<div id="ehdhikatxt">敵光弱体化（敵の反動攻撃）<input id="ehdhika" size="20" value="0" ><br></div>
+<div id="ehdyamitxt">敵闇弱体化（敵の反動攻撃）<input id="ehdyami" size="20" value="0" ><br></div>
+ 
+ダメージ倍率結晶<select id="csmpsel">
+<option value="0">なし</option>
+<option value="1">アドヴェリタス(1.2倍)</option>
+<option value="2">ミュージアム(0.9倍)</option>
+<option value="3">アドヴェリタス＋ミュージアム(1.1倍)</option>
+</select><br>
+ダメージ倍率潜在<select id="awmpsel">
+<option value="0">なし</option>
+<option value="1">あり(1.1倍)</option>
+<option value="2">あり(1.2倍)</option>
+<option value="3">あり(1.3倍)</option>
+</select><br><br>
+
+
+<div id="tikutxt">蓄積％<input id="tiku" size="20" placeholder="数値を入力してください。"><br></div>
+<div id="joutxt">効果値上限値<input id="jou" size="20" placeholder="数値を入力してください。"><br></div>
+<div id="kautxt">カウント数<input id="kau" size="20" placeholder="数値を入力してください。"><br></div>
+<div id="kaujtxt">カウント上限値<input id="kauj" size="20" placeholder="数値を入力してください。"><br></div>
+<div id="chjtxt">チェイン上限値<input id="chj" size="20" placeholder="数値を入力してください。"><br></div>
+<div id="seitxt">精霊数<input id="sei" size="20" placeholder="数値を入力してください。" ><br></div>
+<div id="skitxt">スキル発動回数<input id="ski" size="20" placeholder="数値を入力してください。" ><br></div>
+<div id="jikantxt">時間ゲージ段階数<input id="jikan" size="20" placeholder="数値を入力してください。" ><br></div>
+<div id="dantxt">段階あたりの効果値<input id="dan" size="20" placeholder="数値を入力してください。" ><br></div>
+<div id="baitxt">段階あたりの倍率<input id="bai" size="20" placeholder="数値を入力してください。" ><br></div>
+<div id="panehitxt">火パネル色数<input id="panehi" size="20" value="0" ><br></div>
+<div id="panemizutxt">水パネル色数<input id="panemizu" size="20" value="0" ><br></div>
+<div id="panekamitxt">雷パネル色数<input id="panekami" size="20" value="0" ><br></div>
+<div id="panehikatxt">光パネル色数<input id="panehika" size="20" value="0" ><br></div>
+<div id="paneyamitxt">闇パネル色数<input id="paneyami" size="20" value="0" ><br></div>
+<div id="dametxt">ゲージ数<input id="dame" size="20" value="0" ><br></div>
+
+
+<button id="sscalc">計算する</button>
 
 <br><br>
-計算上の効果値<input type="text" name="ssmp" size="8" value=""> <br>
-ダメージ予想<input type="text" name="damage" size="8" value=""> <br>
-ダメージ予想(最小)<input type="text" name="damagemin" size="8" value=""> <br>
-ダメージ予想(最大)<input type="text" name="damagemax" size="8" value=""> 
+計算上の効果値<input type="text" name="ssmp" id="ssmp" size="8" value=""> <br>
+ダメージ予想<input type="text" name="damage" id="damage" size="8" value=""> <br>
+ダメージ予想(最小)<input type="text" name="damagemin" id="damagemin" size="8" value=""> <br>
+ダメージ予想(最大)<input type="text" name="damagemax" id="damagemax" size="8" value=""> 
 
-
-</form>
-
-
-<script src="./sscalc.js" charset="utf-8">
-</script>
-
+<p></p>
 </body>
+<script src="./jquery-3.5.1.min.js"></script>
+<script src="./sscalc.js"></script>
 
 </html>
