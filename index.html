@@ -22,17 +22,18 @@
 <option value="12">急襲大魔術</option>
 <option value="13">パネル爆破大魔術</option>
 <option value="14">爆裂大魔術</option>
+<option value="15">撃滅連弾</option>
 </select>
 <br>
 
 
-攻撃属性：<select id="myzokusei">
+<div id="mzokusei">攻撃属性：<select id="myzokusei">
 <option value="1">火</option>
 <option value="2">水</option>
 <option value="3">雷</option>
 <option value="4">光</option>
 <option value="5">闇</option>
-</select><br>
+</select><br></div>
 
 敵属性：<select id="emzokusei">
 <option value="1">火</option>
@@ -106,6 +107,7 @@ SPスキル強化効果値<input id="eh6" size="20" value="0" ><br>
 <div id="panehikatxt">光パネル色数<input id="panehika" size="20" value="0" ><br></div>
 <div id="paneyamitxt">闇パネル色数<input id="paneyami" size="20" value="0" ><br></div>
 <div id="dametxt">ゲージ数<input id="dame" size="20" value="0" ><br></div>
+<div id="chjoutxt">発動回数上限数<input id="chjou" size="20" value="20" ><br></div>
 
 
 <button id="sscalc">計算する</button>
@@ -114,7 +116,15 @@ SPスキル強化効果値<input id="eh6" size="20" value="0" ><br>
 計算上の効果値<input type="text" name="ssmp" id="ssmp" size="8" value=""> <br>
 ダメージ予想<input type="text" name="damage" id="damage" size="8" value=""> <br>
 ダメージ予想(最小)<input type="text" name="damagemin" id="damagemin" size="8" value=""> <br>
-ダメージ予想(最大)<input type="text" name="damagemax" id="damagemax" size="8" value=""> 
+ダメージ予想(最大)<input type="text" name="damagemax" id="damagemax" size="8" value=""> <br>
+
+<div id="panedame">
+火属性ダメージ予想(1発平均)<input type="text" name="damagehi" id="damagehi" size="8" value=""> <br>
+水属性ダメージ予想(1発平均)<input type="text" name="damagemizu" id="damagemizu" size="8" value=""> <br>
+雷属性ダメージ予想(1発平均)<input type="text" name="damagekami" id="damagekami" size="8" value=""> <br>
+光属性ダメージ予想(1発平均)<input type="text" name="damagehika" id="damagehika" size="8" value=""> <br>
+闇属性ダメージ予想(1発平均)<input type="text" name="damageyami" id="damageyami" size="8" value=""> <br>
+</div>
 
 <p></p>
 </body>

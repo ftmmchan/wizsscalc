@@ -1,7 +1,86 @@
 $("#ss_type").change(function() {
 var ss = Number($('#ss_type').val());
 switch (Number(ss)) {
+	case 1:
+		$('#mzokusei').show();
+		$('#tikutxt').hide();
+		$('#joutxt').hide();
+		$('#kautxt').hide();
+		$('#dantxt').hide();
+		$('#kaujtxt').hide();
+		$('#seitxt').hide();
+		$('#skitxt').hide();
+		$('#jikantxt').hide();
+		$('#baitxt').hide();
+		$('#chjtxt').hide();
+		$('#panehitxt').hide();
+		$('#panemizutxt').hide();
+		$('#panekamitxt').hide();
+		$('#panehikatxt').hide();
+		$('#paneyamitxt').hide();
+		$('#egdhitxt').hide();
+		$('#egdmizutxt').hide();
+		$('#egdkamitxt').hide();
+		$('#egdhikatxt').hide();
+		$('#egdyamitxt').hide();
+		$('#mjkhitxt').hide();
+		$('#mjkmizutxt').hide();
+		$('#mjkkamitxt').hide();
+		$('#mjkhikatxt').hide();
+		$('#mjkyamitxt').hide();
+		$('#ehdhitxt').hide();
+		$('#ehdmizutxt').hide();
+		$('#ehdkamitxt').hide();
+		$('#ehdhikatxt').hide();
+		$('#ehdyamitxt').hide();
+		$('#ehdtxt').show();
+		$('#egdtxt').show();
+		$('#mjktxt').show();
+		$('#dametxt').hide();
+		$('#panedame').hide();
+		$('#chjoutxt').hide();
+	break;
+	case 2:
+		$('#mzokusei').show();
+		$('#tikutxt').hide();
+		$('#joutxt').hide();
+		$('#kautxt').hide();
+		$('#dantxt').hide();
+		$('#kaujtxt').hide();
+		$('#seitxt').hide();
+		$('#skitxt').hide();
+		$('#jikantxt').hide();
+		$('#baitxt').hide();
+		$('#chjtxt').hide();
+		$('#panehitxt').hide();
+		$('#panemizutxt').hide();
+		$('#panekamitxt').hide();
+		$('#panehikatxt').hide();
+		$('#paneyamitxt').hide();
+		$('#egdhitxt').hide();
+		$('#egdmizutxt').hide();
+		$('#egdkamitxt').hide();
+		$('#egdhikatxt').hide();
+		$('#egdyamitxt').hide();
+		$('#mjkhitxt').hide();
+		$('#mjkmizutxt').hide();
+		$('#mjkkamitxt').hide();
+		$('#mjkhikatxt').hide();
+		$('#mjkyamitxt').hide();
+		$('#ehdhitxt').hide();
+		$('#ehdmizutxt').hide();
+		$('#ehdkamitxt').hide();
+		$('#ehdhikatxt').hide();
+		$('#ehdyamitxt').hide();
+		$('#ehdtxt').show();
+		$('#egdtxt').show();
+		$('#mjktxt').show();
+		$('#dametxt').hide();
+		$('#panedame').hide();
+		$('#chjoutxt').hide();
+	break;
 	case 3: //蓄積%
+		$('#mzokusei').show();
 		$('#tikutxt').show();
 		$('#joutxt').show();
 		$('#kautxt').hide();
@@ -36,8 +115,11 @@ switch (Number(ss)) {
 		$('#egdtxt').show();
 		$('#mjktxt').show();
 		$('#dametxt').hide();
+		$('#panedame').hide();
+		$('#chjoutxt').hide();
 	break;
 	case 4: //カウント
+		$('#mzokusei').show();
 		$('#tikutxt').hide();
 		$('#joutxt').show();
 		$('#kautxt').show();
@@ -72,8 +154,50 @@ switch (Number(ss)) {
 		$('#egdtxt').show();
 		$('#mjktxt').show();
 		$('#dametxt').hide();
+		$('#panedame').hide();
+		$('#chjoutxt').hide();
+	break;
+	case 5:
+		$('#mzokusei').show();
+		$('#tikutxt').hide();
+		$('#joutxt').hide();
+		$('#kautxt').hide();
+		$('#dantxt').hide();
+		$('#kaujtxt').hide();
+		$('#seitxt').hide();
+		$('#skitxt').hide();
+		$('#jikantxt').hide();
+		$('#baitxt').hide();
+		$('#chjtxt').hide();
+		$('#panehitxt').hide();
+		$('#panemizutxt').hide();
+		$('#panekamitxt').hide();
+		$('#panehikatxt').hide();
+		$('#paneyamitxt').hide();
+		$('#egdhitxt').hide();
+		$('#egdmizutxt').hide();
+		$('#egdkamitxt').hide();
+		$('#egdhikatxt').hide();
+		$('#egdyamitxt').hide();
+		$('#mjkhitxt').hide();
+		$('#mjkmizutxt').hide();
+		$('#mjkkamitxt').hide();
+		$('#mjkhikatxt').hide();
+		$('#mjkyamitxt').hide();
+		$('#ehdhitxt').hide();
+		$('#ehdmizutxt').hide();
+		$('#ehdkamitxt').hide();
+		$('#ehdhikatxt').hide();
+		$('#ehdyamitxt').hide();
+		$('#ehdtxt').show();
+		$('#egdtxt').show();
+		$('#mjktxt').show();
+		$('#dametxt').hide();
+		$('#panedame').hide();
+		$('#chjoutxt').hide();
 	break;
 	case 6: //反転解除
+		$('#mzokusei').show();
 		$('#tikutxt').hide();
 		$('#joutxt').hide();
 		$('#kautxt').hide();
@@ -108,8 +232,11 @@ switch (Number(ss)) {
 		$('#egdtxt').show();
 		$('#mjktxt').show();
 		$('#dametxt').hide();
+		$('#panedame').hide();
+		$('#chjoutxt').hide();
 	break;
 	case 7: //詠唱
+		$('#mzokusei').show();
 		$('#tikutxt').hide();
 		$('#joutxt').hide();
 		$('#kautxt').hide();
@@ -144,8 +271,11 @@ switch (Number(ss)) {
 		$('#egdtxt').show();
 		$('#mjktxt').show();
 		$('#dametxt').hide();
+		$('#panedame').hide();
+		$('#chjoutxt').hide();
 	break;
 	case 8: //反動蝕・犠牲
+		$('#mzokusei').show();
 		$('#tikutxt').hide();
 		$('#joutxt').hide();
 		$('#kautxt').hide();
@@ -180,8 +310,11 @@ switch (Number(ss)) {
 		$('#egdtxt').show();
 		$('#mjktxt').show();
 		$('#dametxt').hide();
+		$('#panedame').hide();
+		$('#chjoutxt').hide();
 	break;
 	case 9: //純属性・融合・統一
+		$('#mzokusei').show();
 		$('#tikutxt').hide();
 		$('#joutxt').show();
 		$('#kautxt').hide();
@@ -216,8 +349,11 @@ switch (Number(ss)) {
 		$('#egdtxt').show();
 		$('#mjktxt').show();
 		$('#dametxt').hide();
+		$('#panedame').hide();
+		$('#chjoutxt').hide();
 	break;
 	case 10: //連鎖解放
+		$('#mzokusei').show();
 		$('#tikutxt').hide();
 		$('#joutxt').show();
 		$('#kautxt').hide();
@@ -252,8 +388,11 @@ switch (Number(ss)) {
 		$('#egdtxt').show();
 		$('#mjktxt').show();
 		$('#dametxt').hide();
+		$('#panedame').hide();
+		$('#chjoutxt').hide();
 	break;
 	case 11: //激化 エンハの乗り方が特殊っぽい
+		$('#mzokusei').show();
 		$('#tikutxt').hide();
 		$('#joutxt').hide();
 		$('#kautxt').hide();
@@ -288,8 +427,11 @@ switch (Number(ss)) {
 		$('#egdtxt').show();
 		$('#mjktxt').show();
 		$('#dametxt').hide();
+		$('#panedame').hide();
+		$('#chjoutxt').hide();
 	break;
 	case 12: //急襲 多分激化の逆
+		$('#mzokusei').show();
 		$('#tikutxt').hide();
 		$('#joutxt').hide();
 		$('#kautxt').hide();
@@ -324,8 +466,11 @@ switch (Number(ss)) {
 		$('#egdtxt').show();
 		$('#mjktxt').show();
 		$('#dametxt').hide();
+		$('#panedame').hide();
+		$('#chjoutxt').hide();
 	break;
 	case 13: //パネル爆破 
+		$('#mzokusei').hide();
 		$('#tikutxt').hide();
 		$('#joutxt').hide();
 		$('#kautxt').hide();
@@ -360,8 +505,11 @@ switch (Number(ss)) {
 		$('#egdtxt').hide();
 		$('#mjktxt').hide();
 		$('#dametxt').hide();
+		$('#panedame').show();
+		$('#chjoutxt').hide();
 	break;
-	case 14: //パネル爆破 
+	case 14: 
+		$('#mzokusei').show();
 		$('#tikutxt').hide();
 		$('#joutxt').show();
 		$('#kautxt').hide();
@@ -396,8 +544,50 @@ switch (Number(ss)) {
 		$('#egdtxt').show();
 		$('#mjktxt').show();
 		$('#dametxt').show();
+		$('#panedame').hide();
+		$('#chjoutxt').hide();
+	break;
+	case 15: 
+		$('#mzokusei').show();
+		$('#tikutxt').hide();
+		$('#joutxt').show();
+		$('#kautxt').hide();
+		$('#dantxt').hide();
+		$('#kaujtxt').hide();
+		$('#seitxt').hide();
+		$('#skitxt').hide();
+		$('#jikantxt').hide();
+		$('#baitxt').hide();
+		$('#chjtxt').hide();
+		$('#panehitxt').hide();
+		$('#panemizutxt').hide();
+		$('#panekamitxt').hide();
+		$('#panehikatxt').hide();
+		$('#paneyamitxt').hide();
+		$('#egdhitxt').hide();
+		$('#egdmizutxt').hide();
+		$('#egdkamitxt').hide();
+		$('#egdhikatxt').hide();
+		$('#egdyamitxt').hide();
+		$('#mjkhitxt').hide();
+		$('#mjkmizutxt').hide();
+		$('#mjkkamitxt').hide();
+		$('#mjkhikatxt').hide();
+		$('#mjkyamitxt').hide();
+		$('#ehdhitxt').hide();
+		$('#ehdmizutxt').hide();
+		$('#ehdkamitxt').hide();
+		$('#ehdhikatxt').hide();
+		$('#ehdyamitxt').hide();
+		$('#ehdtxt').show();
+		$('#egdtxt').show();
+		$('#mjktxt').show();
+		$('#dametxt').hide();
+		$('#panedame').hide();
+		$('#chjoutxt').show();
 	break;
 	default: //大魔術 基本的なやつ
+		$('#mzokusei').show();
 		$('#tikutxt').hide();
 		$('#joutxt').hide();
 		$('#kautxt').hide();
@@ -432,6 +622,8 @@ switch (Number(ss)) {
 		$('#egdtxt').show();
 		$('#mjktxt').show();
 		$('#dametxt').hide();
+		$('#panedame').hide();
+		$('#chjoutxt').hide();
 }
 });
 
@@ -493,6 +685,7 @@ var panehika = Number($('#panehika').val()); //パネル色数
 var paneyami = Number($('#paneyami').val()); //パネル色数
 var panetotal = panehi + panemizu + panekami + panehika + paneyami;
 var dame = Number($('#dame').val()); //ゲージ数
+var chjou = Number($('#chjou').val()); //チェイン数
 
 
 switch (sei) {
@@ -788,6 +981,23 @@ var damage = damagehitotal + damagemizutotal + damagekamitotal + damagehikatotal
 		var damagemax = Math.floor(damage*1.1);
 		
 	break;
+	case 15: //撃滅連弾
+	var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chky;
+		var temp = Math.floor(ch/5);
+		if(temp>=chjou){
+			var temp = chjou;
+			}
+		var mptotal = Math.floor(mp + jou * (temp/(chjou*5)))+ehtotal;
+		for (var i=0;i<temp;i++){
+			var damage = damage+atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chky;
+			var ch = ch-5;
+			var cheh = 1+(ch/100); //チェイン補正
+		}
+		var damage = Math.floor(damage);
+		var damagemin = Math.floor(damage*0.9);
+		var damagemax = Math.floor(damage*1.1);
+		
+	break;
 
 	default: //大魔術 基本的なやつ
 	alert('スキルを選択してください');
@@ -796,4 +1006,9 @@ $('#ssmp').val(mptotal);
 $('#damage').val(damage);
 $('#damagemax').val(damagemax);
 $('#damagemin').val(damagemin);
+$('#damagehi').val(damagehi);
+$('#damagemizu').val(damagemizu);
+$('#damagekami').val(damagekami);
+$('#damagehika').val(damagehika);
+$('#damageyami').val(damageyami);
  });
