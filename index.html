@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+<link rel="stylesheet" href="style.css">
   <meta charset="UTF-8">
-    <title>SS計算機</title>
+    <title>黒ウィズＳＳダメージ計算機（仮）</title>
 </head>
 <body>
-    <h1>ＳＳダメージ計算機（仮）</h1>
+    <h1>黒ウィズＳＳダメージ計算機（仮）</h1>
 <select id="ss_type">
 <option value="0">リストから選択</option>
 <option value="1">大魔術(リストにない物もこれ)</option>
@@ -76,6 +77,9 @@ SPスキル強化効果値<input id="eh6" size="20" value="0" ><br>
 <div id="ehdkamitxt">敵雷弱体化（敵の反動攻撃）<input id="ehdkami" size="20" value="0" ><br></div>
 <div id="ehdhikatxt">敵光弱体化（敵の反動攻撃）<input id="ehdhika" size="20" value="0" ><br></div>
 <div id="ehdyamitxt">敵闇弱体化（敵の反動攻撃）<input id="ehdyami" size="20" value="0" ><br></div>
+
+<div id="taiseitxt">敵SS耐性<input id="taisei" size="20" value="0" ><br></div>
+<div id="jakutaitxt">敵SS弱体化<input id="jakutai" size="20" value="0" ><br></div>
  
 ダメージ倍率結晶<select id="csmpsel">
 <option value="0">なし</option>
@@ -107,7 +111,8 @@ SPスキル強化効果値<input id="eh6" size="20" value="0" ><br>
 <div id="panehikatxt">光パネル色数<input id="panehika" size="20" value="0" ><br></div>
 <div id="paneyamitxt">闇パネル色数<input id="paneyami" size="20" value="0" ><br></div>
 <div id="dametxt">ゲージ数<input id="dame" size="20" value="0" ><br></div>
-<div id="chjoutxt">発動回数上限数<input id="chjou" size="20" value="20" ><br></div>
+<div id="chsyoutxt">チェイン消費数<input id="chsyou" size="20" placeholder="数値を入力してください。" ><br></div>
+<div id="chjoutxt">発動回数上限数<input id="chjou" size="20" placeholder="数値を入力してください。" ><br></div>
 
 
 <button id="sscalc">計算する</button>

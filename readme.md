@@ -3,4 +3,4 @@
 ソースの改造とかは自由です
 
 公開場所
-https://ftmmchan.netlify.app/
+https://ftmmchan.github.io/wizsscalc/
