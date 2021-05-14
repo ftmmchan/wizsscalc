@@ -1042,13 +1042,14 @@ var damage = damagehitotal + damagemizutotal + damagekamitotal + damagehikatotal
 		if(temp>=chjou){
 			var temp = chjou;
 			}
-			var mptotal = mp+ehjou;
+			var chmptotal = mp+ehjou;
 		for (var i=0;i<temp;i++){
-			var damage = damage+atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chky;
+			var damage = damage+atk*(chmptotal/100)*cheh*sseh*dmmp*zkeh*chky;
 			var ch = ch-chsyou;
 			var cheh = 1+(ch/100); //チェイン補正
-			var mptotal = mptotal+damjou;
-		}
+			var chmptotal = chmptotal+damjou;
+			var mptotal = chmptotal;
+	}
 		var damage = Math.floor(damage);
 		var damagemin = Math.floor(damage*0.9);
 		var damagemax = Math.floor(damage*1.1);
@@ -1058,7 +1059,6 @@ var damage = damagehitotal + damagemizutotal + damagekamitotal + damagehikatotal
 	default: //大魔術 基本的なやつ
 	alert('スキルを選択してください');
 }
-$('#ssmp').val(mptotal);
 $('#damage').val(damage);
 $('#damagemax').val(damagemax);
 $('#damagemin').val(damagemin);
