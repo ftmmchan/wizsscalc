@@ -1035,17 +1035,19 @@ var damage = damagehitotal + damagemizutotal + damagekamitotal + damagehikatotal
 		
 	break;
 	case 15: //撃滅連弾
+	var damjou = (jou-mp)/chjou;
+	var ehjou = ehtotal/chjou;
 	var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chky;
-	var damjou = (jou-mp)/chjou
 		var temp = Math.floor(ch/chsyou);
 		if(temp>=chjou){
 			var temp = chjou;
 			}
+			var mptotal = mp+ehjou;
 		for (var i=0;i<temp;i++){
 			var damage = damage+atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chky;
 			var ch = ch-chsyou;
 			var cheh = 1+(ch/100); //チェイン補正
-			var mptotal = mptotal+damjou
+			var mptotal = mptotal+damjou;
 		}
 		var damage = Math.floor(damage);
 		var damagemin = Math.floor(damage*0.9);
