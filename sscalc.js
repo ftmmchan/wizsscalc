@@ -715,6 +715,7 @@ var jakutai = Number($('#jakutai').val()); //SS弱体化
 var sseh = (1-(egd/100))*(1+(mjk/100))*(1+(ehd/100))*(1-(taisei/100))*(1+(jakutai/100)); //敵被ダメージ補正
 var csmpsel = Number($('#csmpsel').val()); //ダメージ倍率結晶
 var awmpsel = Number($('#awmpsel').val()); //ダメージ倍率潜在
+var drmpsel = Number($('#drmpsel').val()); //ダメージ倍率潜在
 var myzokusei = Number($('#myzokusei').val()); //属性補正
 var emzokusei = Number($('#emzokusei').val()); //属性補正
 var chch = Number($('#chch').val()); //
@@ -795,13 +796,16 @@ switch (myzokusei) {
 		zkeh = 1.0;
 		}
 	break;
-	default:
+	case 5:
 		if(emzokusei==4){
 		zkeh = 1.5;
 		}else {
 		zkeh = 1.0;
 		}
-}
+	break;
+	default:
+		zkeh = 1.0;
+	}
 
 switch (csmpsel) {
 	case 1:
@@ -812,6 +816,9 @@ switch (csmpsel) {
 	break;
 	case 3:
 		var csmp = 1.1;
+	break;
+	case 4:
+		var csmp = 1.3;
 	break;
 	default:
 		var csmp = 1;
@@ -830,8 +837,15 @@ switch (awmpsel) {
 	default:
 		var awmp = 1;
 }
+switch (drmpsel) {
+	case 1:
+		var drmp = 1.1;
+	break;
+	default:
+		var drmp = 1;
+}
 
-var dmmp = csmp+awmp-1;
+var dmmp = csmp+awmp+drmp-2;
 switch (Number(ss)) {
 	case 1: //大魔術
 		var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chky;
