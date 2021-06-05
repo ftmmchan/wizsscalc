@@ -700,9 +700,9 @@ switch (Number(ss)) {
 		$('#ehdkamitxt').show();
 		$('#ehdhikatxt').show();
 		$('#ehdyamitxt').show();
-		$('#ehdtxt').show();
+		$('#ehdtxt').hide();
 		$('#egdtxt').hide();
-		$('#mjktxt').show();
+		$('#mjktxt').hide();
 		$('#dametxt').hide();
 		$('#panedame').show();
 		$('#chjoutxt').hide();
@@ -742,8 +742,8 @@ switch (Number(ss)) {
 		$('#ehdkamitxt').hide();
 		$('#ehdhikatxt').hide();
 		$('#ehdyamitxt').hide();
-		$('#ehdtxt').hide();
-		$('#egdtxt').hide();
+		$('#ehdtxt').show();
+		$('#egdtxt').show();
 		$('#mjktxt').show();
 		$('#dametxt').hide();
 		$('#panedame').hide();
