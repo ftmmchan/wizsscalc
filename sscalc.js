@@ -742,8 +742,8 @@ switch (Number(ss)) {
 		$('#ehdkamitxt').hide();
 		$('#ehdhikatxt').hide();
 		$('#ehdyamitxt').hide();
-		$('#ehdtxt').show();
-		$('#egdtxt').show();
+		$('#ehdtxt').hide();
+		$('#egdtxt').hide();
 		$('#mjktxt').show();
 		$('#dametxt').hide();
 		$('#panedame').hide();
