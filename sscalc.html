@@ -49,7 +49,7 @@
 </select><br><br>
 
 精霊の攻撃力<input id="atk" size="20" value="0" ><br>
-ＳＳの効果値<input id="mp" size="20" value="0" ><br>
+<div id="mptxt">ＳＳの効果値<input id="mp" size="20" value="0" ><br></div>
 結晶の効果値<input id="cs" size="20" value="0" ><br>
 ダメージ強化効果値<input id="eh1" size="20" value="0" ><br>
 ブースト効果値<input id="eh2" size="20" value="0" ><br>
@@ -104,16 +104,19 @@ SPスキル強化効果値<input id="eh6" size="20" value="0" ><br>
 </select><br><br>
 
 
-<div id="tikutxt">蓄積％<input id="tiku" size="20" placeholder="数値を入力してください。"><br></div>
+<div id="tikutxt">蓄積％<input id="tiku" size="20" value="0"><br></div>
 <div id="joutxt">効果値上限値<input id="jou" size="20" placeholder="数値を入力してください。"><br></div>
+<div id="joustxt">初期効果値<input id="jous" size="20" value="100"><br></div>
 <div id="kautxt">カウント数<input id="kau" size="20" placeholder="数値を入力してください。"><br></div>
 <div id="kaujtxt">カウント上限値<input id="kauj" size="20" placeholder="数値を入力してください。"><br></div>
 <div id="chjtxt">チェイン上限値<input id="chj" size="20" placeholder="数値を入力してください。"><br></div>
-<div id="seitxt">精霊数<input id="sei" size="20" placeholder="数値を入力してください。" ><br></div>
-<div id="skitxt">スキル発動回数<input id="ski" size="20" placeholder="数値を入力してください。" ><br></div>
+<div id="seitxt">条件に合う精霊数<input id="sei" size="20" value="5"><br></div>
+<div id="skitxt">スキル発動回数<input id="ski" size="20" value="1"><br></div>
+<div id="skimtxt">味方の攻撃スキル発動回数<input id="skim" size="20" value="0"><br></div>
 <div id="jikantxt">時間ゲージ段階数<input id="jikan" size="20" placeholder="数値を入力してください。" ><br></div>
 <div id="dantxt">段階あたりの効果値<input id="dan" size="20" placeholder="数値を入力してください。" ><br></div>
 <div id="baitxt">段階あたりの倍率<input id="bai" size="20" placeholder="数値を入力してください。" ><br></div>
+<div id="baimtxt">１回あたりの効果値ダウン 1/<input id="baim" size="20" value="3" ><br></div>
 <div id="panehitxt">火パネル色数<input id="panehi" size="20" value="0" ><br></div>
 <div id="panemizutxt">水パネル色数<input id="panemizu" size="20" value="0" ><br></div>
 <div id="panekamitxt">雷パネル色数<input id="panekami" size="20" value="0" ><br></div>
@@ -122,7 +125,7 @@ SPスキル強化効果値<input id="eh6" size="20" value="0" ><br>
 <div id="dametxt">ゲージ数<input id="dame" size="20" value="0" ><br></div>
 <div id="chsyoutxt">チェイン消費数<input id="chsyou" size="20" placeholder="数値を入力してください。" ><br></div>
 <div id="chjoutxt">発動回数上限数<input id="chjou" size="20" value="20"  ><br></div>
-
+<br>
 
 <button id="sscalc">計算する</button>
 

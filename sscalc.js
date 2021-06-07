@@ -34,12 +34,16 @@ $('#chjoutxt').addClass('invisible');
 $('#chsyoutxt').addClass('invisible');
 $('#seikaitxt').addClass('invisible');
 $('#mudame').addClass('invisible');
+$('#joustxt').addClass('invisible');
+$('#skimtxt').addClass('invisible');
+$('#baimtxt').addClass('invisible');
 
 $("#ss_type").change(function() {
 var ss = Number($('#ss_type').val());
 switch (Number(ss)) {
 	case 1:
 		$('#mzokusei').show();
+		$('#mptxt').show();
 		$('#tikutxt').hide();
 		$('#joutxt').hide();
 		$('#kautxt').hide();
@@ -79,8 +83,12 @@ switch (Number(ss)) {
 		$('#chsyoutxt').hide();
 		$('#seikaitxt').hide();
 		$('#mudame').hide();
+		$('#joustxt').hide();
+		$('#skimtxt').hide();
+		$('#baimtxt').hide();
 	break;
 	case 2:
+		$('#mptxt').show();
 		$('#mzokusei').show();
 		$('#tikutxt').hide();
 		$('#joutxt').hide();
@@ -121,8 +129,12 @@ switch (Number(ss)) {
 		$('#chsyoutxt').hide();
 		$('#seikaitxt').hide();
 		$('#mudame').hide();
+		$('#joustxt').hide();
+		$('#skimtxt').hide();
+		$('#baimtxt').hide();
 	break;
 	case 3: //蓄積%
+		$('#mptxt').hide();
 		$('#mzokusei').show();
 		$('#tikutxt').show();
 		$('#joutxt').show();
@@ -163,6 +175,9 @@ switch (Number(ss)) {
 		$('#chsyoutxt').hide();
 		$('#seikaitxt').hide();
 		$('#mudame').hide();
+		$('#joustxt').show();
+		$('#skimtxt').hide();
+		$('#baimtxt').hide();
 	break;
 	case 4: //カウント
 		$('#mzokusei').show();
@@ -205,6 +220,10 @@ switch (Number(ss)) {
 		$('#chsyoutxt').hide();
 		$('#seikaitxt').hide();
 		$('#mudame').hide();
+		$('#joustxt').hide();
+		$('#skimtxt').hide();
+		$('#baimtxt').hide();
+		$('#mptxt').hide();
 	break;
 	case 5:
 		$('#mzokusei').show();
@@ -247,6 +266,10 @@ switch (Number(ss)) {
 		$('#chsyoutxt').hide();
 		$('#seikaitxt').hide();
 		$('#mudame').hide();
+		$('#joustxt').hide();
+		$('#skimtxt').hide();
+		$('#baimtxt').hide();
+		$('#mptxt').show();
 	break;
 	case 6: //反転解除
 		$('#mzokusei').show();
@@ -289,6 +312,10 @@ switch (Number(ss)) {
 		$('#chsyoutxt').hide();
 		$('#seikaitxt').hide();
 		$('#mudame').hide();
+		$('#joustxt').hide();
+		$('#skimtxt').hide();
+		$('#baimtxt').hide();
+		$('#mptxt').show();
 	break;
 	case 7: //詠唱
 		$('#mzokusei').show();
@@ -331,6 +358,10 @@ switch (Number(ss)) {
 		$('#chsyoutxt').hide();
 		$('#seikaitxt').hide();
 		$('#mudame').hide();
+		$('#joustxt').hide();
+		$('#skimtxt').hide();
+		$('#baimtxt').hide();
+		$('#mptxt').show();
 	break;
 	case 8: //反動蝕・犠牲
 		$('#mzokusei').show();
@@ -373,6 +404,10 @@ switch (Number(ss)) {
 		$('#chsyoutxt').hide();
 		$('#seikaitxt').hide();
 		$('#mudame').hide();
+		$('#joustxt').hide();
+		$('#skimtxt').hide();
+		$('#baimtxt').hide();
+		$('#mptxt').show();
 	break;
 	case 9: //純属性・融合・統一
 		$('#mzokusei').show();
@@ -415,6 +450,10 @@ switch (Number(ss)) {
 		$('#chsyoutxt').hide();
 		$('#seikaitxt').hide();
 		$('#mudame').hide();
+		$('#joustxt').hide();
+		$('#skimtxt').hide();
+		$('#baimtxt').hide();
+		$('#mptxt').hide();
 	break;
 	case 10: //連鎖解放
 		$('#mzokusei').show();
@@ -457,6 +496,10 @@ switch (Number(ss)) {
 		$('#chsyoutxt').hide();
 		$('#seikaitxt').hide();
 		$('#mudame').hide();
+		$('#joustxt').hide();
+		$('#skimtxt').hide();
+		$('#baimtxt').hide();
+		$('#mptxt').hide();
 	break;
 	case 11: //激化 エンハの乗り方が特殊っぽい
 		$('#mzokusei').show();
@@ -499,6 +542,10 @@ switch (Number(ss)) {
 		$('#chsyoutxt').hide();
 		$('#seikaitxt').hide();
 		$('#mudame').hide();
+		$('#joustxt').hide();
+		$('#skimtxt').hide();
+		$('#baimtxt').hide();
+		$('#mptxt').show();
 	break;
 	case 12: //急襲 多分激化の逆
 		$('#mzokusei').show();
@@ -508,9 +555,9 @@ switch (Number(ss)) {
 		$('#dantxt').hide();
 		$('#kaujtxt').hide();
 		$('#seitxt').hide();
-		$('#skitxt').show();
+		$('#skitxt').hide();
 		$('#jikantxt').hide();
-		$('#baitxt').show();
+		$('#baitxt').hide();
 		$('#chjtxt').hide();
 		$('#panehitxt').hide();
 		$('#panemizutxt').hide();
@@ -541,6 +588,10 @@ switch (Number(ss)) {
 		$('#chsyoutxt').hide();
 		$('#seikaitxt').hide();
 		$('#mudame').hide();
+		$('#joustxt').hide();
+		$('#skimtxt').show();
+		$('#baimtxt').show();
+		$('#mptxt').show();
 	break;
 	case 13: //パネル爆破 
 		$('#mzokusei').hide();
@@ -583,6 +634,8 @@ switch (Number(ss)) {
 		$('#chsyoutxt').hide();
 		$('#seikaitxt').hide();
 		$('#mudame').hide();
+		$('#joustxt').hide();
+		$('#mptxt').show();
 	break;
 	case 14: //爆裂大魔術
 		$('#mzokusei').show();
@@ -625,6 +678,8 @@ switch (Number(ss)) {
 		$('#chsyoutxt').hide();
 		$('#seikaitxt').hide();
 		$('#mudame').hide();
+		$('#joustxt').hide();
+		$('#mptxt').show();
 	break;
 	case 15:  //撃滅連弾
 		$('#mzokusei').show();
@@ -667,6 +722,8 @@ switch (Number(ss)) {
 		$('#chsyoutxt').show();
 		$('#seikaitxt').hide();
 		$('#mudame').hide();
+		$('#joustxt').hide();
+		$('#mptxt').show();
 	break;
 	case 16: //天穹大魔術
 		$('#mzokusei').hide();
@@ -709,6 +766,8 @@ switch (Number(ss)) {
 		$('#chsyoutxt').hide();
 		$('#seikaitxt').show();
 		$('#mudame').show();
+		$('#joustxt').hide();
+		$('#mptxt').show();
 	break;
 	default: //大魔術 基本的なやつ
 		$('#mzokusei').show();
@@ -751,6 +810,8 @@ switch (Number(ss)) {
 		$('#chsyoutxt').hide();
 		$('#seikaitxt').hide();
 		$('#mudame').hide();
+		$('#joustxt').hide();
+		$('#mptxt').show();
 }
 });
 $('#sscalc').click(function(){
@@ -817,6 +878,9 @@ var dame = Number($('#dame').val()); //ゲージ数
 var chjou = Number($('#chjou').val()); //チェイン数
 var chsyou = Number($('#chsyou').val()); //チェイン消費数
 var seikai =Number($('#seikai').val()); //必要正解数
+var jous =Number($('#jous').val()); //初期効果値
+var skim =Number($('#skim').val()); //味方の攻撃スキル発動回数
+var baim =Number($('#baim').val()); //段階あたりの倍率
 
 switch (sei) {
 	case 1:
@@ -938,7 +1002,7 @@ switch (Number(ss)) {
 
 	break;
 	case 3: //蓄積%
-		var mptotal = ehtotal+100+((tiku/100)*jou);
+		var mptotal = ehtotal+jous+((tiku/100)*jou);
 		var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chky;
 		var damage = Math.floor(damage);
 		var damagemin = Math.floor(damage*0.9);
@@ -1004,10 +1068,10 @@ switch (Number(ss)) {
 		var damagemax = Math.floor(damage*1.1);
 	break;
 	case 12: //急襲 多分激化の逆
-		if(ski==0){
+		if(skim==0){
 		 mptotal = cs+mp+ehtotal;
 		 } else{
-		var mptotal = ((cs+mp)/((ski*bai))+ehtotal);
+		var mptotal = Math.floor(((cs+mp)/(Math.pow(baim,skim))+ehtotal));
 		}
 		var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chky;
 		var damage = Math.floor(damage);
