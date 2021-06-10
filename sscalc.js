@@ -685,53 +685,7 @@ switch (Number(ss)) {
 		$('#baimtxt').hide();
 		$('#skimtxt').hide();
 	break;
-	case 15: //爆裂大魔術
-		$('#mzokusei').show();
-		$('#tikutxt').hide();
-		$('#joutxt').show();
-		$('#kautxt').hide();
-		$('#dantxt').hide();
-		$('#kaujtxt').hide();
-		$('#seitxt').hide();
-		$('#skitxt').hide();
-		$('#jikantxt').hide();
-		$('#baitxt').hide();
-		$('#chjtxt').hide();
-		$('#panehitxt').hide();
-		$('#panemizutxt').hide();
-		$('#panekamitxt').hide();
-		$('#panehikatxt').hide();
-		$('#paneyamitxt').hide();
-		$('#egdhitxt').hide();
-		$('#egdmizutxt').hide();
-		$('#egdkamitxt').hide();
-		$('#egdhikatxt').hide();
-		$('#egdyamitxt').hide();
-		$('#mjkhitxt').hide();
-		$('#mjkmizutxt').hide();
-		$('#mjkkamitxt').hide();
-		$('#mjkhikatxt').hide();
-		$('#mjkyamitxt').hide();
-		$('#ehdhitxt').hide();
-		$('#ehdmizutxt').hide();
-		$('#ehdkamitxt').hide();
-		$('#ehdhikatxt').hide();
-		$('#ehdyamitxt').hide();
-		$('#ehdtxt').show();
-		$('#egdtxt').show();
-		$('#mjktxt').show();
-		$('#dametxt').show();
-		$('#panedame').hide();
-		$('#chjoutxt').hide();
-		$('#chsyoutxt').hide();
-		$('#seikaitxt').hide();
-		$('#mudame').hide();
-		$('#joustxt').hide();
-		$('#mptxt').show();
-		$('#baimtxt').hide();
-		$('#skimtxt').hide();
-	break;
-	case 16:  //撃滅連弾
+	case 15:  //撃滅連弾
 		$('#mzokusei').show();
 		$('#tikutxt').hide();
 		$('#joutxt').show();
@@ -777,7 +731,7 @@ switch (Number(ss)) {
 		$('#baimtxt').hide();
 		$('#skimtxt').hide();
 	break;
-	case 17: //天穹大魔術
+	case 16: //天穹大魔術
 		$('#mzokusei').hide();
 		$('#tikutxt').hide();
 		$('#joutxt').hide();
@@ -1268,15 +1222,7 @@ switch (Number(ss)) {
 			var damagemax = Math.floor(damage*1.1);
 		break;
 
-	case 15: //爆裂
-		var mptotal = ehtotal+100+((dame/100)*jou);
-		var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chky;
-		var damage = Math.floor(damage);
-		var damagemin = Math.floor(damage*0.9);
-		var damagemax = Math.floor(damage*1.1);
-		
-	break;
-	case 16: //撃滅連弾
+	case 15: //撃滅連弾
 	var damjou = (jou-mp)/chjou;
 	var ehjou = ehtotal/chjou;
 	var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chky;
@@ -1297,7 +1243,7 @@ switch (Number(ss)) {
 		var damagemax = Math.floor(damage*1.1);
 		
 	break;
-	case 17: //天穹大魔術
+	case 16: //天穹大魔術
 			var ssehhi = (1-(egdhi/100))*(1+(mjkhi/100))*(1+(ehdhi/100))*(1-(taisei/100))*(1+(jakutai/100)); //敵被ダメージ補正
 			var ssehmizu = (1-(egdmizu/100))*(1+(mjkmizu/100))*(1+(ehdmizu/100))*(1-(taisei/100))*(1+(jakutai/100)); //敵被ダメージ補正
 			var ssehkami = (1-(egdkami/100))*(1+(mjkkami/100))*(1+(ehdkami/100))*(1-(taisei/100))*(1+(jakutai/100)); //敵被ダメージ補正
