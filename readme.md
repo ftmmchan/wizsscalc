@@ -1,3 +1,8 @@
+![wizcalc](https://img.shields.io/badge/wiz-damagecalc-brightgreen)
+[![GitHub stars](https://img.shields.io/github/stars/ftmmchan/wizsscalc)](https://github.com/ftmmchan/wizsscalc/stargazers) 
+[![GitHub issues](https://img.shields.io/github/issues/ftmmchan/wizsscalc)](https://github.com/ftmmchan/wizsscalc/issues)
+[![GitHub license](https://img.shields.io/github/license/ftmmchan/wizsscalc)](https://github.com/ftmmchan/wizsscalc)
+[![Twitter](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fgithub.com%2Fftmmchan%2Fwizsscalc)](https://twitter.com/intent/tweet?text=黒ウィズダメージ計算機&url=https%3A%2F%2Fgithub.com%2Fftmmchan%2Fwizsscalc)  
 黒ウィズのダメージ計算機です(あまり検証していません。)  
 
 ソースの改造とかは自由です  
