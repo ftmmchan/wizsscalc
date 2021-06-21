@@ -1055,7 +1055,7 @@ switch (Number(ss)) {
 				var jyt = 1;
 		}
 
-		var mptotal = mptotal + (jou*jyt);
+		var mptotal = mptotal + (jou*jyt) + cs;
 		var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chky;
 		var damage = Math.floor(damage);
 		var damagemin = Math.floor(damage*0.9);
@@ -1078,7 +1078,7 @@ switch (Number(ss)) {
 			default:
 				var jyt = 1;
 		}
-		var mptotal = mptotal + (jou*jyt);
+		var mptotal = mptotal + (jou*jyt) + cs;
 		var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chky;
 		var damage = Math.floor(damage);
 		var damagemin = Math.floor(damage*0.9);
