@@ -1251,39 +1251,40 @@ switch (Number(ss)) {
 			var ssehyami = (1-(egdyami/100))*(1+(mjkyami/100))*(1+(ehdyami/100))*(1-(taisei/100))*(1+(jakutai/100)); //敵被ダメージ補正
 			switch (emzokusei) {
 				case 1:
+					var zkehhi = 1;
+					var zkehmizu = 1.5;
+					var zkehkami = 0.5;
+					var zkehhika = 1;
+					var zkehyami = 1;
+				break;
+				case 2:
 					var zkehhi = 0.5;
 					var zkehmizu = 1;
 					var zkehkami = 1.5;
 					var zkehhika = 1;
 					var zkehyami = 1;
 				break;
-				case 2:
+				case 3:
 					var zkehhi = 1.5;
 					var zkehmizu = 0.5;
 					var zkehkami = 1;
 					var zkehhika = 1;
 					var zkehyami = 1;
 				break;
-				case 3:
+				case 4:
 					var zkehhi = 1;
 					var zkehmizu = 1;
 					var zkehkami = 1;
 					var zkehhika = 1;
 					var zkehyami = 1.5;
 				break;
-				case 4:
+				case 5:
 					var zkehhi = 1;
 					var zkehmizu = 1;
 					var zkehkami = 1;
 					var zkehhika = 1.5;
 					var zkehyami = 1;
 				break;
-				case 5:
-					var zkehhi = 1;
-					var zkehmizu = 1.5;
-					var zkehkami = 0.5;
-					var zkehhika = 1;
-					var zkehyami = 1;
 				default:
 					var zkehhi = 1;
 					var zkehmizu = 1;
@@ -1291,12 +1292,12 @@ switch (Number(ss)) {
 					var zkehhika = 1;
 					var zkehyami = 1;
 			}
-					var mptotal = (mp*seikai)+ehtotal;
+					var mptotal = (mp*seikai)+(ehtotal/6);
 					var damagehi = atk*(mptotal/100)*cheh*ssehhi*dmmp*zkehhi*chky;
 					var damagemizu = atk*(mptotal/100)*cheh*ssehmizu*dmmp*zkehmizu*chky;
 					var damagekami = atk*(mptotal/100)*cheh*ssehkami*dmmp*zkehkami*chky;
 					var damagehika = atk*(mptotal/100)*cheh*ssehhika*dmmp*zkehhika*chky;
-					var damageyami = atk*(mptotal/100)*cheh*ssehyami*dmmp*zkehhika*chky;
+					var damageyami = atk*(mptotal/100)*cheh*ssehyami*dmmp*zkehyami*chky;
 					var damagemu = atk*(mptotal/100)*cheh*dmmp*chky;
 					var damagehi = Math.floor(damagehi);
 					var damagemizu = Math.floor(damagemizu);
@@ -1307,9 +1308,7 @@ switch (Number(ss)) {
 					var damage = damagehi + damagemizu + damagekami + damagehika + damageyami + damagemu;
 					var damagemin = Math.floor(damage*0.9);
 					var damagemax = Math.floor(damage*1.1);
-
 	break;
-
 	default: 
 	alert('スキルを選択してください');
 }
