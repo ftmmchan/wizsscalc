@@ -986,6 +986,7 @@ switch (Number(ss)) {
 		var damage = Math.floor(damage);
 		var damagemin = Math.floor(damage*0.9);
 		var damagemax = Math.floor(damage*1.1);
+		var damagetotal = damage + damage2;
 		}else{
 			var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chky;
 			var damage = Math.floor(damage);
@@ -1005,6 +1006,7 @@ switch (Number(ss)) {
 		var damage = Math.floor(damage);
 		var damagemin = Math.floor(damage*0.9);
 		var damagemax = Math.floor(damage*1.1);
+		var damagetotal = damage + damage2;
 		}else{
 			var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chky;
 			var damage = Math.floor(damage);
@@ -1023,6 +1025,7 @@ switch (Number(ss)) {
 		var damage = Math.floor(damage);
 		var damagemin = Math.floor(damage*0.9);
 		var damagemax = Math.floor(damage*1.1);
+		var damagetotal = damage + damage2;
 		}else{
 			var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chky;
 			var damage = Math.floor(damage);
