@@ -770,6 +770,7 @@ var damagemin = 0;
 var damage2 = 0;
 var damagemax2 = 0;
 var damagemin2 = 0;
+var damagetotal = damage + damage2;
 
 
 switch (myzokusei) {
@@ -946,7 +947,7 @@ var ssehyami = (1-(egdyami/100))*(1+(mjkyami/100))*(1+(ehdyami/100))*(1-(taisei/
 				break;
 				default:
 				if(mjk >= 1 ||ehd >= 1 ){
-					var sseh = (1-(egdhi/100))*(1+(mjkhi/100))*(1+(ehdhi/100))*(1-(taisei/100))*(1+(jakutai/100)); //敵被ダメージ補正
+					var sseh = (1+(mjkhi/100))*(1+(ehdhi/100))*(1-(taisei/100))*(1+(jakutai/100)); //敵被ダメージ補正
 				}else{
 					var sseh=1*(1-(taisei/100))*(1+(jakutai/100));
 				}
@@ -969,12 +970,15 @@ var ssehyami = (1-(egdyami/100))*(1+(mjkyami/100))*(1+(ehdyami/100))*(1-(taisei/
 				break;
 				default:
 				if(mjk >= 1 ||ehd >= 1 ){
-					var sseh2 = (1-(egdhi/100))*(1+(mjkhi/100))*(1+(ehdhi/100))*(1-(taisei/100))*(1+(jakutai/100)); //敵被ダメージ補正
+					var sseh2 = (1+(mjkhi/100))*(1+(ehdhi/100))*(1-(taisei/100))*(1+(jakutai/100)); //敵被ダメージ補正
 				}else{
 					var sseh2 = 1*(1-(taisei/100))*(1+(jakutai/100));
 				}
 			}
 var dmmp = csmp+awmp+drmp-2;
+		if(myzokusei == 6)myzokusei2 = 0;
+
+
 switch (Number(ss)) {
 	case 1: //大魔術
 		if(myzokusei == myzokusei2 ||myzokusei2 == 0){
@@ -992,6 +996,7 @@ switch (Number(ss)) {
 			var damagemin2 = Math.floor(damage2*0.9);
 			var damagemax2 = Math.floor(damage2*1.1);
 			}
+		var damagetotal = damage + damage2;
 	break;
 	case 2: //特効・残滅大魔術・カウンター
 		var mptotal = mptotal + 100;
@@ -1010,6 +1015,7 @@ switch (Number(ss)) {
 			var damagemin2 = Math.floor(damage2*0.9);
 			var damagemax2 = Math.floor(damage2*1.1);
 			}
+		var damagetotal = damage + damage2;
 	break;
 	case 3: //多弾魔術
 		if(myzokusei == myzokusei2 ||myzokusei2 == 0){
@@ -1029,6 +1035,7 @@ switch (Number(ss)) {
 			}
 		var damageavg = Math.floor(damage/kaisuu);
 		var damageavg2 = Math.floor(damage2/kaisuu);
+		var damagetotal = damage + damage2;
 	break;
 	case 4: //斬撃大魔術
 		if(myzokusei == myzokusei2 ||myzokusei2 == 0){
@@ -1071,6 +1078,7 @@ switch (Number(ss)) {
 		var damage = Math.floor(damage);
 		var damagemin = Math.floor(damage*0.9);
 		var damagemax = Math.floor(damage*1.1);
+		var damagetotal = damage + damage2;
 	break;
 	case 6: //カウント
 		var mptotal = ehtotal+100+((kau/kauj)*jou);
@@ -1078,6 +1086,7 @@ switch (Number(ss)) {
 		var damage = Math.floor(damage);
 		var damagemin = Math.floor(damage*0.9);
 		var damagemax = Math.floor(damage*1.1);
+		var damagetotal = damage + damage2;
 	break;
 	case 7: //時限 計算式が特殊かつ乱数の影響を受けない
 		//var damage = Math.floor(Math.floor(atk*(Math.floor((mptotal/100)+cheh))*zkeh)*sseh*dmmp*chky);
@@ -1085,6 +1094,7 @@ switch (Number(ss)) {
 		var damage = Math.floor(Math.floor(Math.floor(atk*(Math.floor(Math.floor((mptotal/100)))*zkeh*cheh))*sseh*dmmp)*chky);
 		var damagemin = damage;
 		var damagemax = damage;
+		var damagetotal = damage + damage2;
 	break;
 	case 8: //反転解除
 		var mptotal = mptotal + (sei*dan);
@@ -1103,6 +1113,7 @@ switch (Number(ss)) {
 			var damagemin2 = Math.floor(damage2*0.9);
 			var damagemax2 = Math.floor(damage2*1.1);
 			}
+		var damagetotal = damage + damage2;
 	break;
 	case 9: //詠唱
 		var mptotal = mptotal + (jikan*dan);
@@ -1121,6 +1132,7 @@ switch (Number(ss)) {
 			var damagemin2 = Math.floor(damage2*0.9);
 			var damagemax2 = Math.floor(damage2*1.1);
 			}
+		var damagetotal = damage + damage2;
 	break;
 	case 10: //反動蝕・犠牲
 		var mptotal = mptotal * sei;
@@ -1128,6 +1140,7 @@ switch (Number(ss)) {
 		var damage = Math.floor(damage);
 		var damagemin = Math.floor(damage*0.9);
 		var damagemax = Math.floor(damage*1.1);
+		var damagetotal = damage + damage2;
 	break;
 	case 11: //純属性・融合
 		switch (sei) {
@@ -1152,6 +1165,7 @@ switch (Number(ss)) {
 		var damage = Math.floor(damage);
 		var damagemin = Math.floor(damage*0.9);
 		var damagemax = Math.floor(damage*1.1);
+		var damagetotal = damage + damage2;
 	break;
 	case 12: //統一
 			switch (sei) {
@@ -1180,6 +1194,7 @@ switch (Number(ss)) {
 		var damage2 = Math.floor(damage2);
 		var damagemin2 = Math.floor(damage2*0.9);
 		var damagemax2 = Math.floor(damage2*1.1);
+		var damagetotal = damage + damage2;
 	break;
 	case 13: //連鎖解放
 	if(ch>=chj){
@@ -1190,6 +1205,7 @@ switch (Number(ss)) {
 		var damage = Math.floor(damage);
 		var damagemin = Math.floor(damage*0.9);
 		var damagemax = Math.floor(damage*1.1);
+		var damagetotal = damage + damage2;
 	break;
 	case 14: //激化 エンハの乗り方が特殊っぽい
 		var mptotal = ((cs+mp)*(Math.pow(bai,ski - 1))+ehtotal);
@@ -1197,6 +1213,7 @@ switch (Number(ss)) {
 		var damage = Math.floor(damage);
 		var damagemin = Math.floor(damage*0.9);
 		var damagemax = Math.floor(damage*1.1);
+		var damagetotal = damage + damage2;
 	break;
 	case 15: //急襲 多分激化の逆
 		if(skim==0){
@@ -1208,6 +1225,7 @@ switch (Number(ss)) {
 		var damage = Math.floor(damage);
 		var damagemin = Math.floor(damage*0.9);
 		var damagemax = Math.floor(damage*1.1);
+		var damagetotal = damage + damage2;
 	break;
 	case 16: //パネル爆破
 
@@ -1312,6 +1330,7 @@ switch (Number(ss)) {
 			var damage = damagehitotal + damagemizutotal + damagekamitotal + damagehikatotal + damageyamitotal;
 			var damagemin = Math.floor(damage*0.9);
 			var damagemax = Math.floor(damage*1.1);
+		var damagetotal = damage + damage2;
 		break;
 
 	case 17: //撃滅連弾
@@ -1333,6 +1352,7 @@ switch (Number(ss)) {
 		var damage = Math.floor(damage);
 		var damagemin = Math.floor(damage*0.9);
 		var damagemax = Math.floor(damage*1.1);
+		var damagetotal = damage + damage2;
 		
 	break;
 	case 18: //天穹大魔術
@@ -1395,6 +1415,7 @@ switch (Number(ss)) {
 					var damage = damagehi + damagemizu + damagekami + damagehika + damageyami + damagemu;
 					var damagemin = Math.floor(damage*0.9);
 					var damagemax = Math.floor(damage*1.1);
+		var damagetotal = damage + damage2;
 	break;
 	case 19: //詠唱多弾大魔術
 	if(kaisuu <= 1){
