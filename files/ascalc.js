@@ -1,3 +1,14 @@
+$('#emstxt').addClass('invisible');
+$("#bunsan").change(function() {
+var bunsan = Number($('#bunsansel').val());
+switch (Number(bunsan)) {
+	case 1:
+		$('#emstxt').show();
+	break;
+	default:
+		$('#emstxt').hide();
+}
+});
 $('#ascalc').click(function(){
 var atk = Number($('#atk').val())/2; //攻撃力
 var mp = Number($('#mp').val()); //ＡＳの効果値
@@ -33,6 +44,8 @@ var emzokusei = Number($('#emzokusei').val()); //属性補正
 var pnzokuseisel = Number($('#pnzokuseisel').val()); //属性補正
 var chch = Number($('#chch').val()); 
 var chky = 1+((chch*ch)/100); //連鎖狂化効果
+var ems = Number($('#ems').val());  //敵の数
+var bunsansel = Number($('#bunsansel').val());  //敵の数
 
 switch (myzokusei) {
 	case 1:
@@ -129,9 +142,9 @@ switch (shmpsel) {
 	default:
 		var shmp = 1;
 }
-
+if (bunsansel == 0) var ems = 1;
 var dmmp = csmp+awmp+drmp+shmp-3;
-var damage = atk*((((mptotal+100+exmp)))/100)*(asmpss+asmppn-1)*pneh*cheh*aseh*dmmp*zkeh*chky;
+var damage = atk*((((mptotal+100+exmp)/ems))/100)*(asmpss+asmppn-1)*pneh*cheh*aseh*dmmp*zkeh*chky;
 var damage = Math.floor(damage);
 var damagemin = Math.floor(damage*0.9);
 var damagemax = Math.floor(damage*1.1);

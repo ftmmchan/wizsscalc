@@ -17,11 +17,6 @@
 <option value="5">闇</option>
 <option value="6">無</option>
 </select><br></div>
-<div id="pnzokusei">パネル属性：<select id="pnzokuseisel">
-<option value="0">一致</option>
-<option value="1">不一致</option>
-</select><br></div>
-
 敵属性：<select id="emzokusei">
 <option value="1">火</option>
 <option value="2">水</option>
@@ -30,7 +25,16 @@
 <option value="5">闇</option>
 <option value="6">無</option>
 </select><br>
-</select><br><br>
+<div id="pnzokusei">パネル属性：<select id="pnzokuseisel">
+<option value="0">一致</option>
+<option value="1">不一致</option>
+</select><br></div>
+<div id="bunsan">攻撃特性：<select id="bunsansel">
+<option value="0">通常</option>
+<option value="1">分散</option>
+</select><br></div>
+<br>
+<div id="emstxt">敵の数<input id="ems" size="20" value="3" ><br><br></div>
 
 精霊の攻撃力<input id="atk" size="20" value="0" ><br>
 ＡＳの効果値<input id="mp" size="20" value="0" ><br>
@@ -52,13 +56,11 @@
 
 <br>
 敵ガード<input id="egd" size="20" value="0" ><br>
-
 敵弱体化（味方の弱体化大魔術）<input id="mjk" size="20" value="0" ><br>
 敵弱体化（敵の反動攻撃）<input id="ehd" size="20" value="0" ><br>
-
 敵AS耐性<input id="taisei" size="20" value="0" ><br>
 敵AS弱体化<input id="jakutai" size="20" value="0" ><br>
- 
+<br>
 ダメージ倍率結晶<select id="csmpsel">
 <option value="0">なし</option>
 <option value="1">アドヴェリタス(1.2倍)</option>

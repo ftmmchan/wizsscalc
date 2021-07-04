@@ -11,31 +11,42 @@
 <option value="0">リストから選択</option>
 <option value="1">大魔術(リストにない物もこれ)</option>
 <option value="2">特効・残滅大魔術・カウンター</option>
-<option value="3">蓄積解放大魔術(聖・邪・破)</option>
-<option value="4">蓄積解放(印・連)・Ｌカウント・パネル属性カウント・捕食・逆襲・爆裂大魔術</option>
-<option value="5">時限大魔術</option>
-<option value="6">反転解除大魔術</option>
-<option value="7">詠唱大魔術</option>
-<option value="8">反動蝕・犠牲魔術</option>
-<option value="9">純属性・融合大魔術</option>
-<option value="10">統一大魔術</option>
-<option value="11">連鎖解放大魔術</option>
-<option value="12">激化大魔術</option>
-<option value="13">急襲大魔術</option>
-<option value="14">パネル爆破大魔術</option>
-<option value="15">撃滅連弾</option>
-<option value="16">天穹大魔術</option>
+<option value="3">多弾魔術</option>
+<option value="4">斬撃大魔術</option>
+<option value="5">蓄積解放大魔術(聖・邪・破)</option>
+<option value="6">蓄積解放(印・連)・Ｌカウント・パネル属性カウント・捕食・逆襲・爆裂大魔術</option>
+<option value="7">時限大魔術</option>
+<option value="8">反転解除大魔術</option>
+<option value="9">詠唱大魔術</option>
+<option value="10">反動蝕・犠牲魔術</option>
+<option value="11">純属性・融合大魔術</option>
+<option value="12">統一大魔術</option>
+<option value="13">連鎖解放大魔術</option>
+<option value="14">激化大魔術</option>
+<option value="15">急襲大魔術</option>
+<option value="16">パネル爆破大魔術</option>
+<option value="17">撃滅連弾</option>
+<option value="18">天穹大魔術</option>
+<option value="19">詠唱多弾大魔術</option>
 </select>
 <br>
 
 
-<div id="mzokusei">攻撃属性：<select id="myzokusei">
+<div id="mzokusei">攻撃属性(主属性)：<select id="myzokusei">
 <option value="1">火</option>
 <option value="2">水</option>
 <option value="3">雷</option>
 <option value="4">光</option>
 <option value="5">闇</option>
 <option value="6">無</option>
+</select><br></div>
+<div id="mzokusei2">攻撃属性(複属性)：<select id="myzokusei2">
+<option value="0">無</option>
+<option value="1">火</option>
+<option value="2">水</option>
+<option value="3">雷</option>
+<option value="4">光</option>
+<option value="5">闇</option>
 </select><br></div>
 
 敵属性：<select id="emzokusei">
@@ -50,7 +61,8 @@
 
 精霊の攻撃力<input id="atk" size="20" value="0" ><br>
 <div id="mptxt">ＳＳの効果値<input id="mp" size="20" value="0" ><br></div>
-結晶の効果値<input id="cs" size="20" value="0" ><br>
+<div id="cstxt">結晶の効果値<input id="cs" size="20" value="0" ><br>
+<div id="cs2txt">結晶の効果値(複属性)<input id="cs2" size="20" value="0" ><br></div>
 ダメージ強化効果値<input id="eh1" size="20" value="0" ><br>
 ブースト効果値<input id="eh2" size="20" value="0" ><br>
 精霊強化効果値<input id="eh3" size="20" value="0" ><br>
@@ -59,23 +71,24 @@
 SPスキル強化効果値<input id="eh6" size="20" value="0" ><br>
 チェイン数<input id="ch" size="20" value="0" ><br>
 連鎖狂化効果<input id="chch" size="20" value="0" ><br>
+<div id="kaisuutxt">攻撃回数<input id="kaisuu" size="20" value="5" ><br></div>
 <br>
 <div id="seikaitxt">必要正解数<input id="seikai" size="20" value="1" ><br><br></div>
-<div id="egdtxt">敵ガード<input id="egd" size="20" value="0" ><br></div>
+<div id="egdtxt">敵全属性ガード<input id="egd" size="20" value="0" ><br></div>
 <div id="egdhitxt">敵火ガード<input id="egdhi" size="20" value="0" ><br></div>
 <div id="egdmizutxt">敵水ガード<input id="egdmizu" size="20" value="0" ><br></div>
 <div id="egdkamitxt">敵雷ガード<input id="egdkami" size="20" value="0" ><br></div>
 <div id="egdhikatxt">敵光ガード<input id="egdhika" size="20" value="0" ><br></div>
 <div id="egdyamitxt">敵闇ガード<input id="egdyami" size="20" value="0" ><br><br></div>
 
-<div id="mjktxt">敵弱体化（味方の弱体化大魔術）<input id="mjk" size="20" value="0" ><br></div>
+<div id="mjktxt">敵全属性弱体化（味方の弱体化大魔術）<input id="mjk" size="20" value="0" ><br></div>
 <div id="mjkhitxt">敵火弱体化（味方の弱体化大魔術）<input id="mjkhi" size="20" value="0" ><br></div>
 <div id="mjkmizutxt">敵水弱体化（味方の弱体化大魔術）<input id="mjkmizu" size="20" value="0" ><br></div>
 <div id="mjkkamitxt">敵雷弱体化（味方の弱体化大魔術）<input id="mjkkami" size="20" value="0" ><br></div>
 <div id="mjkhikatxt">敵光弱体化（味方の弱体化大魔術）<input id="mjkhika" size="20" value="0" ><br></div>
 <div id="mjkyamitxt">敵闇弱体化（味方の弱体化大魔術）<input id="mjkyami" size="20" value="0" ><br><br></div>
 
-<div id="ehdtxt">敵弱体化（敵の反動攻撃）<input id="ehd" size="20" value="0" ><br></div>
+<div id="ehdtxt">敵全属性弱体化（敵の反動攻撃）<input id="ehd" size="20" value="0" ><br></div>
 <div id="ehdhitxt">敵火弱体化（敵の反動攻撃）<input id="ehdhi" size="20" value="0" ><br></div>
 <div id="ehdmizutxt">敵水弱体化（敵の反動攻撃）<input id="ehdmizu" size="20" value="0" ><br></div>
 <div id="ehdkamitxt">敵雷弱体化（敵の反動攻撃）<input id="ehdkami" size="20" value="0" ><br></div>
@@ -106,6 +119,7 @@ SPスキル強化効果値<input id="eh6" size="20" value="0" ><br>
 
 <div id="tikutxt">蓄積％<input id="tiku" size="20" value="0"><br></div>
 <div id="joutxt">効果値上限値<input id="jou" size="20" placeholder="数値を入力してください。"><br></div>
+<div id="jou2txt">効果値上限値2<input id="jou2" size="20" placeholder="数値を入力してください。"><br></div>
 <div id="joustxt">初期効果値<input id="jous" size="20" value="100"><br></div>
 <div id="kautxt">カウント・ゲージ数<input id="kau" size="20" placeholder="数値を入力してください。"><br></div>
 <div id="kaujtxt">カウント・ゲージ上限値<input id="kauj" size="20" placeholder="数値を入力してください。"><br></div>
@@ -135,6 +149,12 @@ SPスキル強化効果値<input id="eh6" size="20" value="0" ><br>
 ダメージ予想(最小)<input type="text" name="damagemin" id="damagemin" size="8" value=""> <br>
 ダメージ予想(最大)<input type="text" name="damagemax" id="damagemax" size="8" value=""> <br>
 
+<div id="damagef">複属性ダメージ予想<input type="text" name="damage2" id="damage2" size="8" value=""> <br>
+複属性ダメージ予想(最小)<input type="text" name="damagemin2" id="damagemin2" size="8" value=""> <br>
+複属性ダメージ予想(最大)<input type="text" name="damagemax2" id="damagemax2" size="8" value=""> <br></div>
+<div id="damaavgtxt">ダメージ予想(1発平均)<input type="text" name="damageavg" id="damageavg" size="8" value=""> <br></div>
+<div id="damaavgtxt2">複属性ダメージ予想(1発平均)<input type="text" name="damageavg2" id="damageavg2" size="8" value=""> <br></div>
+
 <div id="panedame">
 火属性ダメージ予想(1発平均)<input type="text" name="damagehi" id="damagehi" size="8" value=""> <br>
 水属性ダメージ予想(1発平均)<input type="text" name="damagemizu" id="damagemizu" size="8" value=""> <br>
@@ -145,6 +165,7 @@ SPスキル強化効果値<input id="eh6" size="20" value="0" ><br>
 <div id="mudame">
 無属性ダメージ予想(1発平均)<input type="text" name="damagemu" id="damagemu" size="8" value=""> <br>
 </div>
+ダメージ予想(合計)<input type="text" name="damagetotal" id="damagetotal" size="8" value=""> <br></div>
 
 <p></p>
 </body>
