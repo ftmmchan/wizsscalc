@@ -1463,5 +1463,5 @@ $('#damagemu').val(damagemu);
 $('#damage2').val(damage2);
 $('#damagemax2').val(damagemax2);
 $('#damagemin2').val(damagemin2);
-$('#damagetotal').val(damagetotal );
+$('#damagetotal').val(damagetotal);
  });
