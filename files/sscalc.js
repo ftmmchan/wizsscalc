@@ -1,697 +1,3 @@
-$('#tikutxt').addClass('invisible');
-$('#joutxt').addClass('invisible');
-$('#jou2txt').addClass('invisible');
-$('#kautxt').addClass('invisible');
-$('#dantxt').addClass('invisible');
-$('#kaujtxt').addClass('invisible');
-$('#seitxt').addClass('invisible');
-$('#skitxt').addClass('invisible');
-$('#jikantxt').addClass('invisible');
-$('#baitxt').addClass('invisible');
-$('#chjtxt').addClass('invisible');
-$('#panehitxt').addClass('invisible');
-$('#panemizutxt').addClass('invisible');
-$('#panekamitxt').addClass('invisible');
-$('#panehikatxt').addClass('invisible');
-$('#paneyamitxt').addClass('invisible');
-$('#dametxt').addClass('invisible');
-$('#panedame').addClass('invisible');
-$('#chjoutxt').addClass('invisible');
-$('#chsyoutxt').addClass('invisible');
-$('#seikaitxt').addClass('invisible');
-$('#mudame').addClass('invisible');
-$('#joustxt').addClass('invisible');
-$('#skimtxt').addClass('invisible');
-$('#baimtxt').addClass('invisible');
-$('#kaisuutxt').addClass('invisible');
-$('#damaavgtxt').addClass('invisible');
-$('#damaavgtxt2').addClass('invisible');
-$('#cs2txt').addClass('invisible');
-
-$("#ss_type").change(function() {
-var ss = Number($('#ss_type').val());
-switch (Number(ss)) {
-	case 1: //大魔術
-		$('#mzokusei').show();
-		$('#mptxt').show();
-		$('#tikutxt').hide();
-		$('#joutxt').hide();
-		$('#jou2txt').hide();
-		$('#kautxt').hide();
-		$('#dantxt').hide();
-		$('#kaujtxt').hide();
-		$('#seitxt').hide();
-		$('#skitxt').hide();
-		$('#jikantxt').hide();
-		$('#baitxt').hide();
-		$('#chjtxt').hide();
-		$('#panehitxt').hide();
-		$('#panemizutxt').hide();
-		$('#panekamitxt').hide();
-		$('#panehikatxt').hide();
-		$('#paneyamitxt').hide();
-		$('#dametxt').hide();
-		$('#panedame').hide();
-		$('#chjoutxt').hide();
-		$('#chsyoutxt').hide();
-		$('#seikaitxt').hide();
-		$('#mudame').hide();
-		$('#joustxt').hide();
-		$('#skimtxt').hide();
-		$('#baimtxt').hide();
-		$('#kaisuutxt').hide();
-		$('#damaavgtxt').hide();
-		$('#damaavgtxt2').hide();
-		$('#cs2txt').hide();
-	break;
-	case 2: //特効・残滅大魔術・カウンター
-		$('#mptxt').show();
-		$('#mzokusei').show();
-		$('#tikutxt').hide();
-		$('#joutxt').hide();
-		$('#jou2txt').hide();
-		$('#kautxt').hide();
-		$('#dantxt').hide();
-		$('#kaujtxt').hide();
-		$('#seitxt').hide();
-		$('#skitxt').hide();
-		$('#jikantxt').hide();
-		$('#baitxt').hide();
-		$('#chjtxt').hide();
-		$('#panehitxt').hide();
-		$('#panemizutxt').hide();
-		$('#panekamitxt').hide();
-		$('#panehikatxt').hide();
-		$('#paneyamitxt').hide();
-		$('#dametxt').hide();
-		$('#panedame').hide();
-		$('#chjoutxt').hide();
-		$('#chsyoutxt').hide();
-		$('#seikaitxt').hide();
-		$('#mudame').hide();
-		$('#joustxt').hide();
-		$('#skimtxt').hide();
-		$('#baimtxt').hide();
-		$('#kaisuutxt').hide();
-		$('#damaavgtxt').hide();
-		$('#damaavgtxt2').hide();
-		$('#cs2txt').hide();
-	break;
-	case 3: //多弾魔術
-		$('#mptxt').show();
-		$('#mzokusei').show();
-		$('#tikutxt').hide();
-		$('#joutxt').hide();
-		$('#jou2txt').hide();
-		$('#kautxt').hide();
-		$('#dantxt').hide();
-		$('#kaujtxt').hide();
-		$('#seitxt').hide();
-		$('#skitxt').hide();
-		$('#jikantxt').hide();
-		$('#baitxt').hide();
-		$('#chjtxt').hide();
-		$('#panehitxt').hide();
-		$('#panemizutxt').hide();
-		$('#panekamitxt').hide();
-		$('#panehikatxt').hide();
-		$('#paneyamitxt').hide();
-		$('#dametxt').hide();
-		$('#panedame').hide();
-		$('#chjoutxt').hide();
-		$('#chsyoutxt').hide();
-		$('#seikaitxt').hide();
-		$('#mudame').hide();
-		$('#joustxt').hide();
-		$('#skimtxt').hide();
-		$('#baimtxt').hide();
-		$('#kaisuutxt').show();
-		$('#damaavgtxt').show();
-		$('#damaavgtxt2').show();
-		$('#cs2txt').hide();
-	break;
-	case 4: //斬撃大魔術
-		$('#mptxt').show();
-		$('#mzokusei').show();
-		$('#tikutxt').hide();
-		$('#joutxt').hide();
-		$('#jou2txt').hide();
-		$('#kautxt').hide();
-		$('#dantxt').hide();
-		$('#kaujtxt').hide();
-		$('#seitxt').hide();
-		$('#skitxt').hide();
-		$('#jikantxt').hide();
-		$('#baitxt').hide();
-		$('#chjtxt').hide();
-		$('#panehitxt').hide();
-		$('#panemizutxt').hide();
-		$('#panekamitxt').hide();
-		$('#panehikatxt').hide();
-		$('#paneyamitxt').hide();
-		$('#dametxt').hide();
-		$('#panedame').hide();
-		$('#chjoutxt').hide();
-		$('#chsyoutxt').hide();
-		$('#seikaitxt').hide();
-		$('#mudame').hide();
-		$('#joustxt').hide();
-		$('#skimtxt').hide();
-		$('#baimtxt').hide();
-		$('#kaisuutxt').show();
-		$('#damaavgtxt').show();
-		$('#damaavgtxt2').show();
-		$('#cs2txt').hide();
-	break;
-	case 5: //蓄積%
-		$('#mptxt').hide();
-		$('#mzokusei').show();
-		$('#tikutxt').show();
-		$('#joutxt').show();
-		$('#jou2txt').hide();
-		$('#kautxt').hide();
-		$('#dantxt').hide();
-		$('#kaujtxt').hide();
-		$('#seitxt').hide();
-		$('#skitxt').hide();
-		$('#jikantxt').hide();
-		$('#baitxt').hide();
-		$('#chjtxt').hide();
-		$('#panehitxt').hide();
-		$('#panemizutxt').hide();
-		$('#panekamitxt').hide();
-		$('#panehikatxt').hide();
-		$('#paneyamitxt').hide();
-		$('#dametxt').hide();
-		$('#panedame').hide();
-		$('#chjoutxt').hide();
-		$('#chsyoutxt').hide();
-		$('#seikaitxt').hide();
-		$('#mudame').hide();
-		$('#joustxt').show();
-		$('#skimtxt').hide();
-		$('#baimtxt').hide();
-		$('#kaisuutxt').hide();
-		$('#damaavgtxt').hide();
-		$('#damaavgtxt2').hide();
-		$('#cs2txt').hide();
-	break;
-	case 6: //カウント
-		$('#mzokusei').show();
-		$('#tikutxt').hide();
-		$('#joutxt').show();
-		$('#jou2txt').hide();
-		$('#kautxt').show();
-		$('#dantxt').hide();
-		$('#kaujtxt').show();
-		$('#seitxt').hide();
-		$('#skitxt').hide();
-		$('#jikantxt').hide();
-		$('#baitxt').hide();
-		$('#chjtxt').hide();
-		$('#panehitxt').hide();
-		$('#panemizutxt').hide();
-		$('#panekamitxt').hide();
-		$('#panehikatxt').hide();
-		$('#paneyamitxt').hide();
-		$('#dametxt').hide();
-		$('#panedame').hide();
-		$('#chjoutxt').hide();
-		$('#chsyoutxt').hide();
-		$('#seikaitxt').hide();
-		$('#mudame').hide();
-		$('#joustxt').hide();
-		$('#skimtxt').hide();
-		$('#baimtxt').hide();
-		$('#mptxt').hide();
-		$('#kaisuutxt').hide();
-		$('#damaavgtxt').hide();
-		$('#damaavgtxt2').hide();
-		$('#cs2txt').hide();
-	break;
-	case 7: //時限大魔術
-		$('#mzokusei').show();
-		$('#tikutxt').hide();
-		$('#joutxt').hide();
-		$('#jou2txt').hide();
-		$('#kautxt').hide();
-		$('#dantxt').hide();
-		$('#kaujtxt').hide();
-		$('#seitxt').hide();
-		$('#skitxt').hide();
-		$('#jikantxt').hide();
-		$('#baitxt').hide();
-		$('#chjtxt').hide();
-		$('#panehitxt').hide();
-		$('#panemizutxt').hide();
-		$('#panekamitxt').hide();
-		$('#panehikatxt').hide();
-		$('#paneyamitxt').hide();
-		$('#dametxt').hide();
-		$('#panedame').hide();
-		$('#chjoutxt').hide();
-		$('#chsyoutxt').hide();
-		$('#seikaitxt').hide();
-		$('#mudame').hide();
-		$('#joustxt').hide();
-		$('#skimtxt').hide();
-		$('#baimtxt').hide();
-		$('#mptxt').show();
-		$('#kaisuutxt').hide();
-		$('#damaavgtxt').hide();
-		$('#damaavgtxt2').hide();
-		$('#cs2txt').hide();
-	break;
-	case 8: //反転解除
-		$('#mzokusei').show();
-		$('#tikutxt').hide();
-		$('#joutxt').hide();
-		$('#jou2txt').hide();
-		$('#kautxt').hide();
-		$('#dantxt').show();
-		$('#kaujtxt').hide();
-		$('#seitxt').show();
-		$('#skitxt').hide();
-		$('#jikantxt').hide();
-		$('#baitxt').hide();
-		$('#chjtxt').hide();
-		$('#panehitxt').hide();
-		$('#panemizutxt').hide();
-		$('#panekamitxt').hide();
-		$('#panehikatxt').hide();
-		$('#paneyamitxt').hide();
-		$('#dametxt').hide();
-		$('#panedame').hide();
-		$('#chjoutxt').hide();
-		$('#chsyoutxt').hide();
-		$('#seikaitxt').hide();
-		$('#mudame').hide();
-		$('#joustxt').hide();
-		$('#skimtxt').hide();
-		$('#baimtxt').hide();
-		$('#mptxt').show();
-		$('#kaisuutxt').hide();
-		$('#damaavgtxt').hide();
-		$('#damaavgtxt2').hide();
-		$('#cs2txt').hide();
-	break;
-	case 9: //詠唱
-		$('#mzokusei').show();
-		$('#tikutxt').hide();
-		$('#joutxt').hide();
-		$('#jou2txt').hide();
-		$('#kautxt').hide();
-		$('#dantxt').show();
-		$('#kaujtxt').hide();
-		$('#seitxt').hide();
-		$('#skitxt').hide();
-		$('#jikantxt').show();
-		$('#baitxt').hide();
-		$('#chjtxt').hide();
-		$('#panehitxt').hide();
-		$('#panemizutxt').hide();
-		$('#panekamitxt').hide();
-		$('#panehikatxt').hide();
-		$('#paneyamitxt').hide();
-		$('#dametxt').hide();
-		$('#panedame').hide();
-		$('#chjoutxt').hide();
-		$('#chsyoutxt').hide();
-		$('#seikaitxt').hide();
-		$('#mudame').hide();
-		$('#joustxt').hide();
-		$('#skimtxt').hide();
-		$('#baimtxt').hide();
-		$('#mptxt').show();
-		$('#kaisuutxt').hide();
-		$('#damaavgtxt').hide();
-		$('#damaavgtxt2').hide();
-		$('#cs2txt').hide();
-	break;
-	case 10: //反動蝕・犠牲
-		$('#mzokusei').show();
-		$('#tikutxt').hide();
-		$('#joutxt').hide();
-		$('#jou2txt').hide();
-		$('#kautxt').hide();
-		$('#dantxt').hide();
-		$('#kaujtxt').hide();
-		$('#seitxt').show();
-		$('#skitxt').hide();
-		$('#jikantxt').hide();
-		$('#baitxt').hide();
-		$('#chjtxt').hide();
-		$('#panehitxt').hide();
-		$('#panemizutxt').hide();
-		$('#panekamitxt').hide();
-		$('#panehikatxt').hide();
-		$('#paneyamitxt').hide();
-		$('#dametxt').hide();
-		$('#panedame').hide();
-		$('#chjoutxt').hide();
-		$('#chsyoutxt').hide();
-		$('#seikaitxt').hide();
-		$('#mudame').hide();
-		$('#joustxt').hide();
-		$('#skimtxt').hide();
-		$('#baimtxt').hide();
-		$('#mptxt').show();
-		$('#kaisuutxt').hide();
-		$('#damaavgtxt').hide();
-		$('#damaavgtxt2').hide();
-		$('#cs2txt').hide();
-	break;
-	case 11: //純属性・融合
-		$('#mzokusei').show();
-		$('#tikutxt').hide();
-		$('#joutxt').show();
-		$('#jou2txt').hide();
-		$('#kautxt').hide();
-		$('#dantxt').hide();
-		$('#kaujtxt').hide();
-		$('#seitxt').show();
-		$('#skitxt').hide();
-		$('#jikantxt').hide();
-		$('#baitxt').hide();
-		$('#chjtxt').hide();
-		$('#panehitxt').hide();
-		$('#panemizutxt').hide();
-		$('#panekamitxt').hide();
-		$('#panehikatxt').hide();
-		$('#paneyamitxt').hide();
-		$('#dametxt').hide();
-		$('#panedame').hide();
-		$('#chjoutxt').hide();
-		$('#chsyoutxt').hide();
-		$('#seikaitxt').hide();
-		$('#mudame').hide();
-		$('#joustxt').hide();
-		$('#skimtxt').hide();
-		$('#baimtxt').hide();
-		$('#mptxt').hide();
-		$('#kaisuutxt').hide();
-		$('#damaavgtxt').hide();
-		$('#damaavgtxt2').hide();
-		$('#cs2txt').hide();
-	break;
-	case 12: //統一
-		$('#mzokusei').show();
-		$('#tikutxt').hide();
-		$('#joutxt').show();
-		$('#jou2txt').show();
-		$('#kautxt').hide();
-		$('#dantxt').hide();
-		$('#kaujtxt').hide();
-		$('#seitxt').show();
-		$('#skitxt').hide();
-		$('#jikantxt').hide();
-		$('#baitxt').hide();
-		$('#chjtxt').hide();
-		$('#panehitxt').hide();
-		$('#panemizutxt').hide();
-		$('#panekamitxt').hide();
-		$('#panehikatxt').hide();
-		$('#paneyamitxt').hide();
-		$('#dametxt').hide();
-		$('#panedame').hide();
-		$('#chjoutxt').hide();
-		$('#chsyoutxt').hide();
-		$('#seikaitxt').hide();
-		$('#mudame').hide();
-		$('#joustxt').hide();
-		$('#skimtxt').hide();
-		$('#baimtxt').hide();
-		$('#mptxt').hide();
-		$('#kaisuutxt').hide();
-		$('#damaavgtxt').hide();
-		$('#damaavgtxt2').hide();
-		$('#cs2txt').show();
-	break;
-	case 13: //連鎖解放
-		$('#mzokusei').show();
-		$('#tikutxt').hide();
-		$('#joutxt').show();
-		$('#jou2txt').hide();
-		$('#kautxt').hide();
-		$('#dantxt').hide();
-		$('#kaujtxt').hide();
-		$('#seitxt').hide();
-		$('#skitxt').hide();
-		$('#jikantxt').hide();
-		$('#baitxt').hide();
-		$('#chjtxt').show();
-		$('#panehitxt').hide();
-		$('#panemizutxt').hide();
-		$('#panekamitxt').hide();
-		$('#panehikatxt').hide();
-		$('#paneyamitxt').hide();
-		$('#dametxt').hide();
-		$('#panedame').hide();
-		$('#chjoutxt').hide();
-		$('#chsyoutxt').hide();
-		$('#seikaitxt').hide();
-		$('#mudame').hide();
-		$('#joustxt').hide();
-		$('#skimtxt').hide();
-		$('#baimtxt').hide();
-		$('#mptxt').hide();
-		$('#kaisuutxt').hide();
-		$('#damaavgtxt').hide();
-		$('#damaavgtxt2').hide();
-		$('#cs2txt').hide();
-	break;
-	case 14: //激化 エンハの乗り方が特殊っぽい
-		$('#mzokusei').show();
-		$('#tikutxt').hide();
-		$('#joutxt').hide();
-		$('#jou2txt').hide();
-		$('#kautxt').hide();
-		$('#dantxt').hide();
-		$('#kaujtxt').hide();
-		$('#seitxt').hide();
-		$('#skitxt').show();
-		$('#jikantxt').hide();
-		$('#baitxt').show();
-		$('#chjtxt').hide();
-		$('#panehitxt').hide();
-		$('#panemizutxt').hide();
-		$('#panekamitxt').hide();
-		$('#panehikatxt').hide();
-		$('#paneyamitxt').hide();
-		$('#dametxt').hide();
-		$('#panedame').hide();
-		$('#chjoutxt').hide();
-		$('#chsyoutxt').hide();
-		$('#seikaitxt').hide();
-		$('#mudame').hide();
-		$('#joustxt').hide();
-		$('#skimtxt').hide();
-		$('#baimtxt').hide();
-		$('#mptxt').show();
-		$('#kaisuutxt').hide();
-		$('#damaavgtxt').hide();
-		$('#damaavgtxt2').hide();
-		$('#cs2txt').hide();
-	break;
-	case 15: //急襲 多分激化の逆
-		$('#mzokusei').show();
-		$('#tikutxt').hide();
-		$('#joutxt').hide();
-		$('#jou2txt').hide();
-		$('#kautxt').hide();
-		$('#dantxt').hide();
-		$('#kaujtxt').hide();
-		$('#seitxt').hide();
-		$('#skitxt').hide();
-		$('#jikantxt').hide();
-		$('#baitxt').hide();
-		$('#chjtxt').hide();
-		$('#panehitxt').hide();
-		$('#panemizutxt').hide();
-		$('#panekamitxt').hide();
-		$('#panehikatxt').hide();
-		$('#paneyamitxt').hide();
-		$('#dametxt').hide();
-		$('#panedame').hide();
-		$('#chjoutxt').hide();
-		$('#chsyoutxt').hide();
-		$('#seikaitxt').hide();
-		$('#mudame').hide();
-		$('#joustxt').hide();
-		$('#skimtxt').show();
-		$('#baimtxt').show();
-		$('#mptxt').show();
-		$('#kaisuutxt').hide();
-		$('#damaavgtxt').hide();
-		$('#damaavgtxt2').hide();
-		$('#cs2txt').hide();
-	break;
-	case 16: //パネル爆破 
-		$('#mzokusei').hide();
-		$('#tikutxt').hide();
-		$('#joutxt').hide();
-		$('#jou2txt').hide();
-		$('#kautxt').hide();
-		$('#dantxt').hide();
-		$('#kaujtxt').hide();
-		$('#seitxt').hide();
-		$('#skitxt').hide();
-		$('#jikantxt').hide();
-		$('#baitxt').hide();
-		$('#chjtxt').hide();
-		$('#panehitxt').show();
-		$('#panemizutxt').show();
-		$('#panekamitxt').show();
-		$('#panehikatxt').show();
-		$('#paneyamitxt').show();
-		$('#dametxt').hide();
-		$('#panedame').show();
-		$('#chjoutxt').hide();
-		$('#chsyoutxt').hide();
-		$('#seikaitxt').hide();
-		$('#mudame').hide();
-		$('#joustxt').hide();
-		$('#mptxt').show();
-		$('#baimtxt').hide();
-		$('#skimtxt').hide();
-		$('#kaisuutxt').hide();
-		$('#damaavgtxt').hide();
-		$('#damaavgtxt2').hide();
-		$('#cs2txt').hide();
-	break;
-	case 17:  //撃滅連弾
-		$('#mzokusei').show();
-		$('#tikutxt').hide();
-		$('#joutxt').show();
-		$('#jou2txt').hide();
-		$('#kautxt').hide();
-		$('#dantxt').hide();
-		$('#kaujtxt').hide();
-		$('#seitxt').hide();
-		$('#skitxt').hide();
-		$('#jikantxt').hide();
-		$('#baitxt').hide();
-		$('#chjtxt').hide();
-		$('#panehitxt').hide();
-		$('#panemizutxt').hide();
-		$('#panekamitxt').hide();
-		$('#panehikatxt').hide();
-		$('#paneyamitxt').hide();
-		$('#dametxt').hide();
-		$('#panedame').hide();
-		$('#chjoutxt').show();
-		$('#chsyoutxt').show();
-		$('#seikaitxt').hide();
-		$('#mudame').hide();
-		$('#joustxt').hide();
-		$('#mptxt').show();
-		$('#baimtxt').hide();
-		$('#skimtxt').hide();
-		$('#kaisuutxt').hide();
-		$('#damaavgtxt').hide();
-		$('#damaavgtxt2').hide();
-		$('#cs2txt').hide();
-	break;
-	case 18: //天穹大魔術
-		$('#mzokusei').hide();
-		$('#tikutxt').hide();
-		$('#joutxt').hide();
-		$('#jou2txt').hide();
-		$('#kautxt').hide();
-		$('#dantxt').hide();
-		$('#kaujtxt').hide();
-		$('#seitxt').hide();
-		$('#skitxt').hide();
-		$('#jikantxt').hide();
-		$('#baitxt').hide();
-		$('#chjtxt').hide();
-		$('#panehitxt').hide();
-		$('#panemizutxt').hide();
-		$('#panekamitxt').hide();
-		$('#panehikatxt').hide();
-		$('#paneyamitxt').hide();
-		$('#dametxt').hide();
-		$('#panedame').show();
-		$('#chjoutxt').hide();
-		$('#chsyoutxt').hide();
-		$('#seikaitxt').show();
-		$('#mudame').show();
-		$('#joustxt').hide();
-		$('#mptxt').show();
-		$('#baimtxt').hide();
-		$('#skimtxt').hide();
-		$('#kaisuutxt').hide();
-		$('#damaavgtxt').hide();
-		$('#damaavgtxt2').hide();
-		$('#cs2txt').hide();
-	break;
-	case 19: //多弾魔術
-		$('#mptxt').show();
-		$('#mzokusei').show();
-		$('#tikutxt').hide();
-		$('#joutxt').hide();
-		$('#jou2txt').hide();
-		$('#kautxt').hide();
-		$('#dantxt').hide();
-		$('#kaujtxt').hide();
-		$('#seitxt').hide();
-		$('#skitxt').hide();
-		$('#jikantxt').hide();
-		$('#baitxt').hide();
-		$('#chjtxt').hide();
-		$('#panehitxt').hide();
-		$('#panemizutxt').hide();
-		$('#panekamitxt').hide();
-		$('#panehikatxt').hide();
-		$('#paneyamitxt').hide();
-		$('#dametxt').hide();
-		$('#panedame').hide();
-		$('#chjoutxt').hide();
-		$('#chsyoutxt').hide();
-		$('#seikaitxt').hide();
-		$('#mudame').hide();
-		$('#joustxt').hide();
-		$('#skimtxt').hide();
-		$('#baimtxt').hide();
-		$('#kaisuutxt').show();
-		$('#damaavgtxt').show();
-		$('#damaavgtxt2').show();
-		$('#cs2txt').hide();
-	break;
-	default: //大魔術 基本的なやつ
-		$('#mzokusei').show();
-		$('#tikutxt').hide();
-		$('#joutxt').hide();
-		$('#jou2txt').hide();
-		$('#kautxt').hide();
-		$('#dantxt').hide();
-		$('#kaujtxt').hide();
-		$('#seitxt').hide();
-		$('#skitxt').hide();
-		$('#jikantxt').hide();
-		$('#baitxt').hide();
-		$('#baimtxt').hide();
-		$('#skimtxt').hide();
-		$('#chjtxt').hide();
-		$('#panehitxt').hide();
-		$('#panemizutxt').hide();
-		$('#panekamitxt').hide();
-		$('#panehikatxt').hide();
-		$('#paneyamitxt').hide();
-		$('#dametxt').hide();
-		$('#panedame').hide();
-		$('#chjoutxt').hide();
-		$('#chsyoutxt').hide();
-		$('#seikaitxt').hide();
-		$('#mudame').hide();
-		$('#joustxt').hide();
-		$('#mptxt').show();
-		$('#kaisuutxt').hide();
-		$('#damaavgtxt').hide();
-		$('#damaavgtxt2').hide();
-		$('#cs2txt').hide();
-}
-});
 $('#sscalc').click(function(){
 var ss = Number($('#ss_type').val());
 var atk = Number($('#atk').val());
@@ -744,6 +50,10 @@ var kauj = Number($('#kauj').val()); //カウント上限値
 var chj = Number($('#chj').val()); //チェイン上限値
 var pane = Number($('#pane').val()); //パネル色数
 var sei = Number($('#sei').val()); //精霊数
+var tansei = Number($('#tansei').val()); //精霊数
+var yuusei = Number($('#yuusei').val()); //精霊数
+var tousei = Number($('#tousei').val()); //精霊数
+var hansei = Number($('#hansei').val()); //精霊数
 var jikan = Number($('#jikan').val()); //時間ゲージ段階数
 var dan = Number($('#dan').val()); //段階あたりの効果値
 var bai = Number($('#bai').val()); //段階あたりの倍率
@@ -771,7 +81,7 @@ var damage2 = 0;
 var damagemax2 = 0;
 var damagemin2 = 0;
 var damagetotal = damage + damage2;
-
+if(chch>=1) var cheh = chky;
 
 switch (myzokusei) {
 	case 1:
@@ -976,23 +286,23 @@ var ssehyami = (1-(egdyami/100))*(1+(mjkyami/100))*(1+(ehdyami/100))*(1-(taisei/
 				}
 			}
 var dmmp = csmp+awmp+drmp-2;
-		if(myzokusei == 6)myzokusei2 = 0;
+if(myzokusei == 6)myzokusei2 = 0;
 
 
 switch (Number(ss)) {
 	case 1: //大魔術
 		if(myzokusei == myzokusei2 ||myzokusei2 == 0){
-		var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chky;
+		var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh;
 		var damage = Math.floor(damage);
 		var damagemin = Math.floor(damage*0.9);
 		var damagemax = Math.floor(damage*1.1);
 		var damagetotal = damage + damage2;
 		}else{
-			var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chky;
+			var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh;
 			var damage = Math.floor(damage);
 			var damagemin = Math.floor(damage*0.9);
 			var damagemax = Math.floor(damage*1.1);
-			var damage2 = atk*(mptotal/100)*cheh*sseh2*dmmp*zkeh2*chky;
+			var damage2 = atk*(mptotal/100)*cheh*sseh2*dmmp*zkeh2;
 			var damage2 = Math.floor(damage2);
 			var damagemin2 = Math.floor(damage2*0.9);
 			var damagemax2 = Math.floor(damage2*1.1);
@@ -1002,17 +312,17 @@ switch (Number(ss)) {
 	case 2: //特効・残滅大魔術・カウンター
 		var mptotal = mptotal + 100;
 		if(myzokusei == myzokusei2 ||myzokusei2 == 0){
-		var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chky;
+		var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh;
 		var damage = Math.floor(damage);
 		var damagemin = Math.floor(damage*0.9);
 		var damagemax = Math.floor(damage*1.1);
 		var damagetotal = damage + damage2;
 		}else{
-			var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chky;
+			var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh;
 			var damage = Math.floor(damage);
 			var damagemin = Math.floor(damage*0.9);
 			var damagemax = Math.floor(damage*1.1);
-			var damage2 = atk*(mptotal/100)*cheh*sseh2*dmmp*zkeh2*chky;
+			var damage2 = atk*(mptotal/100)*cheh*sseh2*dmmp*zkeh2;
 			var damage2 = Math.floor(damage2);
 			var damagemin2 = Math.floor(damage2*0.9);
 			var damagemax2 = Math.floor(damage2*1.1);
@@ -1021,17 +331,17 @@ switch (Number(ss)) {
 	break;
 	case 3: //多弾魔術
 		if(myzokusei == myzokusei2 ||myzokusei2 == 0){
-		var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chky;
+		var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh;
 		var damage = Math.floor(damage);
 		var damagemin = Math.floor(damage*0.9);
 		var damagemax = Math.floor(damage*1.1);
 		var damagetotal = damage + damage2;
 		}else{
-			var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chky;
+			var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh;
 			var damage = Math.floor(damage);
 			var damagemin = Math.floor(damage*0.9);
 			var damagemax = Math.floor(damage*1.1);
-			var damage2 = atk*(mptotal/100)*cheh*sseh2*dmmp*zkeh2*chky;
+			var damage2 = atk*(mptotal/100)*cheh*sseh2*dmmp*zkeh2;
 			var damage2 = Math.floor(damage2);
 			var damagemin2 = Math.floor(damage2*0.9);
 			var damagemax2 = Math.floor(damage2*1.1);
@@ -1042,24 +352,24 @@ switch (Number(ss)) {
 	break;
 	case 4: //斬撃大魔術
 		if(myzokusei == myzokusei2 ||myzokusei2 == 0){
-			var damage = (atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chky)/kaisuu;
+			var damage = (atk*(mptotal/100)*cheh*sseh*dmmp*zkeh)/kaisuu;
 			for (var i=0;i<kaisuu-1;i++){
-				var damage = damage+(atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chky)/kaisuu;
+				var damage = damage+(atk*(mptotal/100)*cheh*sseh*dmmp*zkeh)/kaisuu;
 				var ch = ch+1;
 				var cheh = 1+(ch/100); //チェイン補正
 			}
 		}else{
-			var damage = (atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chky);
+			var damage = (atk*(mptotal/100)*cheh*sseh*dmmp*zkeh);
 			var ch = ch+1;
 			var cheh = 1+(ch/100); //チェイン補正
-			var damage2 = (atk*(mptotal/100)*cheh*sseh2*dmmp*zkeh2*chky);
+			var damage2 = (atk*(mptotal/100)*cheh*sseh2*dmmp*zkeh2);
 			var ch = ch+1;
 			var cheh = 1+(ch/100); //チェイン補正
 			for (var i=0;i<kaisuu-1;i++){
-				var damage = (atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chky);
+				var damage = (atk*(mptotal/100)*cheh*sseh*dmmp*zkeh);
 				var ch = ch+1;
 				var cheh = 1+(ch/100); //チェイン補正
-				var damage2 = (atk*(mptotal/100)*cheh*sseh2*dmmp*zkeh2*chky);
+				var damage2 = (atk*(mptotal/100)*cheh*sseh2*dmmp*zkeh2);
 				var ch = ch+1;
 				var cheh = 1+(ch/100); //チェイン補正
 			}
@@ -1077,7 +387,7 @@ switch (Number(ss)) {
 	break;
 	case 5: //蓄積%
 		var mptotal = ehtotal+jous+((tiku/100)*jou);
-		var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chky;
+		var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh;
 		var damage = Math.floor(damage);
 		var damagemin = Math.floor(damage*0.9);
 		var damagemax = Math.floor(damage*1.1);
@@ -1085,33 +395,33 @@ switch (Number(ss)) {
 	break;
 	case 6: //カウント
 		var mptotal = ehtotal+100+((kau/kauj)*jou);
-		var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chky;
+		var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh;
 		var damage = Math.floor(damage);
 		var damagemin = Math.floor(damage*0.9);
 		var damagemax = Math.floor(damage*1.1);
 		var damagetotal = damage + damage2;
 	break;
 	case 7: //時限 計算式が特殊かつ乱数の影響を受けない
-		//var damage = Math.floor(Math.floor(atk*(Math.floor((mptotal/100)+cheh))*zkeh)*sseh*dmmp*chky);
+		//var damage = Math.floor(Math.floor(atk*(Math.floor((mptotal/100)+cheh))*zkeh)*sseh*dmmp);
 		var mptotal = mptotal + 100;
-		var damage = Math.floor(Math.floor(Math.floor(atk*(Math.floor(Math.floor((mptotal/100)))*zkeh*cheh))*sseh*dmmp)*chky);
+		var damage = Math.floor(Math.floor(Math.floor(atk*(Math.floor(Math.floor((mptotal/100)))*zkeh*cheh))*sseh*dmmp));
 		var damagemin = damage;
 		var damagemax = damage;
 		var damagetotal = damage + damage2;
 	break;
 	case 8: //反転解除
-		var mptotal = mptotal + (sei*dan);
+		var mptotal = mptotal + (hansei*dan);
 		if(myzokusei == myzokusei2 ||myzokusei2 == 0){
-		var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chky;
+		var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh;
 		var damage = Math.floor(damage);
 		var damagemin = Math.floor(damage*0.9);
 		var damagemax = Math.floor(damage*1.1);
 		}else{
-			var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chky;
+			var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh;
 			var damage = Math.floor(damage);
 			var damagemin = Math.floor(damage*0.9);
 			var damagemax = Math.floor(damage*1.1);
-			var damage2 = atk*(mptotal/100)*cheh*sseh2*dmmp*zkeh2*chky;
+			var damage2 = atk*(mptotal/100)*cheh*sseh2*dmmp*zkeh2;
 			var damage2 = Math.floor(damage2);
 			var damagemin2 = Math.floor(damage2*0.9);
 			var damagemax2 = Math.floor(damage2*1.1);
@@ -1121,16 +431,16 @@ switch (Number(ss)) {
 	case 9: //詠唱
 		var mptotal = mptotal + (jikan*dan);
 		if(myzokusei == myzokusei2 ||myzokusei2 == 0){
-		var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chky;
+		var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh;
 		var damage = Math.floor(damage);
 		var damagemin = Math.floor(damage*0.9);
 		var damagemax = Math.floor(damage*1.1);
 		}else{
-			var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chky;
+			var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh;
 			var damage = Math.floor(damage);
 			var damagemin = Math.floor(damage*0.9);
 			var damagemax = Math.floor(damage*1.1);
-			var damage2 = atk*(mptotal/100)*cheh*sseh2*dmmp*zkeh2*chky;
+			var damage2 = atk*(mptotal/100)*cheh*sseh2*dmmp*zkeh2;
 			var damage2 = Math.floor(damage2);
 			var damagemin2 = Math.floor(damage2*0.9);
 			var damagemax2 = Math.floor(damage2*1.1);
@@ -1139,14 +449,14 @@ switch (Number(ss)) {
 	break;
 	case 10: //反動蝕・犠牲
 		var mptotal = mptotal * sei;
-		var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chky;
+		var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh;
 		var damage = Math.floor(damage);
 		var damagemin = Math.floor(damage*0.9);
 		var damagemax = Math.floor(damage*1.1);
 		var damagetotal = damage + damage2;
 	break;
-	case 11: //純属性・融合
-		switch (sei) {
+	case 11: //純属性
+		switch (tansei) {
 			case 1:
 				var jyt = 0.1;
 			break;
@@ -1164,14 +474,39 @@ switch (Number(ss)) {
 		}
 
 		var mptotal = mptotal + (jou*jyt) + cs;
-		var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chky;
+		var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh;
 		var damage = Math.floor(damage);
 		var damagemin = Math.floor(damage*0.9);
 		var damagemax = Math.floor(damage*1.1);
 		var damagetotal = damage + damage2;
 	break;
-	case 12: //統一
-			switch (sei) {
+	case 12: //融合
+		switch (yuusei) {
+			case 1:
+				var jyt = 0.1;
+			break;
+			case 2:
+				var jyt = 0.15
+			break;
+			case 3:
+				var jyt = 0.25;
+			break;
+			case 4:
+				var jyt = 0.35;
+			break;
+			default:
+				var jyt = 1;
+		}
+
+		var mptotal = mptotal + (jou*jyt) + cs;
+		var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh;
+		var damage = Math.floor(damage);
+		var damagemin = Math.floor(damage*0.9);
+		var damagemax = Math.floor(damage*1.1);
+		var damagetotal = damage + damage2;
+	break;
+	case 13: //統一
+			switch (tousei) {
 			case 1:
 				var jyt = 0.1;
 			break;
@@ -1189,8 +524,8 @@ switch (Number(ss)) {
 		}
 		var mptotal = ehtotal + (jou*jyt) + cs;
 		var mptotal2 = ehtotal + (jou2*jyt) + cs2;
-		var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chky;
-		var damage2 = atk*(mptotal2/100)*cheh*sseh*dmmp*zkeh2*chky;
+		var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh;
+		var damage2 = atk*(mptotal2/100)*cheh*sseh*dmmp*zkeh2;
 		var damage = Math.floor(damage);
 		var damagemin = Math.floor(damage*0.9);
 		var damagemax = Math.floor(damage*1.1);
@@ -1199,7 +534,7 @@ switch (Number(ss)) {
 		var damagemax2 = Math.floor(damage2*1.1);
 		var damagetotal = damage + damage2;
 	break;
-	case 13: //連鎖解放
+	case 14: //連鎖解放
 	if(ch>=chj){
 			var ch = chj;
 		}
@@ -1210,64 +545,80 @@ switch (Number(ss)) {
 		var damagemax = Math.floor(damage*1.1);
 		var damagetotal = damage + damage2;
 	break;
-	case 14: //激化 エンハの乗り方が特殊っぽい
-		var mptotal = ((cs+mp)*(Math.pow(bai,ski - 1))+ehtotal);
-		var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chky;
-		var damage = Math.floor(damage);
-		var damagemin = Math.floor(damage*0.9);
-		var damagemax = Math.floor(damage*1.1);
+	case 15: //激化 エンハの乗り方が特殊っぽい
+			var mptotal = ((cs+mp)*(Math.pow(bai,ski))+ehtotal);
+		if(myzokusei == myzokusei2 ||myzokusei2 == 0){
+			var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh;
+			var damage = Math.floor(damage);
+			var damagemin = Math.floor(damage*0.9);
+			var damagemax = Math.floor(damage*1.1);
+			var damagetotal = damage + damage2;
+		}else{
+			var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh;
+			var damage = Math.floor(damage);
+			var damagemin = Math.floor(damage*0.9);
+			var damagemax = Math.floor(damage*1.1);
+			var damage2 = atk*(mptotal/100)*cheh*sseh2*dmmp*zkeh2;
+			var damage2 = Math.floor(damage2);
+			var damagemin2 = Math.floor(damage2*0.9);
+			var damagemax2 = Math.floor(damage2*1.1);
+		}
+		var damageavg = Math.floor(damage/kaisuu);
+		var damageavg2 = Math.floor(damage2/kaisuu);
 		var damagetotal = damage + damage2;
+
 	break;
-	case 15: //急襲 多分激化の逆
+	case 16: //急襲 多分激化の逆
 		if(skim==0){
 		 mptotal = cs+mp+ehtotal;
 		 } else{
 		var mptotal = Math.floor(((cs+mp)/(Math.pow(baim,skim))+ehtotal));
 		}
-		var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chky;
+		var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh;
 		var damage = Math.floor(damage);
 		var damagemin = Math.floor(damage*0.9);
 		var damagemax = Math.floor(damage*1.1);
 		var damagetotal = damage + damage2;
 	break;
-	case 16: //パネル爆破
+	case 17: //パネル爆破
 
 			var dmmp = eval(csmp)+eval(awmp)-1;
 			switch (emzokusei) {
 				case 1:
+					var zkehhi = 1;
+					var zkehmizu = 1.5;
+					var zkehkami = 0.5;
+					var zkehhika = 1;
+					var zkehyami = 1;
+				break;
+				case 2:
 					var zkehhi = 0.5;
 					var zkehmizu = 1;
 					var zkehkami = 1.5;
 					var zkehhika = 1;
 					var zkehyami = 1;
 				break;
-				case 2:
+				case 3:
 					var zkehhi = 1.5;
 					var zkehmizu = 0.5;
 					var zkehkami = 1;
 					var zkehhika = 1;
 					var zkehyami = 1;
 				break;
-				case 3:
+				case 4:
 					var zkehhi = 1;
 					var zkehmizu = 1;
 					var zkehkami = 1;
 					var zkehhika = 1;
 					var zkehyami = 1.5;
 				break;
-				case 4:
+				case 5:
 					var zkehhi = 1;
 					var zkehmizu = 1;
 					var zkehkami = 1;
 					var zkehhika = 1.5;
 					var zkehyami = 1;
 				break;
-				case 5:
-					var zkehhi = 1;
-					var zkehmizu = 1.5;
-					var zkehkami = 0.5;
-					var zkehhika = 1;
-					var zkehyami = 1;
 				default:
 					var zkehhi = 1;
 					var zkehmizu = 1;
@@ -1281,7 +632,7 @@ switch (Number(ss)) {
 			var mptotal = cs+mp+temp;
 
 			if(panehi>=1){
-			var damagehi = atk*(((cs+mp+temp))/100)*cheh*ssehhi*dmmp*zkehhi*chky;
+			var damagehi = atk*(((cs+mp+temp))/100)*cheh*ssehhi*dmmp*zkehhi;
 			}else{
 			var damagehi = 0
 			}
@@ -1291,7 +642,7 @@ switch (Number(ss)) {
 			var damagehimax = Math.floor(damagehi*1.1);
 
 			if(panemizu >= 1){
-			var damagemizu = atk*(((cs+mp+temp))/100)*cheh*ssehmizu*dmmp*zkehmizu*chky;
+			var damagemizu = atk*(((cs+mp+temp))/100)*cheh*ssehmizu*dmmp*zkehmizu;
 			}else{
 			var damagemizu = 0
 			}
@@ -1302,7 +653,7 @@ switch (Number(ss)) {
 			var damagemizumax = Math.floor(damagemizu*1.1);
 
 			if(panekami>=1){
-			var damagekami = atk*((cs+mp+temp)/100)*cheh*ssehkami*dmmp*zkehkami*chky;
+			var damagekami = atk*((cs+mp+temp)/100)*cheh*ssehkami*dmmp*zkehkami;
 			}else{
 			var damagekami = 0
 			}
@@ -1312,7 +663,7 @@ switch (Number(ss)) {
 			var damagekamimax = Math.floor(damagekami*1.1);
 
 			if(panehika>=1){
-			var damagehika = atk*(((cs+mp+temp))/100)*cheh*ssehhika*dmmp*zkehhika*chky;
+			var damagehika = atk*(((cs+mp+temp))/100)*cheh*ssehhika*dmmp*zkehhika;
 			}else{
 			var damagehika = 0
 			}
@@ -1322,7 +673,7 @@ switch (Number(ss)) {
 			var damagehikamax = Math.floor(damagehika*1.1);
 
 			if(paneyami>=1){
-			var damageyami = atk*(((cs+mp+temp))/100)*cheh*ssehyami*dmmp*zkehyami*chky;
+			var damageyami = atk*(((cs+mp+temp))/100)*cheh*ssehyami*dmmp*zkehyami;
 			}else{
 			var damageyami = 0
 			}
@@ -1336,17 +687,17 @@ switch (Number(ss)) {
 		var damagetotal = damage + damage2;
 		break;
 
-	case 17: //撃滅連弾
+	case 18: //撃滅連弾
 	var damjou = (jou-mp)/chjou;
 	var ehjou = ehtotal/chjou;
-	var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chky;
+	var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh;
 		var temp = Math.floor(ch/chsyou);
 		if(temp>=chjou){
 			var temp = chjou;
 			}
 			var chmptotal = mp+ehjou;
 		for (var i=0;i<temp;i++){
-			var damage = damage+atk*(chmptotal/100)*cheh*sseh*dmmp*zkeh*chky;
+			var damage = damage+atk*(chmptotal/100)*cheh*sseh*dmmp*zkeh;
 			var ch = ch-chsyou;
 			var cheh = 1+(ch/100); //チェイン補正
 			var chmptotal = chmptotal+damjou;
@@ -1358,7 +709,7 @@ switch (Number(ss)) {
 		var damagetotal = damage + damage2;
 		
 	break;
-	case 18: //天穹大魔術
+	case 19: //天穹大魔術
 			switch (emzokusei) {
 				case 1:
 					var zkehhi = 1;
@@ -1402,38 +753,38 @@ switch (Number(ss)) {
 					var zkehhika = 1;
 					var zkehyami = 1;
 			}
-					var mptotal = (mp*seikai)+(ehtotal/6);
-					var damagehi = atk*(mptotal/100)*cheh*ssehhi*dmmp*zkehhi*chky;
-					var damagemizu = atk*(mptotal/100)*cheh*ssehmizu*dmmp*zkehmizu*chky;
-					var damagekami = atk*(mptotal/100)*cheh*ssehkami*dmmp*zkehkami*chky;
-					var damagehika = atk*(mptotal/100)*cheh*ssehhika*dmmp*zkehhika*chky;
-					var damageyami = atk*(mptotal/100)*cheh*ssehyami*dmmp*zkehyami*chky;
-					var damagemu = atk*(mptotal/100)*cheh*dmmp*chky;
-					var damagehi = Math.floor(damagehi);
-					var damagemizu = Math.floor(damagemizu);
-					var damagekami = Math.floor(damagekami);
-					var damagehika = Math.floor(damagehika);
-					var damageyami = Math.floor(damageyami);
-					var damagemu = Math.floor(damagemu);
-					var damage = damagehi + damagemizu + damagekami + damagehika + damageyami + damagemu;
-					var damagemin = Math.floor(damage*0.9);
-					var damagemax = Math.floor(damage*1.1);
+		var mptotal = (mp*seikai)+(ehtotal/6);
+		var damagehi = atk*(mptotal/100)*cheh*ssehhi*dmmp*zkehhi;
+		var damagemizu = atk*(mptotal/100)*cheh*ssehmizu*dmmp*zkehmizu;
+		var damagekami = atk*(mptotal/100)*cheh*ssehkami*dmmp*zkehkami;
+		var damagehika = atk*(mptotal/100)*cheh*ssehhika*dmmp*zkehhika;
+		var damageyami = atk*(mptotal/100)*cheh*ssehyami*dmmp*zkehyami;
+		var damagemu = atk*(mptotal/100)*cheh*dmmp;
+		var damagehi = Math.floor(damagehi);
+		var damagemizu = Math.floor(damagemizu);
+		var damagekami = Math.floor(damagekami);
+		var damagehika = Math.floor(damagehika);
+		var damageyami = Math.floor(damageyami);
+		var damagemu = Math.floor(damagemu);
+		var damage = damagehi + damagemizu + damagekami + damagehika + damageyami + damagemu;
+		var damagemin = Math.floor(damage*0.9);
+		var damagemax = Math.floor(damage*1.1);
 		var damagetotal = damage + damage2;
 	break;
-	case 19: //詠唱多弾大魔術
+	case 20: //詠唱多弾大魔術
 	var mptotal = (ehtotal/kaisuu)+mp;
-	if(kaisuu<=1) var kaisuu = 1;
-	var damage = (atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chky)*Math.ceil(kaisuu/2);
-	var damage2 = (atk*(mptotal/100)*cheh*sseh2*dmmp*zkeh2*chky)*Math.floor(kaisuu/2);
-	var damage = Math.floor(damage);
-	var damagemin = Math.floor(damage*0.9);
-	var damagemax = Math.floor(damage*1.1);
-	var damageavg = Math.floor(atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chky);
-	var damage2 = Math.floor(damage2);
-	var damagemin2 = Math.floor(damage2*0.9);
-	var damagemax2 = Math.floor(damage2*1.1);
-	var damageavg2 = Math.floor(atk*(mptotal/100)*cheh*sseh2*dmmp*zkeh2*chky);
-	var damagetotal = damage + damage2;
+		if(kaisuu<=1) var kaisuu = 1;
+		var damage = (atk*(mptotal/100)*cheh*sseh*dmmp*zkeh)*Math.ceil(kaisuu/2);
+		var damage2 = (atk*(mptotal/100)*cheh*sseh2*dmmp*zkeh2)*Math.floor(kaisuu/2);
+		var damage = Math.floor(damage);
+		var damagemin = Math.floor(damage*0.9);
+		var damagemax = Math.floor(damage*1.1);
+		var damageavg = Math.floor(atk*(mptotal/100)*cheh*sseh*dmmp*zkeh);
+		var damage2 = Math.floor(damage2);
+		var damagemin2 = Math.floor(damage2*0.9);
+		var damagemax2 = Math.floor(damage2*1.1);
+		var damageavg2 = Math.floor(atk*(mptotal/100)*cheh*sseh2*dmmp*zkeh2);
+		var damagetotal = damage + damage2;
 	break;
 	default: 
 	alert('スキルを選択してください');

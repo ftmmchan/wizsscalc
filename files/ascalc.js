@@ -88,6 +88,7 @@ var damagemin2 = 0;
 var damageavg = 0;
 var damageavg2 = 0;
 var damagetotal = damage + damage2;
+if(chch>=1) var cheh = chky;
 
 switch (myzokusei) {
 	case 1:
@@ -323,18 +324,18 @@ var dmmp = csmp+awmp+drmp+shmp-3;
 if(myzokusei == 6)myzokusei2 = 0;
 
 if(myzokusei == myzokusei2 ||myzokusei2 == 0){
-	var damage = atk*((((mptotal+100+exmp)/ems))/100)*(asmpss+asmppn-1)*pneh*cheh*aseh*dmmp*zkeh*chky;
+	var damage = atk*((((mptotal+100+exmp)/ems))/100)*(asmpss+asmppn-1)*pneh*cheh*aseh*dmmp*zkeh;
 	var damage = Math.floor(damage);
 	var damageavg = Math.floor(damage/kaisuu);
 	var damagemin = Math.floor(damage*0.9);
 	var damagemax = Math.floor(damage*1.1);
 }else{
-	var damage = atk*((((mptotal+100+exmp)/ems))/100)*(asmpss+asmppn-1)*pneh*cheh*aseh*dmmp*zkeh*chky;
+	var damage = atk*((((mptotal+100+exmp)/ems))/100)*(asmpss+asmppn-1)*pneh*cheh*aseh*dmmp*zkeh;
 	var damage = Math.floor(damage);
 	var damageavg = Math.floor(damage/kaisuu);
 	var damagemin = Math.floor(damage*0.9);
 	var damagemax = Math.floor(damage*1.1);
-	var damage2 = atk*((((mptotal+100+exmp)/ems))/100)*(asmpss+asmppn-1)*pneh2*cheh*aseh2*dmmp*zkeh2*chky;
+	var damage2 = atk*((((mptotal+100+exmp)/ems))/100)*(asmpss+asmppn-1)*pneh2*cheh*aseh2*dmmp*zkeh2;
 	var damage2 = Math.floor(damage2);
 	var damageavg2 = Math.floor(damage2/kaisuu);
 	var damagemin2 = Math.floor(damage2*0.9);
