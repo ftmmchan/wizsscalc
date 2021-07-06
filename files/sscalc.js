@@ -1421,29 +1421,19 @@ switch (Number(ss)) {
 		var damagetotal = damage + damage2;
 	break;
 	case 19: //詠唱多弾大魔術
-	if(kaisuu <= 1){
-			var damage = (atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chky);
-		}else if(kaisuu % 2 ==1){
-			for (var i=1;i<(kaisuu/2);i++){
-			var damage = damage + (atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chky);
-			var damage2 = damage2 + (atk*(mptotal/100)*cheh*sseh2*dmmp*zkeh2*chky);
-			}
-			var damage = damage + (atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chky);
-		}else{
-			for (var i=1;i<kaisuu/2;i++){
-			var damage = damage + (atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chky);
-			var damage2 = damage2 + (atk*(mptotal/100)*cheh*sseh2*dmmp*zkeh2*chky);
-			}
-}
-		var damage = Math.floor(damage);
-		var damagemin = Math.floor(damage*0.9);
-		var damagemax = Math.floor(damage*1.1);
-		var damageavg = Math.floor(atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chky);
-		var damage2 = Math.floor(damage2);
-		var damagemin2 = Math.floor(damage2*0.9);
-		var damagemax2 = Math.floor(damage2*1.1);
-		var damageavg2 = Math.floor(atk*(mptotal/100)*cheh*sseh2*dmmp*zkeh2*chky);
-		var damagetotal = damage + damage2;
+	var mptotal = (ehtotal/kaisuu)+mp;
+	if(kaisuu<=1) var kaisuu = 1;
+	var damage = (atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chky)*Math.ceil(kaisuu/2);
+	var damage2 = (atk*(mptotal/100)*cheh*sseh2*dmmp*zkeh2*chky)*Math.floor(kaisuu/2);
+	var damage = Math.floor(damage);
+	var damagemin = Math.floor(damage*0.9);
+	var damagemax = Math.floor(damage*1.1);
+	var damageavg = Math.floor(atk*(mptotal/100)*cheh*sseh*dmmp*zkeh*chky);
+	var damage2 = Math.floor(damage2);
+	var damagemin2 = Math.floor(damage2*0.9);
+	var damagemax2 = Math.floor(damage2*1.1);
+	var damageavg2 = Math.floor(atk*(mptotal/100)*cheh*sseh2*dmmp*zkeh2*chky);
+	var damagetotal = damage + damage2;
 	break;
 	default: 
 	alert('スキルを選択してください');
