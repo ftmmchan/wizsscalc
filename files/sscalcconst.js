@@ -30,6 +30,7 @@ $('#baimtxt').addClass('invisible');
 $('#kaisuutxt').addClass('invisible');
 $('#damaavgtxt').addClass('invisible');
 $('#damaavgtxt2').addClass('invisible');
+$('#cstxt').addClass('invisible');
 $('#cs2txt').addClass('invisible');
 $('#damagef').addClass('invisible');
 $('#mzokusei2').addClass('invisible');
@@ -74,6 +75,7 @@ switch (Number(ss)) {
 		$('#kaisuutxt').hide();
 		$('#damaavgtxt').hide();
 		$('#damaavgtxt2').hide();
+		$('#cstxt').show();
 		$('#cs2txt').hide();
 		$('#damagef').show();
 	break;
@@ -115,6 +117,7 @@ switch (Number(ss)) {
 		$('#damaavgtxt').hide();
 		$('#damaavgtxt2').hide();
 		$('#cs2txt').hide();
+		$('#cstxt').show();
 		$('#damagef').show();
 	break;
 	case 3: //多弾魔術
@@ -155,6 +158,7 @@ switch (Number(ss)) {
 		$('#damaavgtxt').show();
 		$('#damaavgtxt2').show();
 		$('#cs2txt').hide();
+		$('#cstxt').show();
 		$('#damagef').show();
 	break;
 	case 4: //斬撃大魔術
@@ -195,6 +199,7 @@ switch (Number(ss)) {
 		$('#damaavgtxt').show();
 		$('#damaavgtxt2').show();
 		$('#cs2txt').hide();
+		$('#cstxt').show();
 		$('#damagef').show();
 	break;
 	case 5: //蓄積%
@@ -233,6 +238,7 @@ switch (Number(ss)) {
 		$('#kaisuutxt').hide();
 		$('#damaavgtxt').hide();
 		$('#damaavgtxt2').hide();
+		$('#cstxt').hide();
 		$('#cs2txt').hide();
 		$('#damagef').hide();
 	break;
@@ -274,6 +280,7 @@ switch (Number(ss)) {
 		$('#damaavgtxt').hide();
 		$('#damaavgtxt2').hide();
 		$('#cs2txt').hide();
+		$('#cstxt').hide();
 		$('#damagef').show();
 	break;
 	case 7: //時限大魔術
@@ -314,6 +321,7 @@ switch (Number(ss)) {
 		$('#damaavgtxt').hide();
 		$('#damaavgtxt2').hide();
 		$('#cs2txt').hide();
+		$('#cstxt').hide();
 		$('#damagef').hide();
 	break;
 	case 8: //反転解除
@@ -354,6 +362,7 @@ switch (Number(ss)) {
 		$('#damaavgtxt').hide();
 		$('#damaavgtxt2').hide();
 		$('#cs2txt').hide();
+		$('#cstxt').show();
 		$('#damagef').show();
 	break;
 	case 9: //詠唱
@@ -394,6 +403,7 @@ switch (Number(ss)) {
 		$('#damaavgtxt').hide();
 		$('#damaavgtxt2').hide();
 		$('#cs2txt').hide();
+		$('#cstxt').hide();
 		$('#damagef').show();
 	break;
 	case 10: //反動蝕・犠牲
@@ -434,6 +444,7 @@ switch (Number(ss)) {
 		$('#damaavgtxt').hide();
 		$('#damaavgtxt2').hide();
 		$('#cs2txt').hide();
+		$('#cstxt').show();
 		$('#damagef').hide();
 	break;
 	case 11: //純属性
@@ -473,6 +484,7 @@ switch (Number(ss)) {
 		$('#damaavgtxt').hide();
 		$('#damaavgtxt2').hide();
 		$('#cs2txt').hide();
+		$('#cstxt').hide();
 		$('#damagef').hide();
 	break;
 	case 12: //融合
@@ -512,6 +524,7 @@ switch (Number(ss)) {
 		$('#damaavgtxt').hide();
 		$('#damaavgtxt2').hide();
 		$('#cs2txt').hide();
+		$('#cstxt').hide();
 		$('#damagef').hide();
 	break;
 	case 13: //統一
@@ -551,6 +564,7 @@ switch (Number(ss)) {
 		$('#damaavgtxt').hide();
 		$('#damaavgtxt2').hide();
 		$('#cs2txt').show();
+		$('#cstxt').show();
 		$('#damagef').show();
 	break;
 	case 14: //連鎖解放
@@ -590,6 +604,7 @@ switch (Number(ss)) {
 		$('#damaavgtxt').hide();
 		$('#damaavgtxt2').hide();
 		$('#cs2txt').hide();
+		$('#cstxt').show();
 		$('#damagef').hide();
 	break;
 	case 15: //激化 エンハの乗り方が特殊っぽい
@@ -629,6 +644,7 @@ switch (Number(ss)) {
 		$('#damaavgtxt').show();
 		$('#damaavgtxt2').show();
 		$('#cs2txt').hide();
+		$('#cstxt').show();
 		$('#damagef').show();
 	break;
 	case 16: //急襲 多分激化の逆
@@ -668,6 +684,7 @@ switch (Number(ss)) {
 		$('#damaavgtxt').hide();
 		$('#damaavgtxt2').hide();
 		$('#cs2txt').hide();
+		$('#cstxt').show();
 		$('#damagef').hide();
 	break;
 	case 17: //パネル爆破 
@@ -707,6 +724,7 @@ switch (Number(ss)) {
 		$('#damaavgtxt').hide();
 		$('#damaavgtxt2').hide();
 		$('#cs2txt').hide();
+		$('#cstxt').show();
 		$('#damagef').hide();
 	break;
 	case 18:  //撃滅連弾
@@ -746,6 +764,7 @@ switch (Number(ss)) {
 		$('#damaavgtxt').hide();
 		$('#damaavgtxt2').hide();
 		$('#cs2txt').hide();
+		$('#cstxt').hide();
 		$('#damagef').hide();
 	break;
 	case 19: //天穹大魔術
@@ -785,6 +804,7 @@ switch (Number(ss)) {
 		$('#damaavgtxt').hide();
 		$('#damaavgtxt2').hide();
 		$('#cs2txt').hide();
+		$('#cstxt').hide();
 		$('#damagef').hide();
 	break;
 	case 20: //詠唱多弾大魔術
@@ -824,6 +844,7 @@ switch (Number(ss)) {
 		$('#damaavgtxt').show();
 		$('#damaavgtxt2').show();
 		$('#cs2txt').hide();
+		$('#cstxt').hide();
 		$('#damagef').show();
 	break;
 	default: //大魔術 基本的なやつ
@@ -863,6 +884,7 @@ switch (Number(ss)) {
 		$('#damaavgtxt').hide();
 		$('#damaavgtxt2').hide();
 		$('#cs2txt').hide();
+		$('#cstxt').show();
 		$('#damagef').show();
 }
 });
