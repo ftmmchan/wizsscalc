@@ -9,7 +9,7 @@
     <h1>黒ウィズＡＳダメージ計算機（α）</h1>
 <br>
 
-<div id="mzokusei">攻撃属性(主属性)：<select id="myzokusei">
+<div id="mzokusei">攻撃属性(主属性)：<select id="myzokusei" onchange="zokuseisel()">
 <option value="1">火</option>
 <option value="2">水</option>
 <option value="3">雷</option>
@@ -17,7 +17,7 @@
 <option value="5">闇</option>
 <option value="6">無</option>
 </select><br></div>
-<div id="mzokusei2">攻撃属性(複属性)：<select id="myzokusei2">
+<div id="mzokusei2">攻撃属性(複属性)：<select id="myzokusei2" onchange="zokuseisel()">
 <option value="0">無</option>
 <option value="1">火</option>
 <option value="2">水</option>
@@ -33,20 +33,19 @@
 <option value="5">闇</option>
 <option value="6">無</option>
 </select><br>
-<div id="pnzokusei">パネル属性(主属性)：<select id="pnzokuseisel">
-<option value="0">一致</option>
-<option value="1">不一致</option>
-</select><br></div>
-<div id="pnzokusei2">パネル属性(複属性)：<select id="pnzokuseisel2">
-<option value="0">一致</option>
-<option value="1">不一致</option>
-</select><br></div>
-<div id="bunsan">攻撃特性：<select id="bunsansel">
-<option value="0">通常</option>
-<option value="1">分散</option>
-<option value="2">連撃</option>
-</select><br></div>
-<br>
+<div id="pnzokusei">パネル属性(主属性)：　
+<input id="pnzokusei1" name="pnzokuseibtn" type="radio" ><label for="pnzokusei1">一致　</label>
+<input id="pnzokusei2" name="pnzokuseibtn" type="radio" ><label for="pnzokusei2">不一致</label><br>
+</div>
+<div id="pnzokuseif">パネル属性(複属性)：　
+<input id="pnzokuseif1" name="pnzokuseifbtn" type="radio" ><label for="pnzokuseif1">一致　</label>
+<input id="pnzokuseif2" name="pnzokuseifbtn" type="radio" ><label for="pnzokuseif2">不一致</label><br>
+</div>
+<div id="bunsan">攻撃特性：　
+<input id="bunsansel1" name="bunsanselbtn" type="radio" value="bunsan1" onchange="bunsansel();" /><label for="bunsansel1">通常　</label>
+<input id="bunsansel2" name="bunsanselbtn" type="radio" value="bunsan2" onchange="bunsansel();" /><label for="bunsansel2">分散　</label>
+<input id="bunsansel3" name="bunsanselbtn" type="radio" value="bunsan3" onchange="bunsansel();" /><label for="bunsansel3">連撃　</label>
+<br><br>
 <div id="emstxt">敵の数<input id="ems" size="20" value="3" ><br><br></div>
 <div id="kaisuutxt">攻撃回数<input id="kaisuu" size="20" value="3" ><br><br></div>
 
@@ -69,20 +68,48 @@
 ＡＳ倍率（パネル）<input id="asmppn" size="20" value="1" ><br>
 
 <br>
-<div id="egdtxt">敵全属性ガード<input id="egd" size="20" value="0" ><br></div>
+ダメージ倍率結晶<select id="csmpsel">
+<option value="0">なし</option>
+<option value="1">アドヴェリタス(1.2倍)</option>
+<option value="2">ミュージアム(0.9倍)</option>
+<option value="3">アドヴェリタス＋ミュージアム(1.1倍)</option>
+<option value="4">剛剣＋アドヴェリタス(1.3倍)</option>
+</select><br><br>
+ダメージ倍率潜在　
+<input id="awmpsel1" name="awmpselbtn" type="radio" value="awmp1"><label for="awmpsel1">なし　</label>
+<input id="awmpsel2" name="awmpselbtn" type="radio" value="awmp2"><label for="awmpsel2">1.1倍　</label>
+<input id="awmpsel3" name="awmpselbtn" type="radio" value="awmp3"><label for="awmpsel3">1.2倍　</label>
+<input id="awmpsel4" name="awmpselbtn" type="radio" value="awmp4"><label for="awmpsel4">1.3倍　</label><br>
+ドラゴンRIZE　
+<input id="drmp1" name="drmpbtn" type="radio" ><label for="drmp1">なし　</label>
+<input id="drmp2" name="drmpbtn" type="radio" ><label for="drmp2">あり（1.1倍）</label><br>
+
+李小狼の剣　
+<input id="shmp1" name="shmpbtn" type="radio" onchange="shmpsel();" /><label for="shmp1">なし　</label>
+<input id="shmp2" name="shmpbtn" type="radio" onchange="shmpsel();" /><label for="shmp2">あり（1.3倍）</label><br>
+<br>
+<input id="egd1" name="egdbtn" type="radio" onchange="egdsel();" /><label for="egd1">全属性ガード　</label>
+<input id="egd2" name="egdbtn" type="radio" onchange="egdsel();" /><label for="egd2">個別ガード</label><br>
+    
+<div id="egdtxt">敵全属性ガード<input id="egd" size="20" value="0" ><br><br></div>
 <div id="egdhitxt">敵火ガード<input id="egdhi" size="20" value="0" ><br></div>
 <div id="egdmizutxt">敵水ガード<input id="egdmizu" size="20" value="0" ><br></div>
 <div id="egdkamitxt">敵雷ガード<input id="egdkami" size="20" value="0" ><br></div>
 <div id="egdhikatxt">敵光ガード<input id="egdhika" size="20" value="0" ><br></div>
 <div id="egdyamitxt">敵闇ガード<input id="egdyami" size="20" value="0" ><br><br></div>
 
-<div id="mjktxt">敵全属性弱体化（味方の弱体化大魔術）<input id="mjk" size="20" value="0" ><br></div>
+<input id="mjk1" name="mjkbtn" type="radio" onchange="mjksel();" /><label for="mjk1">味方の弱体化大魔術（全属性）　</label>
+<input id="mjk2" name="mjkbtn" type="radio" onchange="mjksel();" /><label for="mjk2">味方の弱体化大魔術（個別）</label><br>
+
+<div id="mjktxt">敵全属性弱体化（味方の弱体化大魔術）<input id="mjk" size="20" value="0" ><br><br></div>
 <div id="mjkhitxt">敵火弱体化（味方の弱体化大魔術）<input id="mjkhi" size="20" value="0" ><br></div>
 <div id="mjkmizutxt">敵水弱体化（味方の弱体化大魔術）<input id="mjkmizu" size="20" value="0" ><br></div>
 <div id="mjkkamitxt">敵雷弱体化（味方の弱体化大魔術）<input id="mjkkami" size="20" value="0" ><br></div>
 <div id="mjkhikatxt">敵光弱体化（味方の弱体化大魔術）<input id="mjkhika" size="20" value="0" ><br></div>
 <div id="mjkyamitxt">敵闇弱体化（味方の弱体化大魔術）<input id="mjkyami" size="20" value="0" ><br><br></div>
 
+<input id="ehd1" name="ehdbtn" type="radio" onchange="ehdsel();" /><label for="ehd1">敵の反動攻撃（全属性）　</label>
+<input id="ehd2" name="ehdbtn" type="radio" onchange="ehdsel();" /><label for="ehd2">敵の反動攻撃（個別）</label><br>
 <div id="ehdtxt">敵全属性弱体化（敵の反動攻撃）<input id="ehd" size="20" value="0" ><br></div>
 <div id="ehdhitxt">敵火弱体化（敵の反動攻撃）<input id="ehdhi" size="20" value="0" ><br></div>
 <div id="ehdmizutxt">敵水弱体化（敵の反動攻撃）<input id="ehdmizu" size="20" value="0" ><br></div>
@@ -90,31 +117,10 @@
 <div id="ehdhikatxt">敵光弱体化（敵の反動攻撃）<input id="ehdhika" size="20" value="0" ><br></div>
 <div id="ehdyamitxt">敵闇弱体化（敵の反動攻撃）<input id="ehdyami" size="20" value="0" ><br></div>
 <br>
-敵AS耐性<input id="taisei" size="20" value="0" ><br>
-敵AS弱体化<input id="jakutai" size="20" value="0" ><br>
+<div id="taiseitxt"><input id="tai1" name="taibtn" type="radio" onchange="taisel();" /><label for="tai1">耐性　</label>
+<input id="tai2" name="taibtn" type="radio" onchange="taisel();" /><label for="tai2">弱体化</label><br>
+敵AS耐性変化<input id="taisei" size="20" value="0" ><br></div>
 <br>
-ダメージ倍率結晶<select id="csmpsel">
-<option value="0">なし</option>
-<option value="1">アドヴェリタス(1.2倍)</option>
-<option value="2">ミュージアム(0.9倍)</option>
-<option value="3">アドヴェリタス＋ミュージアム(1.1倍)</option>
-<option value="4">剛剣＋アドヴェリタス(1.3倍)</option>
-</select><br>
-ダメージ倍率潜在<select id="awmpsel">
-<option value="0">なし</option>
-<option value="1">あり(1.1倍)</option>
-<option value="2">あり(1.2倍)</option>
-<option value="3">あり(1.3倍)</option>
-</select><br>
-ドラゴンRIZE<select id="drmpsel">
-<option value="0">なし</option>
-<option value="1">あり(1.1倍)</option>
-</select><br>
-
-李小狼の剣<select id="shmpsel">
-<option value="0">なし</option>
-<option value="1">あり(1.3倍)</option>
-</select><br><br>
 
 
 <button id="ascalc">計算する</button>
@@ -136,5 +142,6 @@
 </body>
 <script src="./jquery-3.5.1.min.js"></script>
 <script src="./ascalc.js"></script>
+<script src="./ascalcconst.js"></script>
 
 </html>

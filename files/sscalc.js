@@ -33,7 +33,6 @@ var ehdhika = Number($('#ehdhika').val());
 var ehdyami = Number($('#ehdyami').val()); 
 var taisei = Number($('#taisei').val()); //SS耐性
 var jakutai = Number($('#jakutai').val()); //SS弱体化
-var sseh = (1-(egd/100))*(1+(mjk/100))*(1+(ehd/100))*(1-(taisei/100))*(1+(jakutai/100)); //敵被ダメージ補正
 var csmpsel = Number($('#csmpsel').val()); //ダメージ倍率結晶
 var awmpsel = Number($('#awmpsel').val()); //ダメージ倍率潜在
 var drmpsel = Number($('#drmpsel').val()); //ダメージ倍率潜在
@@ -82,6 +81,22 @@ var damagemax2 = 0;
 var damagemin2 = 0;
 var damagetotal = damage + damage2;
 if(chch>=1) var cheh = chky;
+
+var awmpsel = $("input[name='awmpselbtn']:checked").val();
+switch (awmpsel) {
+	case "awmp1":
+		var awmp = 1;
+		break;
+	case "awmp2":
+		var awmp = 1.1;
+		break;
+	case "awmp3":
+		var awmp = 1.2;
+		break;
+	default:
+		var awmp = 1.3;
+		break;
+	}
 
 switch (myzokusei) {
 	case 1:
@@ -193,53 +208,49 @@ switch (csmpsel) {
 		var csmp = 1;
 }
 
-switch (awmpsel) {
-	case 1:
-		var awmp = 1.1;
-	break;
-	case 2:
-		var awmp = 1.2;
-	break;
-	case 3:
-		var awmp = 1.3;
-	break;
-	default:
-		var awmp = 1;
+if(drmp1.checked == true){
+var drmp = 1;
+}else{
+var drmp = 1.1;
 }
-switch (drmpsel) {
-	case 1:
-		var drmp = 1.1;
-	break;
-	default:
-		var drmp = 1;
-}
-if(egd >= 1){
+
+if(egd1.checked == true){
 	var egdhi = egd;
 	var egdmizu = egd;
 	var egdkami = egd;
 	var egdhika = egd;
 	var egdyami = egd;
 }
-if(mjk >= 1){
+if(mjk1.checked == true){
 	var mjkhi = mjk;
 	var mjkmizu = mjk;
 	var mjkkami = mjk;
 	var mjkhika = mjk;
 	var mjkyami = mjk;
 }
-if(ehd >= 1){
+ehd1 = document.getElementById("ehd1");
+
+if(ehd1.checked == true){
 	var ehdhi = ehd;
 	var ehdmizu = ehd;
 	var ehdkami = ehd;
 	var ehdhika = ehd;
 	var ehdyami = ehd;
 }
-var ssehhi = (1-(egdhi/100))*(1+(mjkhi/100))*(1+(ehdhi/100))*(1-(taisei/100))*(1+(jakutai/100)); //敵被ダメージ補正
-var ssehmizu = (1-(egdmizu/100))*(1+(mjkmizu/100))*(1+(ehdmizu/100))*(1-(taisei/100))*(1+(jakutai/100)); //敵被ダメージ補正
-var ssehkami = (1-(egdkami/100))*(1+(mjkkami/100))*(1+(ehdkami/100))*(1-(taisei/100))*(1+(jakutai/100)); //敵被ダメージ補正
-var ssehhika = (1-(egdhika/100))*(1+(mjkhika/100))*(1+(ehdhika/100))*(1-(taisei/100))*(1+(jakutai/100)); //敵被ダメージ補正
-var ssehyami = (1-(egdyami/100))*(1+(mjkyami/100))*(1+(ehdyami/100))*(1-(taisei/100))*(1+(jakutai/100)); //敵被ダメージ補正
-			switch(myzokusei){
+if(tai1.checked == true){
+var ssjoutai = 1-(taisei/100);
+}else{
+var ssjoutai = 1+(taisei/100);
+}
+if(ss==3) ssjoutai = 1;
+var sseh = (1-(egd/100))*(1+(mjk/100))*(1+(ehd/100))*ssjoutai; //敵被ダメージ補正
+var ssehhi = (1-(egdhi/100))*(1+(mjkhi/100))*(1+(ehdhi/100))*ssjoutai; //敵被ダメージ補正
+var ssehmizu = (1-(egdmizu/100))*(1+(mjkmizu/100))*(1+(ehdmizu/100))*ssjoutai; //敵被ダメージ補正
+var ssehkami = (1-(egdkami/100))*(1+(mjkkami/100))*(1+(ehdkami/100))*ssjoutai; //敵被ダメージ補正
+var ssehhika = (1-(egdhika/100))*(1+(mjkhika/100))*(1+(ehdhika/100))*ssjoutai; //敵被ダメージ補正
+var ssehyami = (1-(egdyami/100))*(1+(mjkyami/100))*(1+(ehdyami/100))*ssjoutai; //敵被ダメージ補正
+
+		switch(myzokusei){
 				case 1:
 				var sseh = ssehhi;
 				break;
@@ -257,9 +268,9 @@ var ssehyami = (1-(egdyami/100))*(1+(mjkyami/100))*(1+(ehdyami/100))*(1-(taisei/
 				break;
 				default:
 				if(mjk >= 1 ||ehd >= 1 ){
-					var sseh = (1+(mjkhi/100))*(1+(ehdhi/100))*(1-(taisei/100))*(1+(jakutai/100)); //敵被ダメージ補正
+					var sseh = (1+(mjkhi/100))*(1+(ehdhi/100))*ssjoutai; //敵被ダメージ補正
 				}else{
-					var sseh=1*(1-(taisei/100))*(1+(jakutai/100));
+					var sseh=1*ssjoutai;
 				}
 			}
 		switch(myzokusei2){
@@ -280,9 +291,9 @@ var ssehyami = (1-(egdyami/100))*(1+(mjkyami/100))*(1+(ehdyami/100))*(1-(taisei/
 				break;
 				default:
 				if(mjk >= 1 ||ehd >= 1 ){
-					var sseh2 = (1+(mjkhi/100))*(1+(ehdhi/100))*(1-(taisei/100))*(1+(jakutai/100)); //敵被ダメージ補正
+					var sseh2 = (1+(mjkhi/100))*(1+(ehdhi/100))*ssjoutai; //敵被ダメージ補正
 				}else{
-					var sseh2 = 1*(1-(taisei/100))*(1+(jakutai/100));
+					var sseh2 = 1*ssjoutai;
 				}
 			}
 var dmmp = csmp+awmp+drmp-2;
@@ -309,7 +320,7 @@ switch (Number(ss)) {
 			}
 		var damagetotal = damage + damage2;
 	break;
-	case 2: //特効・残滅大魔術・カウンター
+	case 2: //特効・残滅大魔術
 		var mptotal = mptotal + 100;
 		if(myzokusei == myzokusei2 ||myzokusei2 == 0){
 		var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh;
@@ -329,7 +340,27 @@ switch (Number(ss)) {
 			}
 		var damagetotal = damage + damage2;
 	break;
-	case 3: //多弾魔術
+	case 3: //カウンター・行動感知
+		var mptotal = mptotal + 100;
+		if(myzokusei == myzokusei2 ||myzokusei2 == 0){
+		var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh;
+		var damage = Math.floor(damage);
+		var damagemin = Math.floor(damage*0.9);
+		var damagemax = Math.floor(damage*1.1);
+		var damagetotal = damage + damage2;
+		}else{
+			var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh;
+			var damage = Math.floor(damage);
+			var damagemin = Math.floor(damage*0.9);
+			var damagemax = Math.floor(damage*1.1);
+			var damage2 = atk*(mptotal/100)*cheh*sseh2*dmmp*zkeh2;
+			var damage2 = Math.floor(damage2);
+			var damagemin2 = Math.floor(damage2*0.9);
+			var damagemax2 = Math.floor(damage2*1.1);
+			}
+		var damagetotal = damage + damage2;
+	break;
+	case 4: //多弾魔術
 		if(myzokusei == myzokusei2 ||myzokusei2 == 0){
 		var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh;
 		var damage = Math.floor(damage);
@@ -350,7 +381,7 @@ switch (Number(ss)) {
 		var damageavg2 = Math.floor(damage2/kaisuu);
 		var damagetotal = damage + damage2;
 	break;
-	case 4: //斬撃大魔術
+	case 5: //斬撃大魔術
 		if(myzokusei == myzokusei2 ||myzokusei2 == 0){
 			var damage = (atk*(mptotal/100)*cheh*sseh*dmmp*zkeh)/kaisuu;
 			for (var i=0;i<kaisuu-1;i++){
@@ -385,7 +416,7 @@ switch (Number(ss)) {
 		var damagetotal = damage + damage2;
 
 	break;
-	case 5: //蓄積%
+	case 6: //蓄積%
 		var mptotal = ehtotal+jous+((tiku/100)*jou);
 		var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh;
 		var damage = Math.floor(damage);
@@ -393,7 +424,7 @@ switch (Number(ss)) {
 		var damagemax = Math.floor(damage*1.1);
 		var damagetotal = damage + damage2;
 	break;
-	case 6: //カウント
+	case 7: //カウント
 		var mptotal = ehtotal+100+((kau/kauj)*jou);
 		var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh;
 		var damage = Math.floor(damage);
@@ -401,7 +432,7 @@ switch (Number(ss)) {
 		var damagemax = Math.floor(damage*1.1);
 		var damagetotal = damage + damage2;
 	break;
-	case 7: //時限 計算式が特殊かつ乱数の影響を受けない
+	case 8: //時限 計算式が特殊かつ乱数の影響を受けない
 		//var damage = Math.floor(Math.floor(atk*(Math.floor((mptotal/100)+cheh))*zkeh)*sseh*dmmp);
 		var mptotal = mptotal + 100;
 		var damage = Math.floor(Math.floor(Math.floor(atk*(Math.floor(Math.floor((mptotal/100)))*zkeh*cheh))*sseh*dmmp));
@@ -409,7 +440,7 @@ switch (Number(ss)) {
 		var damagemax = damage;
 		var damagetotal = damage + damage2;
 	break;
-	case 8: //反転解除
+	case 9: //反転解除
 		var mptotal = mptotal + (hansei*dan);
 		if(myzokusei == myzokusei2 ||myzokusei2 == 0){
 		var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh;
@@ -428,7 +459,7 @@ switch (Number(ss)) {
 			}
 		var damagetotal = damage + damage2;
 	break;
-	case 9: //詠唱
+	case 10: //詠唱
 		var mptotal = mptotal + (jikan*dan);
 		if(myzokusei == myzokusei2 ||myzokusei2 == 0){
 		var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh;
@@ -447,7 +478,7 @@ switch (Number(ss)) {
 			}
 		var damagetotal = damage + damage2;
 	break;
-	case 10: //反動蝕・犠牲
+	case 11: //反動蝕・犠牲
 		var mptotal = mptotal * sei;
 		var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh;
 		var damage = Math.floor(damage);
@@ -455,7 +486,7 @@ switch (Number(ss)) {
 		var damagemax = Math.floor(damage*1.1);
 		var damagetotal = damage + damage2;
 	break;
-	case 11: //純属性
+	case 12: //純属性
 		switch (tansei) {
 			case 1:
 				var jyt = 0.1;
@@ -480,7 +511,7 @@ switch (Number(ss)) {
 		var damagemax = Math.floor(damage*1.1);
 		var damagetotal = damage + damage2;
 	break;
-	case 12: //融合
+	case 13: //融合
 		switch (yuusei) {
 			case 1:
 				var jyt = 0.1;
@@ -505,7 +536,7 @@ switch (Number(ss)) {
 		var damagemax = Math.floor(damage*1.1);
 		var damagetotal = damage + damage2;
 	break;
-	case 13: //統一
+	case 14: //統一
 			switch (tousei) {
 			case 1:
 				var jyt = 0.1;
@@ -534,7 +565,7 @@ switch (Number(ss)) {
 		var damagemax2 = Math.floor(damage2*1.1);
 		var damagetotal = damage + damage2;
 	break;
-	case 14: //連鎖解放
+	case 15: //連鎖解放
 	if(ch>=chj){
 			var ch = chj;
 		}
@@ -545,7 +576,7 @@ switch (Number(ss)) {
 		var damagemax = Math.floor(damage*1.1);
 		var damagetotal = damage + damage2;
 	break;
-	case 15: //激化 エンハの乗り方が特殊っぽい
+	case 16: //激化 エンハの乗り方が特殊っぽい
 			var mptotal = ((cs+mp)*(Math.pow(bai,ski))+ehtotal);
 		if(myzokusei == myzokusei2 ||myzokusei2 == 0){
 			var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh;
@@ -568,7 +599,7 @@ switch (Number(ss)) {
 		var damagetotal = damage + damage2;
 
 	break;
-	case 16: //急襲 多分激化の逆
+	case 17: //急襲 多分激化の逆
 		if(skim==0){
 		 mptotal = cs+mp+ehtotal;
 		 } else{
@@ -580,7 +611,7 @@ switch (Number(ss)) {
 		var damagemax = Math.floor(damage*1.1);
 		var damagetotal = damage + damage2;
 	break;
-	case 17: //パネル爆破
+	case 18: //パネル爆破
 
 			var dmmp = eval(csmp)+eval(awmp)-1;
 			switch (emzokusei) {
@@ -687,7 +718,7 @@ switch (Number(ss)) {
 		var damagetotal = damage + damage2;
 		break;
 
-	case 18: //撃滅連弾
+	case 19: //撃滅連弾
 	var damjou = (jou-mp)/chjou;
 	var ehjou = ehtotal/chjou;
 	var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh;
@@ -709,7 +740,7 @@ switch (Number(ss)) {
 		var damagetotal = damage + damage2;
 		
 	break;
-	case 19: //天穹大魔術
+	case 20: //天穹大魔術
 			switch (emzokusei) {
 				case 1:
 					var zkehhi = 1;
@@ -771,7 +802,7 @@ switch (Number(ss)) {
 		var damagemax = Math.floor(damage*1.1);
 		var damagetotal = damage + damage2;
 	break;
-	case 20: //詠唱多弾大魔術
+	case 21: //詠唱多弾大魔術
 	var mptotal = (ehtotal/kaisuu)+mp;
 		if(kaisuu<=1) var kaisuu = 1;
 		var damage = (atk*(mptotal/100)*cheh*sseh*dmmp*zkeh)*Math.ceil(kaisuu/2);

@@ -1,29 +1,3 @@
-$('#emstxt').addClass('invisible');
-$('#kaisuutxt').addClass('invisible');
-$('#damaavgtxt').addClass('invisible');
-$('#damaavgtxt2').addClass('invisible');
-$("#bunsan").change(function() {
-var bunsan = Number($('#bunsansel').val());
-switch (Number(bunsan)) {
-	case 1:
-		$('#emstxt').show();
-		$('#kaisuutxt').hide();
-		$('#damaavgtxt').hide();
-		$('#damaavgtxt2').hide();
-	break;
-	case 2:
-		$('#emstxt').hide();
-		$('#kaisuutxt').show();
-		$('#damaavgtxt').show();
-		$('#damaavgtxt2').show();
-	break;
-	default:
-		$('#emstxt').hide();
-		$('#kaisuutxt').hide();
-		$('#damaavgtxt').hide();
-		$('#damaavgtxt2').hide();
-}
-});
 $('#ascalc').click(function(){
 var atk = Number($('#atk').val())/2; //攻撃力
 var mp = Number($('#mp').val()); //ＡＳの効果値
@@ -64,16 +38,14 @@ var taisei = Number($('#taisei').val()); //SS耐性
 var jakutai = Number($('#jakutai').val()); //SS弱体化
 var asmpss = Number($('#asmpss').val()); //ＡＳ倍率強化（スキル）
 var asmppn = Number($('#asmppn').val()); //ＡＳ倍率強化（パネル）
-var aseh = (1-(egd/100))*(1+(mjk/100))*(1+(ehd/100))*(1-(taisei/100))*(1+(jakutai/100)); //敵被ダメージ補正
+var aseh = (1-(egd/100))*(1+(mjk/100))*(1+(ehd/100))*ssjoutai; //敵被ダメージ補正
 var csmpsel = Number($('#csmpsel').val()); //ダメージ倍率結晶
 var awmpsel = Number($('#awmpsel').val()); //ダメージ倍率潜在
 var drmpsel = Number($('#drmpsel').val()); //ダメージ倍率潜在
 var shmpsel = Number($('#shmpsel').val()); //ダメージ倍率潜在
+var emzokusei = Number($('#emzokusei').val()); //属性補正
 var myzokusei = Number($('#myzokusei').val()); //属性補正
 var myzokusei2 = Number($('#myzokusei2').val()); //属性補正
-var emzokusei = Number($('#emzokusei').val()); //属性補正
-var pnzokuseisel = Number($('#pnzokuseisel').val()); //属性補正
-var pnzokuseisel2 = Number($('#pnzokuseisel2').val()); //属性補正
 var chch = Number($('#chch').val()); 
 var chky = 1+((chch*ch)/100); //連鎖狂化効果
 var ems = Number($('#ems').val());  //敵の数
@@ -93,48 +65,48 @@ if(chch>=1) var cheh = chky;
 switch (myzokusei) {
 	case 1:
 		if(emzokusei == 2){
-		zkeh = 0.5;
+		var zkeh = 0.5;
 		}else if(emzokusei == 3) {
-		zkeh = 1.5;
+		var zkeh = 1.5;
 		}
 		else {
-		zkeh = 1.0;
+		var zkeh = 1.0;
 		}
 	break;
 	case 2:
 		if(emzokusei==3){
-		zkeh = 0.5;
+		var zkeh = 0.5;
 		}else if(emzokusei==1){
-		zkeh = 1.5;
+		var zkeh = 1.5;
 		}else {
-		zkeh = 1.0;
+		var zkeh = 1.0;
 		}
 	break;
 	case 3:
 		if(emzokusei==1){
-		zkeh = 0.5;
+		var zkeh = 0.5;
 		}else if(emzokusei==2){
-		zkeh = 1.5;
+		var zkeh = 1.5;
 		}else {
-		zkeh = 1.0;
+		var zkeh = 1.0;
 		}
 	break;
 	case 4:
 		if(emzokusei==5){
-		zkeh = 1.5;
+		var zkeh = 1.5;
 		}else {
-		zkeh = 1.0;
+		var zkeh = 1.0;
 		}
 	break;
 	case 5:
 		if(emzokusei==4){
-		zkeh = 1.5;
+		var zkeh = 1.5;
 		}else {
-		zkeh = 1.0;
+		var zkeh = 1.0;
 		}
 	break;
 	default:
-		zkeh = 1.0;
+		var zkeh = 1.0;
 	}
 	switch (myzokusei2) {
 	case 1:
@@ -193,77 +165,87 @@ switch (csmpsel) {
 	case 3:
 		var csmp = 1.1;
 	break;
+	case 4:
+		var csmp = 1.3;
+	break;
 	default:
 		var csmp = 1;
 }
 
-switch (awmpsel) {
-	case 1:
-		var awmp = 1.1;
-	break;
-	case 2:
-		var awmp = 1.2;
-	break;
-	case 3:
-		var awmp = 1.3;
-	break;
-	default:
+value = $("input[name='awmpselbtn']:checked").val();
+switch (value) {
+	case "awmp1":
 		var awmp = 1;
-}
-switch (pnzokuseisel) {
-	case 1:
-		 var pneh = 0.5;
-	break;
-	default:		
-		 var pneh = 1;
-}
-switch (pnzokuseisel2) {
-	case 1:
-		 var pneh2 = 0.5;
-	break;
-	default:		
-		 var pneh2 = 1;
-}
-switch (drmpsel) {
-	case 1:
-		var drmp = 1.1;
-	break;
+		break;
+	case "awmp2":
+		var awmp = 1.1;
+		break;
+	case "awmp3":
+		var awmp = 1.2;
+		break;
 	default:
-		var drmp = 1;
+		var awmp = 1.3;
+		break;
+	}
+
+
+if(pnzokusei1.checked == true){
+var pneh = 1;
+}else{
+var pneh = 0.5
 }
-switch (shmpsel) {
-	case 1:
-		var shmp = 1.3;
-	break;
-	default:
-		var shmp = 1;
+
+if(pnzokuseif1.checked == true){
+var pneh2 = 1;
+}else{
+var pneh2 = 0.5
 }
-if(egd >= 1){
+
+if(drmp1.checked == true){
+var drmp = 1;
+}else{
+var drmp = 1.1;
+}
+
+if(shmp1.checked == true){
+var shmp = 1;
+}else{
+var shmp = 1.3;
+}
+
+if(egd1.checked == true){
 	var egdhi = egd;
 	var egdmizu = egd;
 	var egdkami = egd;
 	var egdhika = egd;
 	var egdyami = egd;
 }
-if(mjk >= 1){
+if(mjk1.checked == true){
 	var mjkhi = mjk;
 	var mjkmizu = mjk;
 	var mjkkami = mjk;
 	var mjkhika = mjk;
 	var mjkyami = mjk;
 }
-if(ehd >= 1){
+
+if(ehd1.checked == true){
 	var ehdhi = ehd;
 	var ehdmizu = ehd;
 	var ehdkami = ehd;
 	var ehdhika = ehd;
 	var ehdyami = ehd;
 }
-var asehhi = (1-(egdhi/100))*(1+(mjkhi/100))*(1+(ehdhi/100))*(1-(taisei/100))*(1+(jakutai/100)); //敵被ダメージ補正
-var asehmizu = (1-(egdmizu/100))*(1+(mjkmizu/100))*(1+(ehdmizu/100))*(1-(taisei/100))*(1+(jakutai/100)); //敵被ダメージ補正
-var asehkami = (1-(egdkami/100))*(1+(mjkkami/100))*(1+(ehdkami/100))*(1-(taisei/100))*(1+(jakutai/100)); //敵被ダメージ補正
-var asehhika = (1-(egdhika/100))*(1+(mjkhika/100))*(1+(ehdhika/100))*(1-(taisei/100))*(1+(jakutai/100)); //敵被ダメージ補正
-var asehyami = (1-(egdyami/100))*(1+(mjkyami/100))*(1+(ehdyami/100))*(1-(taisei/100))*(1+(jakutai/100)); //敵被ダメージ補正
+if(tai1.checked == true){
+var ssjoutai = 1-(taisei/100);
+}else{
+var ssjoutai = 1+(taisei/100);
+}
+
+var asehhi = (1-(egdhi/100))*(1+(mjkhi/100))*(1+(ehdhi/100))*ssjoutai; //敵被ダメージ補正
+var asehmizu = (1-(egdmizu/100))*(1+(mjkmizu/100))*(1+(ehdmizu/100))*ssjoutai; //敵被ダメージ補正
+var asehkami = (1-(egdkami/100))*(1+(mjkkami/100))*(1+(ehdkami/100))*ssjoutai; //敵被ダメージ補正
+var asehhika = (1-(egdhika/100))*(1+(mjkhika/100))*(1+(ehdhika/100))*ssjoutai; //敵被ダメージ補正
+var asehyami = (1-(egdyami/100))*(1+(mjkyami/100))*(1+(ehdyami/100))*ssjoutai; //敵被ダメージ補正
 			switch(myzokusei){
 				case 1:
 				var aseh = asehhi;
@@ -282,9 +264,9 @@ var asehyami = (1-(egdyami/100))*(1+(mjkyami/100))*(1+(ehdyami/100))*(1-(taisei/
 				break;
 				default:
 				if(mjk >= 1 ||ehd >= 1 ){
-					var aseh = (1+(mjkhi/100))*(1+(ehdhi/100))*(1-(taisei/100))*(1+(jakutai/100)); //敵被ダメージ補正
+					var aseh = (1+(mjkhi/100))*(1+(ehdhi/100))*ssjoutai; //敵被ダメージ補正
 				}else{
-					var aseh=1*(1-(taisei/100))*(1+(jakutai/100));
+					var aseh=1*ssjoutai;
 				}
 			}
 		switch(myzokusei2){
@@ -305,25 +287,17 @@ var asehyami = (1-(egdyami/100))*(1+(mjkyami/100))*(1+(ehdyami/100))*(1-(taisei/
 				break;
 				default:
 				if(mjk >= 1 ||ehd >= 1 ){
-					var aseh2 = (1+(mjkhi/100))*(1+(ehdhi/100))*(1-(taisei/100))*(1+(jakutai/100)); //敵被ダメージ補正
+					var aseh2 = (1+(mjkhi/100))*(1+(ehdhi/100))*ssjoutai; //敵被ダメージ補正
 				}else{
-					var aseh2 = 1*(1-(taisei/100))*(1+(jakutai/100));
+					var aseh2 = 1*ssjoutai;
 				}
 			}
 
-switch(bunsansel){
-	case 1:
-	break;
-	case 2:
-	var ems = 1;
-	break;
-	default:
-	var ems = 1
-}
-var dmmp = csmp+awmp+drmp+shmp-3;
-if(myzokusei == 6)myzokusei2 = 0;
+if(bunsansel2.checked == false) ems = 1;
 
-if(myzokusei == myzokusei2 ||myzokusei2 == 0){
+var dmmp = csmp+awmp+drmp+shmp-3;
+
+if(myzokusei == myzokusei2 || myzokusei2 == 0){
 	var damage = atk*((((mptotal+100+exmp)/ems))/100)*(asmpss+asmppn-1)*pneh*cheh*aseh*dmmp*zkeh;
 	var damage = Math.floor(damage);
 	var damageavg = Math.floor(damage/kaisuu);

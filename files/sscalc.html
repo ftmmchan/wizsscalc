@@ -10,25 +10,26 @@
 <select id="ss_type">
 <option value="0">リストから選択</option>
 <option value="1">大魔術(リストにない物もこれ)</option>
-<option value="2">特効・残滅大魔術・カウンター</option>
-<option value="3">多弾魔術</option>
-<option value="4">斬撃大魔術</option>
-<option value="5">蓄積解放大魔術(聖・邪・破)</option>
-<option value="6">蓄積解放(印・連)・Ｌカウント・パネル属性カウント・捕食・逆襲・爆裂大魔術</option>
-<option value="7">時限大魔術</option>
-<option value="8">反転解除大魔術</option>
-<option value="9">詠唱大魔術</option>
-<option value="10">反動蝕・犠牲魔術</option>
-<option value="11">純属性大魔術</option>
-<option value="12">融合大魔術</option>
-<option value="13">統一大魔術</option>
-<option value="14">連鎖解放大魔術</option>
-<option value="15">激化大魔術</option>
-<option value="16">急襲大魔術</option>
-<option value="17">パネル爆破大魔術</option>
-<option value="18">撃滅連弾</option>
-<option value="19">天穹大魔術</option>
-<option value="20">詠唱多弾大魔術</option>
+<option value="2">特効・残滅大魔術</option>
+<option value="3">カウンター・行動感知</option>
+<option value="4">多弾魔術</option>
+<option value="5">斬撃大魔術</option>
+<option value="6">蓄積解放大魔術(聖・邪・破)</option>
+<option value="7">蓄積解放(印・連)・Ｌカウント・パネル属性カウント・捕食・逆襲・爆裂大魔術</option>
+<option value="8">時限大魔術</option>
+<option value="9">反転解除大魔術</option>
+<option value="10">詠唱大魔術</option>
+<option value="11">反動蝕・犠牲魔術</option>
+<option value="12">純属性大魔術</option>
+<option value="13">融合大魔術</option>
+<option value="14">統一大魔術</option>
+<option value="15">連鎖解放大魔術</option>
+<option value="16">激化大魔術</option>
+<option value="17">急襲大魔術</option>
+<option value="18">パネル爆破大魔術</option>
+<option value="19">撃滅連弾</option>
+<option value="20">天穹大魔術</option>
+<option value="21">詠唱多弾大魔術</option>
 </select>
 <br><br>
 <div id="mzokusei">攻撃属性(主属性)：<select id="myzokusei">
@@ -103,31 +104,38 @@ SPスキル強化効果値<input id="eh6" size="20" value="0" ><br>
 <option value="2">ミュージアム(0.9倍)</option>
 <option value="3">アドヴェリタス＋ミュージアム(1.1倍)</option>
 <option value="4">剛剣＋アドヴェリタス(1.3倍)</option>
-</select><br>
-ダメージ倍率潜在<select id="awmpsel">
-<option value="0">なし</option>
-<option value="1">あり(1.1倍)</option>
-<option value="2">あり(1.2倍)</option>
-<option value="3">あり(1.3倍)</option>
-</select><br>
-ドラゴンRIZE<select id="drmpsel">
-<option value="0">なし</option>
-<option value="1">あり(1.1倍)</option>
 </select><br><br>
-
-<div id="egdtxt">敵全属性ガード<input id="egd" size="20" value="0" ><br></div>
+ダメージ倍率潜在　
+<input id="awmpsel1" name="awmpselbtn" type="radio" value="awmp1"><label for="awmpsel1">なし　</label>
+<input id="awmpsel2" name="awmpselbtn" type="radio" value="awmp2"><label for="awmpsel2">1.1倍　</label>
+<input id="awmpsel3" name="awmpselbtn" type="radio" value="awmp3"><label for="awmpsel3">1.2倍　</label>
+<input id="awmpsel4" name="awmpselbtn" type="radio" value="awmp4"><label for="awmpsel4">1.3倍　</label><br>
+ドラゴンRIZE　
+<input id="drmp1" name="drmpbtn" type="radio"><label for="drmp1">なし　</label>
+<input id="drmp2" name="drmpbtn" type="radio"><label for="drmp2">あり（1.1倍）</label><br>
+<br>
+<input id="egd1" name="egdbtn" type="radio" onchange="egdsel();" /><label for="egd1">全属性ガード　</label>
+<input id="egd2" name="egdbtn" type="radio" onchange="egdsel();" /><label for="egd2">個別ガード</label><br>
+    
+<div id="egdtxt">敵全属性ガード<input id="egd" size="20" value="0" ><br><br></div>
 <div id="egdhitxt">敵火ガード<input id="egdhi" size="20" value="0" ><br></div>
 <div id="egdmizutxt">敵水ガード<input id="egdmizu" size="20" value="0" ><br></div>
 <div id="egdkamitxt">敵雷ガード<input id="egdkami" size="20" value="0" ><br></div>
 <div id="egdhikatxt">敵光ガード<input id="egdhika" size="20" value="0" ><br></div>
 <div id="egdyamitxt">敵闇ガード<input id="egdyami" size="20" value="0" ><br><br></div>
 
-<div id="mjktxt">敵全属性弱体化（味方の弱体化大魔術）<input id="mjk" size="20" value="0" ><br></div>
+<input id="mjk1" name="mjkbtn" type="radio" onchange="mjksel();" /><label for="mjk1">味方の弱体化大魔術（全属性）　</label>
+<input id="mjk2" name="mjkbtn" type="radio" onchange="mjksel();" /><label for="mjk2">味方の弱体化大魔術（個別）</label><br>
+
+<div id="mjktxt">敵全属性弱体化（味方の弱体化大魔術）<input id="mjk" size="20" value="0" ><br><br></div>
 <div id="mjkhitxt">敵火弱体化（味方の弱体化大魔術）<input id="mjkhi" size="20" value="0" ><br></div>
 <div id="mjkmizutxt">敵水弱体化（味方の弱体化大魔術）<input id="mjkmizu" size="20" value="0" ><br></div>
 <div id="mjkkamitxt">敵雷弱体化（味方の弱体化大魔術）<input id="mjkkami" size="20" value="0" ><br></div>
 <div id="mjkhikatxt">敵光弱体化（味方の弱体化大魔術）<input id="mjkhika" size="20" value="0" ><br></div>
 <div id="mjkyamitxt">敵闇弱体化（味方の弱体化大魔術）<input id="mjkyami" size="20" value="0" ><br><br></div>
+
+<input id="ehd1" name="ehdbtn" type="radio" onchange="ehdsel();" /><label for="ehd1">敵の反動攻撃（全属性）　</label>
+<input id="ehd2" name="ehdbtn" type="radio" onchange="ehdsel();" /><label for="ehd2">敵の反動攻撃（個別）</label><br>
 
 <div id="ehdtxt">敵全属性弱体化（敵の反動攻撃）<input id="ehd" size="20" value="0" ><br></div>
 <div id="ehdhitxt">敵火弱体化（敵の反動攻撃）<input id="ehdhi" size="20" value="0" ><br></div>
@@ -136,8 +144,9 @@ SPスキル強化効果値<input id="eh6" size="20" value="0" ><br>
 <div id="ehdhikatxt">敵光弱体化（敵の反動攻撃）<input id="ehdhika" size="20" value="0" ><br></div>
 <div id="ehdyamitxt">敵闇弱体化（敵の反動攻撃）<input id="ehdyami" size="20" value="0" ><br></div>
 <br>
-<div id="taiseitxt">敵SS耐性<input id="taisei" size="20" value="0" ><br></div>
-<div id="jakutaitxt">敵SS弱体化<input id="jakutai" size="20" value="0" ><br></div>
+<div id="taiseitxt"><input id="tai1" name="taibtn" type="radio"><label for="tai1">耐性　</label>
+<input id="tai2" name="taibtn" type="radio"><label for="tai2">弱体化</label><br>
+敵SS耐性変化<input id="taisei" size="20" value="0" ><br></div>
 <br>
 
 <button id="sscalc">計算する</button>
