@@ -16,33 +16,61 @@ var ch = Number($('#ch').val()); //チェイン数
 var ehtotal = eh1 + eh2 + eh3 + eh4 + eh5 + eh6 + eh7 + eh8 + eh9; //ダメージ強化合計
 var mptotal = (mp+cs+ehtotal); //計算上の効果値
 var cheh = 1+(ch/100); //チェイン補正
-var egd = Number($('#egd').val()); //敵ガード
+
+//敵ガード
+if(egd1.checked == true){
+var egd = Number($('#egd').val()); 
+var egdhi = 0; 
+var egdmizu = 0; 
+var egdkami = 0; 
+var egdhika = 0; 
+var egdyami = 0; 
+}else{
+var egd = 0; 
 var egdhi = Number($('#egdhi').val()); 
 var egdmizu = Number($('#egdmizu').val()); 
 var egdkami = Number($('#egdkami').val()); 
 var egdhika = Number($('#egdhika').val()); 
 var egdyami = Number($('#egdyami').val()); 
-var mjk = Number($('#mjk').val()); //敵弱体化（味方の弱体化大魔術）
+}
+
+//味方の弱体化大魔術
+if(mjk1.checked == true){
+var mjk = Number($('#mjk').val()); 
+var mjkhi = 0; 
+var mjkmizu = 0; 
+var mjkkami = 0; 
+var mjkhika = 0; 
+var mjkyami = 0; 
+}else{
+var mjk = 0; 
 var mjkhi = Number($('#mjkhi').val()); 
 var mjkmizu = Number($('#mjkmizu').val()); 
 var mjkkami = Number($('#mjkkami').val()); 
 var mjkhika = Number($('#mjkhika').val()); 
 var mjkyami = Number($('#mjkyami').val()); 
-var ehd = Number($('#ehd').val()); //敵弱体化（敵の反動攻撃）
+}
+
+//敵の反動攻撃
+if(ehd1.checked == true){
+var ehd = Number($('#ehd').val()); 
+var ehdhi = 0; 
+var ehdmizu = 0; 
+var ehdkami = 0; 
+var ehdhika = 0; 
+var ehdyami = 0; 
+}else{
+var ehd = 0; 
 var ehdhi = Number($('#ehdhi').val()); 
 var ehdmizu = Number($('#ehdmizu').val()); 
 var ehdkami = Number($('#ehdkami').val()); 
 var ehdhika = Number($('#ehdhika').val()); 
 var ehdyami = Number($('#ehdyami').val()); 
-var taisei = Number($('#taisei').val()); //SS耐性
-var jakutai = Number($('#jakutai').val()); //SS弱体化
+}
+
+var taisei = Number($('#taisei').val()); //AS耐性変化
 var asmpss = Number($('#asmpss').val()); //ＡＳ倍率強化（スキル）
 var asmppn = Number($('#asmppn').val()); //ＡＳ倍率強化（パネル）
-var aseh = (1-(egd/100))*(1+(mjk/100))*(1+(ehd/100))*ssjoutai; //敵被ダメージ補正
-var csmpsel = Number($('#csmpsel').val()); //ダメージ倍率結晶
-var awmpsel = Number($('#awmpsel').val()); //ダメージ倍率潜在
-var drmpsel = Number($('#drmpsel').val()); //ダメージ倍率潜在
-var shmpsel = Number($('#shmpsel').val()); //ダメージ倍率潜在
 var emzokusei = Number($('#emzokusei').val()); //属性補正
 var myzokusei = Number($('#myzokusei').val()); //属性補正
 var myzokusei2 = Number($('#myzokusei2').val()); //属性補正
@@ -212,7 +240,6 @@ var shmp = 1;
 }else{
 var shmp = 1.3;
 }
-
 if(egd1.checked == true){
 	var egdhi = egd;
 	var egdmizu = egd;
@@ -220,6 +247,7 @@ if(egd1.checked == true){
 	var egdhika = egd;
 	var egdyami = egd;
 }
+
 if(mjk1.checked == true){
 	var mjkhi = mjk;
 	var mjkmizu = mjk;
@@ -235,17 +263,19 @@ if(ehd1.checked == true){
 	var ehdhika = ehd;
 	var ehdyami = ehd;
 }
-if(tai1.checked == true){
-var ssjoutai = 1-(taisei/100);
-}else{
-var ssjoutai = 1+(taisei/100);
-}
 
-var asehhi = (1-(egdhi/100))*(1+(mjkhi/100))*(1+(ehdhi/100))*ssjoutai; //敵被ダメージ補正
-var asehmizu = (1-(egdmizu/100))*(1+(mjkmizu/100))*(1+(ehdmizu/100))*ssjoutai; //敵被ダメージ補正
-var asehkami = (1-(egdkami/100))*(1+(mjkkami/100))*(1+(ehdkami/100))*ssjoutai; //敵被ダメージ補正
-var asehhika = (1-(egdhika/100))*(1+(mjkhika/100))*(1+(ehdhika/100))*ssjoutai; //敵被ダメージ補正
-var asehyami = (1-(egdyami/100))*(1+(mjkyami/100))*(1+(ehdyami/100))*ssjoutai; //敵被ダメージ補正
+if(tai1.checked == true){
+var asjoutai = 1-(taisei/100);
+}else{
+var asjoutai = 1+(taisei/100);
+}
+var aseh = (1-(egd/100))*(1+(mjk/100))*(1+(ehd/100))*asjoutai; //敵被ダメージ補正
+var asehhi = (1-(egdhi/100))*(1+(mjkhi/100))*(1+(ehdhi/100))*asjoutai; //敵被ダメージ補正
+var asehmizu = (1-(egdmizu/100))*(1+(mjkmizu/100))*(1+(ehdmizu/100))*asjoutai; //敵被ダメージ補正
+var asehkami = (1-(egdkami/100))*(1+(mjkkami/100))*(1+(ehdkami/100))*asjoutai; //敵被ダメージ補正
+var asehhika = (1-(egdhika/100))*(1+(mjkhika/100))*(1+(ehdhika/100))*asjoutai; //敵被ダメージ補正
+var asehyami = (1-(egdyami/100))*(1+(mjkyami/100))*(1+(ehdyami/100))*asjoutai; //敵被ダメージ補正
+var asehmu = (1+(mjk/100))*(1+(ehd/100))*asjoutai; //敵被ダメージ補正
 			switch(myzokusei){
 				case 1:
 				var aseh = asehhi;
@@ -263,11 +293,7 @@ var asehyami = (1-(egdyami/100))*(1+(mjkyami/100))*(1+(ehdyami/100))*ssjoutai; /
 				var aseh = asehyami;
 				break;
 				default:
-				if(mjk >= 1 ||ehd >= 1 ){
-					var aseh = (1+(mjkhi/100))*(1+(ehdhi/100))*ssjoutai; //敵被ダメージ補正
-				}else{
-					var aseh=1*ssjoutai;
-				}
+				var aseh = asehmu;
 			}
 		switch(myzokusei2){
 				case 1:
@@ -286,11 +312,6 @@ var asehyami = (1-(egdyami/100))*(1+(mjkyami/100))*(1+(ehdyami/100))*ssjoutai; /
 				var aseh2 = asehyami;
 				break;
 				default:
-				if(mjk >= 1 ||ehd >= 1 ){
-					var aseh2 = (1+(mjkhi/100))*(1+(ehdhi/100))*ssjoutai; //敵被ダメージ補正
-				}else{
-					var aseh2 = 1*ssjoutai;
-				}
 			}
 
 if(bunsansel2.checked == false) ems = 1;
