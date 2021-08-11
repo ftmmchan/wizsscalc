@@ -10,7 +10,7 @@
 公開場所
 https://ftmmchan.github.io/wizsscalc/
 
-情報提供は [@chandot_1923](https://twitter.com/chandot_1923)までお願いします。
+更新停止しました。  
 
 ***  
 
