@@ -11,7 +11,6 @@ var eh5 = Number($('#eh5').val()); //夢現の射手効果値
 var eh6 = Number($('#eh6').val()); //SPスキル強化効果値
 var ch = Number($('#ch').val()); //チェイン数
 var ehtotal = eh1 + eh2 + eh3 + eh4 + eh5 + eh6; //ダメージ強化合計
-var mptotal = (mp+cs+ehtotal); //計算上の効果値
 var cheh = 1+(ch/100); //チェイン補正
 var ehd1 = document.getElementById("ehd1");
 
@@ -331,6 +330,7 @@ if(myzokusei == 6 || myzokusei == myzokusei2) myzokusei2 = 0; //複属性があ�
 
 switch (Number(ss)) {
 	case 1: //大魔術
+		var mptotal = mp+cs+ehtotal;
 		if(myzokusei == myzokusei2 ||myzokusei2 == 0){
 		var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh;
 		var damage = Math.floor(damage);
@@ -350,7 +350,7 @@ switch (Number(ss)) {
 		var damagetotal = damage + damage2;
 	break;
 	case 2: //特効・残滅大魔術
-		var mptotal = mptotal + 100;
+		var mptotal = mp+cs+ehtotal+100; 
 		if(myzokusei == myzokusei2 ||myzokusei2 == 0){
 		var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh;
 		var damage = Math.floor(damage);
@@ -370,7 +370,7 @@ switch (Number(ss)) {
 		var damagetotal = damage + damage2;
 	break;
 	case 3: //カウンター・行動感知
-		var mptotal = mptotal + 100;
+		var mptotal = mp+cs+ehtotal+100; 
 		if(myzokusei == myzokusei2 ||myzokusei2 == 0){
 		var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh;
 		var damage = Math.floor(damage);
@@ -390,6 +390,7 @@ switch (Number(ss)) {
 		var damagetotal = damage + damage2;
 	break;
 	case 4: //多弾魔術
+		var mptotal = mp+cs+ehtotal;
 		if(myzokusei == myzokusei2 ||myzokusei2 == 0){
 		var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh;
 		var damage = Math.floor(damage);
@@ -411,6 +412,7 @@ switch (Number(ss)) {
 		var damagetotal = damage + damage2;
 	break;
 	case 5: //斬撃大魔術
+		var mptotal = mp+cs+ehtotal;
 		if(myzokusei == myzokusei2 ||myzokusei2 == 0){
 			var damage = (atk*(mptotal/100)*cheh*sseh*dmmp*zkeh)/kaisuu;
 			for (var i=0;i<kaisuu-1;i++){
@@ -462,6 +464,7 @@ switch (Number(ss)) {
 		var damagetotal = damage + damage2;
 	break;
 	case 8: //時限 計算式が特殊かつ乱数の影響を受けない
+		var mptotal = mp+ehtotal;
 		//var damage = Math.floor(Math.floor(atk*(Math.floor((mptotal/100)+cheh))*zkeh)*sseh*dmmp);
 		var mptotal = mptotal + 100;
 		var damage = Math.floor(Math.floor(Math.floor(atk*(Math.floor(Math.floor((mptotal/100)))*zkeh*cheh))*sseh*dmmp));
@@ -470,7 +473,7 @@ switch (Number(ss)) {
 		var damagetotal = damage + damage2;
 	break;
 	case 9: //反転解除
-		var mptotal = mptotal + (hansei*dan);
+		var mptotal = mp+ehtotal + (hansei*dan);
 		if(myzokusei == myzokusei2 ||myzokusei2 == 0){
 		var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh;
 		var damage = Math.floor(damage);
@@ -489,7 +492,7 @@ switch (Number(ss)) {
 		var damagetotal = damage + damage2;
 	break;
 	case 10: //詠唱
-		var mptotal = mptotal + (jikan*dan);
+		var mptotal = mp+ehtotal + (jikan*dan);
 		if(myzokusei == myzokusei2 ||myzokusei2 == 0){
 		var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh;
 		var damage = Math.floor(damage);
@@ -508,7 +511,7 @@ switch (Number(ss)) {
 		var damagetotal = damage + damage2;
 	break;
 	case 11: //反動蝕・犠牲
-		var mptotal = mptotal * sei;
+		var mptotal = ((mp+cs) * sei) + ehtotal;
 		var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh;
 		var damage = Math.floor(damage);
 		var damagemin = Math.floor(damage*0.9);
@@ -533,12 +536,12 @@ switch (Number(ss)) {
 				var jyt = 1;
 		}
 
-		var mptotal = mptotal + (jou*jyt);
+		var mptotal = ehtotal + cs + (jou*jyt);
 		var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh;
 		var damage = Math.floor(damage);
 		var damagemin = Math.floor(damage*0.9);
 		var damagemax = Math.floor(damage*1.1);
-		var damagetotal = damage + damage2;
+		var damagetotal = damage;
 	break;
 	case 13: //融合
 		switch (yuusei) {
@@ -558,12 +561,12 @@ switch (Number(ss)) {
 				var jyt = 1;
 		}
 
-		var mptotal = mptotal + (jou*jyt);
+		var mptotal = ehtotal + (jou*jyt);
 		var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh;
 		var damage = Math.floor(damage);
 		var damagemin = Math.floor(damage*0.9);
 		var damagemax = Math.floor(damage*1.1);
-		var damagetotal = damage + damage2;
+		var damagetotal = damage;
 	break;
 	case 14: //統一
 			switch (tousei) {
@@ -596,7 +599,7 @@ switch (Number(ss)) {
 	break;
 	case 15: //連鎖解放
 		if(ch>=chj) var ch = chj;
-		var mptotal = ehtotal+100+((ch/chj)*(jou+cs));
+		var mptotal = ehtotal+jous+((ch/chj)*(jou+cs));
 		var damage = atk*(mptotal/100)*sseh*dmmp*zkeh;
 		var damage = Math.floor(damage);
 		var damagemin = Math.floor(damage*0.9);

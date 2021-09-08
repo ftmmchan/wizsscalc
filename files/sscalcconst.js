@@ -624,7 +624,7 @@ switch (Number(ss)) {
 		$('#damaavgtxt').hide();
 		$('#damaavgtxt2').hide();
 		$('#cs2txt').hide();
-		$('#cstxt').hide();
+		$('#cstxt').show();
 		$('#damagef').hide();
 		$('#taiseitxt').show();
 	break;
@@ -739,7 +739,7 @@ switch (Number(ss)) {
 		$('#chsyoutxt').hide();
 		$('#seikaitxt').hide();
 		$('#mudame').hide();
-		$('#joustxt').hide();
+		$('#joustxt').show();
 		$('#skimtxt').hide();
 		$('#baimtxt').hide();
 		$('#mptxt').hide();
