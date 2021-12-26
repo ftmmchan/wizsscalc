@@ -36,6 +36,11 @@ $('#egdmizutxt').addClass('invisible');
 $('#egdkamitxt').addClass('invisible');
 $('#egdhikatxt').addClass('invisible');
 $('#egdyamitxt').addClass('invisible');
+$('#emmhitxt').addClass('invisible');
+$('#emmmizutxt').addClass('invisible');
+$('#emmkamitxt').addClass('invisible');
+$('#emmhikatxt').addClass('invisible');
+$('#emmyamitxt').addClass('invisible');
 $('#mjkhitxt').addClass('invisible');
 $('#mjkmizutxt').addClass('invisible');
 $('#mjkkamitxt').addClass('invisible');
@@ -56,6 +61,9 @@ mjk1.checked = true ;
 var ehd1 = document.getElementById("ehd1");
 var ehd2 = document.getElementById("ehd2");
 ehd1.checked = true ;
+var emm1 = document.getElementById("emm1");
+var emm2 = document.getElementById("emm2");
+emm1.checked = true ;
 var tai1 = document.getElementById("tai1");
 var tai2 = document.getElementById("tai2");
 tai1.checked = true ;
@@ -66,6 +74,8 @@ var awmpsel4 = document.getElementById("awmpsel4");
 awmpsel1.checked = true ;
 var drmp1 = document.getElementById("drmp1");
 var drmp2 = document.getElementById("drmp2");
+
+
 drmp1.checked = true ;
 
 function egdsel() {
@@ -86,6 +96,24 @@ function egdsel() {
 	}
 }
 	
+function emmsel() {
+	if(emm1.checked == true){
+		$('#emmtxt').show();
+		$('#emmhitxt').hide();
+		$('#emmmizutxt').hide();
+		$('#emmkamitxt').hide();
+		$('#emmhikatxt').hide();
+		$('#emmyamitxt').hide();
+	}else{
+		$('#emmtxt').hide();
+		$('#emmhitxt').show();
+		$('#emmmizutxt').show();
+		$('#emmkamitxt').show();
+		$('#emmhikatxt').show();
+		$('#emmyamitxt').show();
+	}
+}
+
 function mjksel() {
 	if(mjk1.checked == true){
 		$('#mjktxt').show();
@@ -167,6 +195,7 @@ switch (Number(ss)) {
 		$('#cs2txt').hide();
 		$('#damagef').show();
 		$('#taiseitxt').show();
+
 	break;
 	case 2: //特効・残滅大魔術
 		$('#mptxt').show();
@@ -209,6 +238,7 @@ switch (Number(ss)) {
 		$('#cstxt').show();
 		$('#damagef').show();
 		$('#taiseitxt').show();
+
 	break;
 	case 3: //特効・残滅大魔術
 		$('#mptxt').show();
@@ -251,6 +281,7 @@ switch (Number(ss)) {
 		$('#cstxt').show();
 		$('#damagef').show();
 		$('#taiseitxt').hide();
+
 	break;
 	case 4: //多弾魔術
 		$('#mptxt').show();
@@ -293,6 +324,7 @@ switch (Number(ss)) {
 		$('#cstxt').show();
 		$('#damagef').show();
 		$('#taiseitxt').show();
+
 	break;
 	case 5: //斬撃大魔術
 		$('#mptxt').show();
@@ -335,6 +367,7 @@ switch (Number(ss)) {
 		$('#cstxt').show();
 		$('#damagef').show();
 		$('#taiseitxt').show();
+
 	break;
 	case 6: //蓄積%
 		$('#mptxt').hide();
@@ -376,6 +409,7 @@ switch (Number(ss)) {
 		$('#cs2txt').hide();
 		$('#damagef').hide();
 		$('#taiseitxt').show();
+
 	break;
 	case 7: //カウント
 		$('#mzokusei').show();
@@ -418,6 +452,7 @@ switch (Number(ss)) {
 		$('#cstxt').hide();
 		$('#damagef').show();
 		$('#taiseitxt').show();
+
 	break;
 	case 8: //時限大魔術
 		$('#mzokusei').show();
@@ -460,6 +495,7 @@ switch (Number(ss)) {
 		$('#cstxt').hide();
 		$('#damagef').hide();
 		$('#taiseitxt').show();
+
 	break;
 	case 9: //反転解除
 		$('#mzokusei').show();
@@ -502,6 +538,7 @@ switch (Number(ss)) {
 		$('#cstxt').show();
 		$('#damagef').show();
 		$('#taiseitxt').show();
+
 	break;
 	case 10: //詠唱
 		$('#mzokusei').show();
@@ -544,6 +581,7 @@ switch (Number(ss)) {
 		$('#cstxt').hide();
 		$('#damagef').show();
 		$('#taiseitxt').show();
+
 	break;
 	case 11: //反動蝕・犠牲
 		$('#mzokusei').show();
@@ -586,6 +624,7 @@ switch (Number(ss)) {
 		$('#cstxt').show();
 		$('#damagef').hide();
 		$('#taiseitxt').show();
+
 	break;
 	case 12: //純属性
 		$('#mzokusei').show();
@@ -627,6 +666,7 @@ switch (Number(ss)) {
 		$('#cstxt').show();
 		$('#damagef').hide();
 		$('#taiseitxt').show();
+
 	break;
 	case 13: //融合
 		$('#mzokusei').show();
@@ -668,6 +708,7 @@ switch (Number(ss)) {
 		$('#cstxt').hide();
 		$('#damagef').hide();
 		$('#taiseitxt').show();
+
 	break;
 	case 14: //統一
 		$('#mzokusei').show();
@@ -709,6 +750,7 @@ switch (Number(ss)) {
 		$('#cstxt').show();
 		$('#damagef').show();
 		$('#taiseitxt').show();
+
 	break;
 	case 15: //連鎖解放
 		$('#mzokusei').show();
@@ -750,6 +792,7 @@ switch (Number(ss)) {
 		$('#cstxt').show();
 		$('#damagef').hide();
 		$('#taiseitxt').show();
+
 	break;
 	case 16: //激化 エンハの乗り方が特殊っぽい
 		$('#mzokusei').show();
@@ -791,6 +834,7 @@ switch (Number(ss)) {
 		$('#cstxt').show();
 		$('#damagef').show();
 		$('#taiseitxt').show();
+
 	break;
 	case 17: //急襲 多分激化の逆
 		$('#mzokusei').show();
@@ -832,6 +876,7 @@ switch (Number(ss)) {
 		$('#cstxt').show();
 		$('#damagef').hide();
 		$('#taiseitxt').show();
+
 	break;
 	case 18: //パネル爆破 
 		$('#mzokusei').hide();
@@ -873,6 +918,7 @@ switch (Number(ss)) {
 		$('#cstxt').show();
 		$('#damagef').hide();
 		$('#taiseitxt').show();
+
 	break;
 	case 19:  //撃滅連弾
 		$('#mzokusei').show();
@@ -914,6 +960,7 @@ switch (Number(ss)) {
 		$('#cstxt').hide();
 		$('#damagef').hide();
 		$('#taiseitxt').show();
+
 	break;
 	case 20: //天穹大魔術
 		$('#mzokusei').hide();
@@ -955,6 +1002,7 @@ switch (Number(ss)) {
 		$('#cstxt').hide();
 		$('#damagef').hide();
 		$('#taiseitxt').show();
+
 	break;
 	case 21: //詠唱多弾大魔術
 		$('#mptxt').show();
@@ -996,6 +1044,7 @@ switch (Number(ss)) {
 		$('#cstxt').hide();
 		$('#damagef').show();
 		$('#taiseitxt').show();
+
 	break;
 	default: //大魔術 基本的なやつ
 		$('#mzokusei').show();
@@ -1037,5 +1086,6 @@ switch (Number(ss)) {
 		$('#cstxt').show();
 		$('#damagef').show();
 		$('#taiseitxt').show();
+
 }
 });

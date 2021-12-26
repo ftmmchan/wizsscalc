@@ -1,5 +1,5 @@
 $('#ascalc').click(function(){
-var atk = Number($('#atk').val())/2; //攻撃力
+var atk = Number($('#atk').val()); //攻撃力
 var mp = Number($('#mp').val()); //ＡＳの効果値
 var cs = Number($('#cs').val()); //結晶の効果値
 var eh1 = Number($('#eh1').val()); //ダメージ強化効果値
@@ -32,6 +32,23 @@ var egdmizu = Number($('#egdmizu').val());
 var egdkami = Number($('#egdkami').val()); 
 var egdhika = Number($('#egdhika').val()); 
 var egdyami = Number($('#egdyami').val()); 
+}
+
+//敵属性免疫
+if(emm1.checked == true){
+var emm = Number($('#emm').val()); 
+var emmhi = 0; 
+var emmmizu = 0; 
+var emmkami = 0; 
+var emmhika = 0; 
+var emmyami = 0; 
+}else{
+var emm = 0; 
+var emmhi = Number($('#emmhi').val()); 
+var emmmizu = Number($('#emmmizu').val()); 
+var emmkami = Number($('#emmkami').val()); 
+var emmhika = Number($('#emmhika').val()); 
+var emmyami = Number($('#emmyami').val()); 
 }
 
 //味方の弱体化大魔術
@@ -183,22 +200,15 @@ switch (myzokusei) {
 		var zkeh2 = 1.0;
 	}
 
-switch (csmpsel) {
-	case 1:
-		var csmp = 1.2;
-	break;
-	case 2:
-		var csmp = 0.9;
-	break;
-	case 3:
-		var csmp = 1.1;
-	break;
-	case 4:
-		var csmp = 1.3;
-	break;
-	default:
-		var csmp = 1;
-}
+var csmp = 1 ;
+var ad = document.getElementById("ad");
+var mu = document.getElementById("mu");
+var go = document.getElementById("go");
+var ri = document.getElementById("ri");
+if (ad.checked == true) {var csmp = csmp + 0.2}
+if (mu.checked == true) {var csmp = csmp - 0.1}
+if (go.checked == true) {var csmp = csmp + 0.1}
+if (ri.checked == true) {var csmp = csmp + 0.3}
 
 value = $("input[name='awmpselbtn']:checked").val();
 switch (value) {
@@ -235,11 +245,6 @@ var drmp = 1;
 var drmp = 1.1;
 }
 
-if(shmp1.checked == true){
-var shmp = 1;
-}else{
-var shmp = 1.3;
-}
 if(egd1.checked == true){
 	var egdhi = egd;
 	var egdmizu = egd;
@@ -264,17 +269,26 @@ if(ehd1.checked == true){
 	var ehdyami = ehd;
 }
 
+if(emm1.checked == true){
+	var emmhi = emm;
+	var emmmizu = emm;
+	var emmkami = emm;
+	var emmhika = emm;
+	var emmyami = emm;
+}
+
+
 if(tai1.checked == true){
 var asjoutai = 1-(taisei/100);
 }else{
 var asjoutai = 1+(taisei/100);
 }
-var aseh = (1-(egd/100))*(1+(mjk/100))*(1+(ehd/100))*asjoutai; //敵被ダメージ補正
-var asehhi = (1-(egdhi/100))*(1+(mjkhi/100))*(1+(ehdhi/100))*asjoutai; //敵被ダメージ補正
-var asehmizu = (1-(egdmizu/100))*(1+(mjkmizu/100))*(1+(ehdmizu/100))*asjoutai; //敵被ダメージ補正
-var asehkami = (1-(egdkami/100))*(1+(mjkkami/100))*(1+(ehdkami/100))*asjoutai; //敵被ダメージ補正
-var asehhika = (1-(egdhika/100))*(1+(mjkhika/100))*(1+(ehdhika/100))*asjoutai; //敵被ダメージ補正
-var asehyami = (1-(egdyami/100))*(1+(mjkyami/100))*(1+(ehdyami/100))*asjoutai; //敵被ダメージ補正
+var aseh = (1-(egd/100))*(1+(mjk/100))*(1+(ehd/100))*(1-(emm/100))*asjoutai; //敵被ダメージ補正
+var asehhi = (1-(egdhi/100))*(1+(mjkhi/100))*(1+(ehdhi/100))*(1-(emmhi/100))*asjoutai; //敵被ダメージ補正
+var asehmizu = (1-(egdmizu/100))*(1+(mjkmizu/100))*(1+(ehdmizu/100))*(1-(emmmizu/100))*asjoutai; //敵被ダメージ補正
+var asehkami = (1-(egdkami/100))*(1+(mjkkami/100))*(1+(ehdkami/100))*(1-(emmkami/100))*asjoutai; //敵被ダメージ補正
+var asehhika = (1-(egdhika/100))*(1+(mjkhika/100))*(1+(ehdhika/100))*(1-(emmhika/100))*asjoutai; //敵被ダメージ補正
+var asehyami = (1-(egdyami/100))*(1+(mjkyami/100))*(1+(ehdyami/100))*(1-(emmyami/100))*asjoutai; //敵被ダメージ補正
 var asehmu = (1+(mjk/100))*(1+(ehd/100))*asjoutai; //敵被ダメージ補正
 			switch(myzokusei){
 				case 1:
@@ -315,8 +329,8 @@ var asehmu = (1+(mjk/100))*(1+(ehd/100))*asjoutai; //敵被ダメージ補正
 			}
 
 if(bunsansel2.checked == false) ems = 1;
-
-var dmmp = csmp+awmp+drmp+shmp-3;
+var atk = atk/2;
+var dmmp = csmp+awmp+drmp-2;
 
 if(myzokusei == myzokusei2 || myzokusei2 == 0){
 	var damage = atk*((((mptotal+100+exmp)/ems))/100)*(asmpss+asmppn-1)*pneh*cheh*aseh*dmmp*zkeh;

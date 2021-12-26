@@ -19,6 +19,12 @@ $('#ehdyamitxt').addClass('invisible');
 $('#emstxt').addClass('invisible');
 $('#kaisuutxt').addClass('invisible');
 $('#pnzokuseif').addClass('invisible');
+$('#emmhitxt').addClass('invisible');
+$('#emmmizutxt').addClass('invisible');
+$('#emmkamitxt').addClass('invisible');
+$('#emmhikatxt').addClass('invisible');
+$('#emmyamitxt').addClass('invisible');
+
 var egd1 = document.getElementById("egd1");
 var egd2 = document.getElementById("egd2");
 egd1.checked = true ;
@@ -39,15 +45,15 @@ awmpsel1.checked = true ;
 var drmp1 = document.getElementById("drmp1");
 var drmp2 = document.getElementById("drmp2");
 drmp1.checked = true ;
-var shmp1 = document.getElementById("shmp1");
-var shmp2 = document.getElementById("shmp2");
-shmp1.checked = true ;
 var bunsansel1 = document.getElementById("bunsansel1");
 var bunsansel2 = document.getElementById("bunsansel2");
 var bunsansel3 = document.getElementById("bunsansel3");
 bunsansel1.checked = true ;
 pnzokusei1.checked = true ;
 pnzokuseif1.checked = true ;
+var emm1 = document.getElementById("emm1");
+var emm2 = document.getElementById("emm2");
+emm1.checked = true ;
 
 
 function zokuseisel() {
@@ -65,7 +71,7 @@ function zokuseisel() {
 		}
 };
 
-$("#bunsan").change(function() {
+function bunsansel() {
 var bunsan = $("input[name='bunsanselbtn']:checked").val();
 switch (bunsan) {
 	case "bunsan2":
@@ -86,7 +92,7 @@ switch (bunsan) {
 		$('#damaavgtxt').hide();
 		$('#damaavgtxt2').hide();
 }
-});
+};
 
 
 function egdsel() {
@@ -143,4 +149,21 @@ function ehdsel() {
 	}
 }
 
+function emmsel() {
+	if(emm1.checked == true){
+		$('#emmtxt').show();
+		$('#emmhitxt').hide();
+		$('#emmmizutxt').hide();
+		$('#emmkamitxt').hide();
+		$('#emmhikatxt').hide();
+		$('#emmyamitxt').hide();
+	}else{
+		$('#emmtxt').hide();
+		$('#emmhitxt').show();
+		$('#emmmizutxt').show();
+		$('#emmkamitxt').show();
+		$('#emmhikatxt').show();
+		$('#emmyamitxt').show();
+	}
+}
 

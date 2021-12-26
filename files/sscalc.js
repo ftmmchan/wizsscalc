@@ -30,6 +30,22 @@ var egdkami = Number($('#egdkami').val());
 var egdhika = Number($('#egdhika').val()); 
 var egdyami = Number($('#egdyami').val()); 
 }
+//敵属性免疫
+if(emm1.checked == true){
+var emm = Number($('#emm').val()); 
+var emmhi = 0; 
+var emmmizu = 0; 
+var emmkami = 0; 
+var emmhika = 0; 
+var emmyami = 0; 
+}else{
+var emm = 0; 
+var emmhi = Number($('#emmhi').val()); 
+var emmmizu = Number($('#emmmizu').val()); 
+var emmkami = Number($('#emmkami').val()); 
+var emmhika = Number($('#emmhika').val()); 
+var emmyami = Number($('#emmyami').val()); 
+}
 
 //味方の弱体化大魔術
 if(mjk1.checked == true){
@@ -68,7 +84,6 @@ var ehdyami = Number($('#ehdyami').val());
 var taisei = Number($('#taisei').val()); //SS耐性変化
 var csmpsel = Number($('#csmpsel').val()); //ダメージ倍率結晶
 var awmpsel = Number($('#awmpsel').val()); //ダメージ倍率潜在
-var drmpsel = Number($('#drmpsel').val()); //ダメージ倍率潜在
 var myzokusei = Number($('#myzokusei').val()); //属性補正
 var myzokusei2 = Number($('#myzokusei2').val()); //属性補正
 var emzokusei = Number($('#emzokusei').val()); //属性補正
@@ -226,24 +241,14 @@ switch (myzokusei) {
 	default:
 		var zkeh2 = 1.0;
 	}
-
-switch (csmpsel) {
-	case 1:
-		var csmp = 1.2;
-	break;
-	case 2:
-		var csmp = 0.9;
-	break;
-	case 3:
-		var csmp = 1.1;
-	break;
-	case 4:
-		var csmp = 1.3;
-	break;
-	default:
-		var csmp = 1;
-}
-
+	
+var csmp = 1 ;
+var ad = document.getElementById("ad");
+var mu = document.getElementById("mu");
+var go = document.getElementById("go");
+if (ad.checked == true) {var csmp = csmp + 0.2}
+if (mu.checked == true) {var csmp = csmp - 0.1}
+if (go.checked == true) {var csmp = csmp + 0.1}
 if(drmp1.checked == true){
 var drmp = 1;
 }else{
@@ -266,6 +271,14 @@ if(mjk1.checked == true){
 	var mjkyami = mjk;
 }
 
+if(emm1.checked == true){
+	var emmhi = emm;
+	var emmmizu = emm;
+	var emmkami = emm;
+	var emmhika = emm;
+	var emmyami = emm;
+}
+
 if(ehd1.checked == true){
 	var ehdhi = ehd;
 	var ehdmizu = ehd;
@@ -280,12 +293,12 @@ var ssjoutai = 1+(taisei/100);
 }
 if(ss == 3) ssjoutai = 1;
 //属性ごとにダメージ補正を計算する
-var sseh = (1-(egd/100))*(1+(mjk/100))*(1+(ehd/100))*ssjoutai;
-var ssehhi = (1-(egdhi/100))*(1+(mjkhi/100))*(1+(ehdhi/100))*ssjoutai; 
-var ssehmizu = (1-(egdmizu/100))*(1+(mjkmizu/100))*(1+(ehdmizu/100))*ssjoutai;
-var ssehkami = (1-(egdkami/100))*(1+(mjkkami/100))*(1+(ehdkami/100))*ssjoutai;
-var ssehhika = (1-(egdhika/100))*(1+(mjkhika/100))*(1+(ehdhika/100))*ssjoutai;
-var ssehyami = (1-(egdyami/100))*(1+(mjkyami/100))*(1+(ehdyami/100))*ssjoutai;
+var sseh = (1-(egd/100))*(1+(mjk/100))*(1+(ehd/100))*(1-(emm/100))*ssjoutai;
+var ssehhi = (1-(egdhi/100))*(1+(mjkhi/100))*(1+(ehdhi/100))*(1-(emmhi/100))*ssjoutai; 
+var ssehmizu = (1-(egdmizu/100))*(1+(mjkmizu/100))*(1+(ehdmizu/100))*(1-(emmmizu/100))*ssjoutai;
+var ssehkami = (1-(egdkami/100))*(1+(mjkkami/100))*(1+(ehdkami/100))*(1-(emmkami/100))*ssjoutai;
+var ssehhika = (1-(egdhika/100))*(1+(mjkhika/100))*(1+(ehdhika/100))*(1-(emmhika/100))*ssjoutai;
+var ssehyami = (1-(egdyami/100))*(1+(mjkyami/100))*(1+(ehdyami/100))*(1-(emmyami/100))*ssjoutai;
 var ssehmu = (1+(mjk/100))*(1+(ehd/100))*ssjoutai;
 
 		switch(myzokusei){
@@ -427,7 +440,7 @@ switch (Number(ss)) {
 			var damage2 = (atk*(mptotal/100)*cheh*sseh2*dmmp*zkeh2);
 			var ch = ch+1;
 			var cheh = 1+(ch/100); //チェイン補正
-			for (var i=0;i<kaisuu-1;i++){
+			for (var i=1;i<kaisuu;i++){
 				var damage = (atk*(mptotal/100)*cheh*sseh*dmmp*zkeh);
 				var ch = ch+1;
 				var cheh = 1+(ch/100); //チェイン補正
@@ -751,13 +764,12 @@ switch (Number(ss)) {
 	case 19: //撃滅連弾
 	var damjou = (jou-mp)/chjou;
 	var ehjou = ehtotal/chjou;
+	var mptotal = mp+cs+ehtotal;
 	var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh;
 		var temp = Math.floor(ch/chsyou);
-		if(temp>=chjou){
-			var temp = chjou;
-			}
-			var chmptotal = mp+ehjou;
-		for (var i=0;i<temp;i++){
+		if(temp>=chjou) var temp = chjou;
+		var chmptotal = mp+ehjou;
+		for (var i=1;i<temp;i++){
 			var damage = damage+atk*(chmptotal/100)*cheh*sseh*dmmp*zkeh;
 			var ch = ch-chsyou;
 			var cheh = 1+(ch/100); //チェイン補正
@@ -768,7 +780,6 @@ switch (Number(ss)) {
 		var damagemin = Math.floor(damage*0.9);
 		var damagemax = Math.floor(damage*1.1);
 		var damagetotal = damage + damage2;
-		
 	break;
 	case 20: //天穹大魔術
 			switch (emzokusei) {
