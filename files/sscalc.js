@@ -764,7 +764,7 @@ switch (Number(ss)) {
 	case 19: //撃滅連弾
 	var damjou = (jou-mp)/chjou;
 	var ehjou = ehtotal/chjou;
-	var mptotal = mp+cs+ehtotal;
+	var mptotal = mp+ehtotal;
 	var damage = atk*(mptotal/100)*cheh*sseh*dmmp*zkeh;
 		var temp = Math.floor(ch/chsyou);
 		if(temp>=chjou) var temp = chjou;
