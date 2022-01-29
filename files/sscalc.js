@@ -246,14 +246,11 @@ var csmp = 1 ;
 var ad = document.getElementById("ad");
 var mu = document.getElementById("mu");
 var go = document.getElementById("go");
+var dr = document.getElementById("dr");
 if (ad.checked == true) {var csmp = csmp + 0.2}
 if (mu.checked == true) {var csmp = csmp - 0.1}
 if (go.checked == true) {var csmp = csmp + 0.1}
-if(drmp1.checked == true){
-var drmp = 1;
-}else{
-var drmp = 1.1;
-}
+if (dr.checked == true) {var csmp = csmp + 0.1}
 
 if(egd1.checked == true){
 	var egdhi = egd;
@@ -337,7 +334,7 @@ var ssehmu = (1+(mjk/100))*(1+(ehd/100))*ssjoutai;
 				var sseh2 = ssehyami;
 				break;
 			}
-var dmmp = csmp+awmp+drmp-2;
+var dmmp = csmp+awmp-1;
 if(myzokusei == 6 || myzokusei == myzokusei2) myzokusei2 = 0; //複属性があるか判定する、主属性と複属性が同じなら単色とみなす
 
 

@@ -72,11 +72,6 @@ var awmpsel2 = document.getElementById("awmpsel2");
 var awmpsel3 = document.getElementById("awmpsel3");
 var awmpsel4 = document.getElementById("awmpsel4");
 awmpsel1.checked = true ;
-var drmp1 = document.getElementById("drmp1");
-var drmp2 = document.getElementById("drmp2");
-
-
-drmp1.checked = true ;
 
 function egdsel() {
 	if(egd1.checked == true){

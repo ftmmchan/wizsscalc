@@ -10,7 +10,6 @@
 公開場所
 https://ftmmchan.github.io/wizsscalc/
 
-更新停止しました。  
 
 ***  
 
@@ -113,4 +112,7 @@ damage = floor(攻撃力 × floor{(効果値+1)×(チェイン×0.01)× 属性�
 ![夢現の射手](files/img/ite.png) 夢現の射手  
 ![攻撃SPスキル強化](files/img/spkyouka.png) 攻撃SPスキル強化  
 ![ダブルAS付与](files/img/was.png) ダブルAS付与  
+
+複数発動させるとこの様になる。  
+![例](files/img/example.png)  
 

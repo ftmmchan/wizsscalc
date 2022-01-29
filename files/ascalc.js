@@ -11,9 +11,10 @@ var eh6 = Number($('#eh6').val()); //夢現の射手効果値
 var eh7 = Number($('#eh7').val()); //ダブルＡＳ付与効果値
 var eh8 = Number($('#eh8').val()); //ＡＳ特殊変化効果値
 var eh9 = Number($('#eh9').val()); //ダメージ強化パネル効果値
+var eh10 = Number($('#eh10').val()); //ＡＳ強化フィールド効果値
 var exmp = Number($('#exmp').val()); //EXAS効果値
 var ch = Number($('#ch').val()); //チェイン数
-var ehtotal = eh1 + eh2 + eh3 + eh4 + eh5 + eh6 + eh7 + eh8 + eh9; //ダメージ強化合計
+var ehtotal = eh1 + eh2 + eh3 + eh4 + eh5 + eh6 + eh7 + eh8 + eh9 + eh10; //ダメージ強化合計
 var mptotal = (mp+cs+ehtotal); //計算上の効果値
 var cheh = 1+(ch/100); //チェイン補正
 
@@ -205,10 +206,12 @@ var ad = document.getElementById("ad");
 var mu = document.getElementById("mu");
 var go = document.getElementById("go");
 var ri = document.getElementById("ri");
+var dr = document.getElementById("dr");
 if (ad.checked == true) {var csmp = csmp + 0.2}
 if (mu.checked == true) {var csmp = csmp - 0.1}
 if (go.checked == true) {var csmp = csmp + 0.1}
 if (ri.checked == true) {var csmp = csmp + 0.3}
+if (dr.checked == true) {var csmp = csmp + 0.1}
 
 value = $("input[name='awmpselbtn']:checked").val();
 switch (value) {
@@ -237,12 +240,6 @@ if(pnzokuseif1.checked == true){
 var pneh2 = 1;
 }else{
 var pneh2 = 0.5
-}
-
-if(drmp1.checked == true){
-var drmp = 1;
-}else{
-var drmp = 1.1;
 }
 
 if(egd1.checked == true){
@@ -330,7 +327,7 @@ var asehmu = (1+(mjk/100))*(1+(ehd/100))*asjoutai; //敵被ダメージ補正
 
 if(bunsansel2.checked == false) ems = 1;
 var atk = atk/2;
-var dmmp = csmp+awmp+drmp-2;
+var dmmp = csmp+awmp-1;
 
 if(myzokusei == myzokusei2 || myzokusei2 == 0){
 	var damage = atk*((((mptotal+100+exmp)/ems))/100)*(asmpss+asmppn-1)*pneh*cheh*aseh*dmmp*zkeh;
