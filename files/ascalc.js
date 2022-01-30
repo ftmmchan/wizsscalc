@@ -12,9 +12,10 @@ var eh7 = Number($('#eh7').val()); //ダブルＡＳ付与効果値
 var eh8 = Number($('#eh8').val()); //ＡＳ特殊変化効果値
 var eh9 = Number($('#eh9').val()); //ダメージ強化パネル効果値
 var eh10 = Number($('#eh10').val()); //ＡＳ強化フィールド効果値
+var eh11 = Number($('#eh11').val()); //ＡＳ強化フィールド効果値
 var exmp = Number($('#exmp').val()); //EXAS効果値
 var ch = Number($('#ch').val()); //チェイン数
-var ehtotal = eh1 + eh2 + eh3 + eh4 + eh5 + eh6 + eh7 + eh8 + eh9 + eh10; //ダメージ強化合計
+var ehtotal = eh1 + eh2 + eh3 + eh4 + eh5 + eh6 + eh7 + eh8 + eh9 + eh10 + eh11; //ダメージ強化合計
 var mptotal = (mp+cs+ehtotal); //計算上の効果値
 var cheh = 1+(ch/100); //チェイン補正
 
@@ -341,7 +342,7 @@ if(myzokusei == myzokusei2 || myzokusei2 == 0){
 	var damageavg = Math.floor(damage/kaisuu);
 	var damagemin = Math.floor(damage*0.9);
 	var damagemax = Math.floor(damage*1.1);
-	var damage2 = atk*((((mptotal+100+exmp)/ems))/100)*(asmpss+asmppn-1)*pneh2*cheh*aseh2*dmmp*zkeh2;
+	var damage2 = atk*((((mptotal+100+exmp-eh11)/ems))/100)*(asmpss+asmppn-1)*pneh2*cheh*aseh2*dmmp*zkeh2;
 	var damage2 = Math.floor(damage2);
 	var damageavg2 = Math.floor(damage2/kaisuu);
 	var damagemin2 = Math.floor(damage2*0.9);
